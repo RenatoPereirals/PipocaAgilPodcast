@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 
 * {
   margin: 0;
@@ -213,8 +213,7 @@ bottom:hover {
   gap: 15px;
 }
 .ultimos .videos-ultimos iframe {
-  width: 305px;
-  height: 197px;
+  
   margin-right: 63px;
   margin-left: 63px;
   padding-bottom: 30px;
@@ -251,8 +250,7 @@ footer p {
 }
 
 .rodape {
-  margin: auto;
- 
+  margin: auto; 
   display: flex;
   flex-direction: column;
   align-items: center;

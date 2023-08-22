@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="bemvindo">
-        <article class="logo">
-            <img src="../image/logo-pipoca-agil.png" alt="Logo pipoca Agil">
-            <h2> Bem - vindo</h2>
-        </article>
+      <article class="logo">
+        <img src="../image/logo-pipoca-agil.png" alt="Logo pipoca Agil" />
+        <h2>Bem - vindo</h2>
+      </article>
     </section>
     <section class="cadastro">
-        <article>
-            <h2>Crie sua conta</h2>
-            <p>Ganhe acesso à conteúdos especiais e benefícios exclusivos do nosso Clube Assinante.</p>
-            <p class="login"> Já tem conta? <a href="login.html" target="_blank">Login</a></p>
-        </article>
-        <article>
-            <div>
-                <label>Nome Completo</label><br>
-                <input type="text" name="nome" id="nome">
-            </div>
-        </article>
+      <article>
+        <h2>Crie sua conta</h2>
+        <p>
+          Ganhe acesso à conteúdos especiais e benefícios exclusivos do nosso
+          Clube Assinante.
+        </p>
+        <p class="login">
+          Já tem conta? <a href="login.html" target="_blank">Login</a>
+        </p>
+      </article>
+      <form>
+        <div>
+          <label>Nome Completo</label><br />
+          <input type="text" name="nome" id="nome" />
+        </div>
+        <fieldset>
+          <div>
+            <label>E-mail</label><br />
+            <input type="email" name="email" id="email" />
+          </div>
+          <br />
+          <div>
+            <label>Data de Nascimento</label><br />
+            <input type="date" name="data" id="data" />
+            <p>Para assinar precisa ser maior de 18 anos.</p>
+          </div>
+        </fieldset>
+        <fieldset>
+          <label>Senha</label><br />
+          <input type="password" name="senha" id="senha" />
+          <br />
+          <label>Confirmar Senha</label><br>
+          <input type="password" name="cofirmasenha" id="confirmasenha" />
+        </fieldset>
+        <input type="checkbox" name="termo" id="termo">
+        <label>Concordo com os <a href="*">termos de uso</a>, e <a href="*">politica de privacidade</a></label>
+      </form>
+      <input type="button" value="Confirmar" id="button">
     </section>
-     
-</body>
-</html> 
+  </body>
+</html>

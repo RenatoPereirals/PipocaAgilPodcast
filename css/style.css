@@ -1,10 +1,6 @@
 @charset "UTF-8";
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
   text-decoration: none;
   color: aliceblue;
   -webkit-font-smoothing: antialiased;
@@ -42,7 +38,7 @@ header {
 }
 
 header::before {
-  content: "";
+ 
   width: 100%;
   height: 100%;
   position: absolute;
@@ -59,7 +55,7 @@ header::before {
   margin-bottom: 30px;
 }
 
-nav {
+.navigator {
   max-width: 1600px;
   min-width: 300px;
   width: 100%;

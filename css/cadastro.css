@@ -7,7 +7,7 @@
   --color-black-medium: #000;
 }
 
-body {
+body {  
   background-color: #201c1c;
   font-family: "Roboto", monospace;
 }
@@ -119,6 +119,9 @@ fieldset {
 
 input {
   border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: #fff;
 }
 
 label {
@@ -145,7 +148,7 @@ label {
 .email-data {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 15px;
   margin-left: 165px;
   margin-top: 28px;
 }
@@ -164,24 +167,26 @@ label {
   flex-shrink: 0;
 }
 
-.datanasc {
+.datanasc > p {
   color: rgba(255, 255, 255, 0.6);
   font-family: "Roboto";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: 4px;
 }
 
 .senhas {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 15px;
   margin-left: 165px;
   margin-top: 55px;
 }
 
 .senha > p {
+  margin-top: 4px;
   color: rgba(255, 255, 255, 0.6);
   font-family: "Roboto";
   font-size: 12px;
@@ -202,4 +207,45 @@ label {
   width: 232px;
   height: 52px;
   flex-shrink: 0;
+}
+
+.termos {
+  display: flex;
+  margin-left: 165px;
+  margin-top: 15px;
+}
+
+.termos > label {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.termos > label > a {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+button {
+  width: 188px;
+  height: 56px;
+  margin-top: 55px;
+  margin-left: 165px;
+  border-radius: 40px;
+  background: #fecf5d;
+  box-shadow: 1px 14px 9px 0px rgba(0, 0, 0, 0.25);
+  color: #000;
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.32px;
 }

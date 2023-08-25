@@ -7,7 +7,7 @@
   --color-black-medium: #000;
 }
 
-body {  
+body {
   background-color: #201c1c;
   font-family: "Roboto", monospace;
 }
@@ -112,6 +112,40 @@ h2 {
   line-height: normal;
   text-decoration-line: underline;
 }
+
+.errormessage {
+  display:none ;
+  width: 710px;
+  height: 88px;
+  color: #fff;
+  background-color: red;
+  margin-left: 60px;
+
+}
+
+.logtext{
+  display: flex;
+  align-items: center;
+  }
+
+.logtext > img{
+  width: 32px;
+  height: 32px;
+  margin-top: 28px;
+  margin-left: 27px;
+  margin-bottom: 28px;
+
+}
+
+.msgerro{
+  font-family: "Roboto";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 30px;
+}
+
 
 fieldset {
   border: 0;
@@ -248,4 +282,5 @@ button {
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.32px;
+  cursor: pointer;
 }

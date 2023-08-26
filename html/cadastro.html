@@ -6,7 +6,7 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/cadastro.css" />
-    
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;500;600;700;800;900&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300&display=swap");
@@ -51,7 +51,9 @@
               name="nome"
               id="nome"
               placeholder="Nome completo"
+              required
             />
+            <label id="msgerronome" class="erromsglabel">Insira seu nome completo.</label>
           </div>
           <fieldset class="email-data">
             <div class="email">
@@ -64,12 +66,19 @@
                 required
                 minlength="10"
                 class="error-message"
+                required
               />
             </div>
             <br />
             <div class="datanasc">
               <label>Data de Nascimento</label><br />
-              <input type="date" name="data" id="data" class="error-message" />
+              <input
+                type="date"
+                name="data"
+                id="data"
+                class="error-message"
+                required
+              />
               <p>Para assinar precisa ser maior de 18 anos.</p>
             </div>
           </fieldset>
@@ -81,18 +90,22 @@
                 name="senha"
                 id="senha"
                 class="error-message"
+                required
               />
+              <img src="../image/Hide.png" alt="icone olho" class="olhofechado" id="verSenha"/>
               <p>Senha deve conter mínimo 8 caracteres</p>
             </div>
             <br />
-            <div class="confsenha">
+            <div class="confenha">
               <label>Confirmar Senha</label><br />
               <input
                 type="password"
                 name="cofirmasenha"
                 id="confirmasenha"
                 class="error-message"
+                required
               />
+              <img src="../image/Hide.png" alt="icone olho" class="olhofechado2" id="verConfSenha"/>
             </div>
           </fieldset>
           <div class="termos">
@@ -111,9 +124,9 @@
             >
           </div>
         </form>
-        <button type="submit" id="confirmar" >Confirmar</button>
+        <button onclick="cadastrar()" id="confirmar">Confirmar</button>
       </article>
     </main>
+    <script src="../js/script.js"></script>
   </body>
-  
 </html>

@@ -114,30 +114,28 @@ h2 {
 }
 
 .errormessage {
-  display:none ;
+  display: none;
   width: 710px;
   height: 88px;
   color: #fff;
   background-color: red;
   margin-left: 60px;
-
 }
 
-.logtext{
+.logtext {
   display: flex;
   align-items: center;
-  }
+}
 
-.logtext > img{
+.logtext > img {
   width: 32px;
   height: 32px;
   margin-top: 28px;
   margin-left: 27px;
   margin-bottom: 28px;
-
 }
 
-.msgerro{
+.msgerro {
   font-family: "Roboto";
   font-size: 24px;
   font-style: normal;
@@ -146,16 +144,21 @@ h2 {
   margin-left: 30px;
 }
 
-
 fieldset {
   border: 0;
 }
 
 input {
-  border-radius: 5px;
+  padding: 5px 5px;
   border-radius: 5px;
   border: 1px solid #000;
-  background: #fff;
+  background: #fff;  
+  color: #201c1c;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 label {
@@ -214,9 +217,9 @@ label {
 .senhas {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 17px;
   margin-left: 165px;
-  margin-top: 55px;
+  margin-top: 40px;
 }
 
 .senha > p {
@@ -236,11 +239,26 @@ label {
   flex-shrink: 0;
 }
 
+.olhofechado {
+  position: relative;
+  top: 5px;
+  right: 35px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 #confirmasenha {
   margin-top: 13px;
   width: 232px;
   height: 52px;
   flex-shrink: 0;
+}
+.olhofechado2 {
+  position: relative;
+  top: 5px;
+  right: 35px;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .termos {
@@ -283,4 +301,17 @@ button {
   line-height: normal;
   letter-spacing: -0.32px;
   cursor: pointer;
+}
+
+.erromsglabel {
+  color: #fa0000;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  right: 500px;
+  top: 35px;
+  display: none;
 }

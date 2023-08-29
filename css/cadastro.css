@@ -53,7 +53,7 @@ h2 {
   margin-left: 147px;
 }
 
-.cadastro {
+.formcad {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -62,7 +62,7 @@ h2 {
   height: 1024px;
 }
 
-.titulo {
+.crieconta {
   width: 501px;
   height: 115px;
   margin-top: 101px;
@@ -71,7 +71,7 @@ h2 {
   text-align: left;
 }
 
-.titulo > h2 {
+.crieconta > h2 {
   margin: 0px;
   color: #fff;
   font-family: "Work Sans";
@@ -82,7 +82,7 @@ h2 {
   letter-spacing: -0.68px;
 }
 
-.titulo > p {
+.crieconta > p {
   padding-top: 20px;
   color: #fff;
   font-family: "Work Sans";
@@ -114,7 +114,7 @@ h2 {
 }
 
 .errormessage {
-  display: none;
+  visibility: hidden;
   width: 710px;
   height: 88px;
   color: #fff;
@@ -148,11 +148,10 @@ fieldset {
   border: 0;
 }
 
-input {
-  padding: 5px 5px;
-  border-radius: 5px;
-  border: 1px solid #000;
-  background: #fff;  
+.form-control input {
+  padding: 5px;
+    border: 1px solid #000;
+  background: #fff;
   color: #201c1c;
   font-family: Roboto;
   font-size: 14px;
@@ -170,24 +169,28 @@ label {
   line-height: normal;
 }
 
-.name {
+#name {
   margin-left: 165px;
   margin-top: 43px;
 }
 
-#nome {
+#username {
   margin-top: 26px;
   width: 500px;
   height: 50px;
   flex-shrink: 0;
+  border-radius: 5px;
 }
 
 .email-data {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+
   margin-left: 165px;
   margin-top: 28px;
+}
+
+#e-mail {
+  margin-top: 14px;
 }
 
 #email {
@@ -195,16 +198,19 @@ label {
   width: 232px;
   height: 49px;
   flex-shrink: 0;
+  border-radius: 5px;
 }
 
-#data {
-  margin-top: 14px;
+#date {
+  margin-top: 13px;
   width: 232px;
   height: 49px;
-  flex-shrink: 0;
+  position: relative;
+  right:10px;
+  border-radius: 5px;
 }
 
-.datanasc > p {
+#date > p {
   color: rgba(255, 255, 255, 0.6);
   font-family: "Roboto";
   font-size: 12px;
@@ -212,17 +218,19 @@ label {
   font-weight: 400;
   line-height: normal;
   margin-top: 4px;
+  position: relative;
+  right: 4px;
 }
 
 .senhas {
   display: flex;
   flex-wrap: wrap;
-  gap: 17px;
+  gap: 6px;
   margin-left: 165px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
-.senha > p {
+#passwords > p {
   margin-top: 4px;
   color: rgba(255, 255, 255, 0.6);
   font-family: "Roboto";
@@ -230,9 +238,10 @@ label {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  
 }
 
-#senha {
+#password {
   margin-top: 13px;
   width: 232px;
   height: 52px;
@@ -247,7 +256,7 @@ label {
   opacity: 0.5;
 }
 
-#confirmasenha {
+#passwordconf {
   margin-top: 13px;
   width: 232px;
   height: 52px;
@@ -261,13 +270,12 @@ label {
   opacity: 0.5;
 }
 
-.termos {
+#termos {
   display: flex;
   margin-left: 165px;
   margin-top: 15px;
 }
-
-.termos > label {
+#termos > label {
   color: #fff;
   font-family: Roboto;
   font-size: 12px;
@@ -276,7 +284,7 @@ label {
   line-height: normal;
 }
 
-.termos > label > a {
+#termos > label > a {
   color: #fff;
   font-family: Roboto;
   font-size: 12px;
@@ -303,15 +311,45 @@ button {
   cursor: pointer;
 }
 
-.erromsglabel {
-  color: #fa0000;
+button:hover{
+  background: #ffffff;
+  color: #000000;
+  transition: 0.5;
+
+}
+
+.form-control.success input {
+  border: 1px solid #03a200;
+  background: #daf8da;
+}
+
+.form-control.error input {
+  border: 1px solid #fa0000;
+  background: #fad6d6;
+}
+
+.form-control small {  
+  visibility: hidden;
   font-family: "Roboto";
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.form-control.error small {
+  color: #fa0000;
+  visibility: visible;
+}
+
+#e-mail > small{
   position: relative;
-  right: 500px;
-  top: 35px;
-  display: none;
+  right: 230px;
+  top: 40px;
+}
+
+
+#password2 > small{
+  position: relative;
+  right: 260px;
+  top: 40px;
 }

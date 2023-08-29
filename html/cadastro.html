@@ -24,7 +24,7 @@
           <h2>Bem - vindo</h2>
         </section>
       </article>
-      <article class="cadastro">
+      <article class="formcad">
         <div id="erromessage" class="errormessage">
           <div class="logtext">
             <img src="../image/🦆 icon _warning_.svg" alt="icone de perigo" />
@@ -32,7 +32,7 @@
           </div>
         </div>
         <section>
-          <aside class="titulo">
+          <aside class="crieconta">
             <h2>Crie sua conta</h2>
             <p>
               Ganhe acesso à conteúdos especiais e benefícios exclusivos do
@@ -43,79 +43,83 @@
             Já tem conta? <a href="login.html" target="_blank">Login</a>
           </p>
         </section>
-        <form id="cadastro">
-          <div class="name">
-            <label>Nome Completo</label><br />
-            <input
-              type="text"
-              name="nome"
-              id="nome"
-              placeholder="Nome completo"
-              required
-            />
-            <label id="msgerronome" class="erromsglabel">Insira seu nome completo.</label>
+        <form class="form" id="form">
+          <div id="name" class="form-control">
+            <label for="username">Nome Completo</label><br />
+            <input type="text" name="nome" id="username" required />
           </div>
           <fieldset class="email-data">
-            <div class="email">
-              <label>E-mail</label><br />
+            <div id="e-mail" class="form-control">
+              <label for="email">E-mail</label><br />
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="seueemail@email.com"
-                required
-                minlength="10"
                 class="error-message"
                 required
               />
+              <small>Error msg</small>
             </div>
             <br />
-            <div class="datanasc">
-              <label>Data de Nascimento</label><br />
+            <div id="date" class="form-control">
+              <label for="date">Data de Nascimento</label><br />
               <input
                 type="date"
                 name="data"
-                id="data"
+                id="date"
                 class="error-message"
                 required
               />
               <p>Para assinar precisa ser maior de 18 anos.</p>
+              <small>Error msg</small>
             </div>
           </fieldset>
           <fieldset class="senhas">
-            <div class="senha">
-              <label>Senha</label><br />
+            <div id="passwords" class="form-control">
+              <label for="password">Senha</label><br />
               <input
                 type="password"
                 name="senha"
-                id="senha"
+                id="password"
                 class="error-message"
                 required
               />
-              <img src="../image/Hide.png" alt="icone olho" class="olhofechado" id="verSenha"/>
+              <img
+                src="../image/Hide.png"
+                alt="icone olho"
+                class="olhofechado"
+                id="verSenha"
+              />
               <p>Senha deve conter mínimo 8 caracteres</p>
+              <small>Error msg</small>
             </div>
             <br />
-            <div class="confenha">
-              <label>Confirmar Senha</label><br />
+            <div id="password2" class="form-control">
+              <label for="passwordconf">Confirmar Senha</label><br />
               <input
                 type="password"
                 name="cofirmasenha"
-                id="confirmasenha"
+                id="passwordconf"
                 class="error-message"
                 required
               />
-              <img src="../image/Hide.png" alt="icone olho" class="olhofechado2" id="verConfSenha"/>
+              <img
+                src="../image/Hide.png"
+                alt="icone olho"
+                class="olhofechado2"
+                id="verConfSenha"
+              />
+              <small>Error msg</small>
             </div>
           </fieldset>
-          <div class="termos">
+          <div id="termos" class="form-control">
             <input
               type="checkbox"
               name="termo"
               id="termo"
               class="error-message"
             />
-            <label
+            <label for="termo"
               >Concordo com os
               <a href="termoecon.html" target="_blank">termos de uso</a>, e
               <a href="politicap.html" target="_blank"
@@ -123,8 +127,8 @@
               ></label
             >
           </div>
+          <button type="submit">Confirmar</button>
         </form>
-        <button onclick="cadastrar()" id="confirmar">Confirmar</button>
       </article>
     </main>
     <script src="../js/script.js"></script>

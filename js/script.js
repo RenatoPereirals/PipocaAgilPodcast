@@ -11,7 +11,6 @@ let passwordConf = document.querySelector("#passwordconf");
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
   checkInputs();
 })
 

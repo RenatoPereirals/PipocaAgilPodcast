@@ -38,7 +38,6 @@ header {
 }
 
 header::before {
- 
   width: 100%;
   height: 100%;
   position: absolute;
@@ -51,7 +50,8 @@ header::before {
 .logo-pipoca {
   display: flex;
   position: relative;
-  left: 100px;
+  right: 10px;
+  top: 15px;
   margin-bottom: 30px;
 }
 
@@ -61,14 +61,13 @@ header::before {
   width: 100%;
   height: 222px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: 0 auto;
 }
 
 nav > ul {
   display: flex;
-  gap: 100px;
   font-size: 20px;
 }
 
@@ -136,7 +135,7 @@ bottom:hover {
   display: flex;
   flex-direction: row;
   align-content: space-between;
- padding: 40px;
+  padding: 40px;
 }
 
 .descricao {
@@ -147,8 +146,10 @@ bottom:hover {
   font-style: normal;
   font-weight: 700;
   text-align: left;
-  margin-right: 350px;
-  
+  margin-right: 320px;
+  position: relative;
+  left: 20px;
+  top: 15px;
 }
 
 .redes-sociais {
@@ -188,7 +189,6 @@ bottom:hover {
 }
 
 .ultimos {
-  
   width: 100%;
   height: 506px;
   background-color: #000;
@@ -240,16 +240,18 @@ footer {
   align-content: center;
   width: 173px;
   height: 173px;
+  position: relative;
+  left: 30px;
 }
 
 footer p {
-  margin: 10px 30px;
-  padding: 30px 20px;
+  margin: 10px 50px;
+  padding: 30px 40px;
   text-align: left;
 }
 
 .rodape {
-  margin: auto; 
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,6 +259,7 @@ footer p {
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
+  left: 100px;
 }
 
 .rodape-redes {
@@ -264,4 +267,7 @@ footer p {
   flex-direction: row;
   align-items: center;
   gap: 5px;
+  position: relative;
+
+  bottom: 30px;
 }

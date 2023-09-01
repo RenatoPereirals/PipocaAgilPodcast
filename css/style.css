@@ -18,7 +18,7 @@ body {
   text-align: center;
   background-color: var(--color-black);
   background-position: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", monospace;
   height: 100vh;
   width: 100vw;
   color: #fff;
@@ -142,7 +142,7 @@ bottom:hover {
 .descricao {
   width: 671px;
   height: 214px;
-  font-family: "Roboto";
+  font-family:"Roboto", monospace;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;

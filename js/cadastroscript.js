@@ -1,5 +1,5 @@
-let btnSenha = document.querySelector("#verSenha");
 let btnConfirm = document.querySelector("#verConfSenha");
+let btnSenha = document.querySelector("#verSenha");
 
 let form = document.querySelector("#form");
 let username = document.querySelector("#username");

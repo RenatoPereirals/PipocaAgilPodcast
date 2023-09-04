@@ -1,177 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reset.css">
-    
-    <title>Popdcast | Agilidade</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navigator">
-        <div class="logo-pipoca">
-          <img src="image/logo-pipoca-agil.png" alt="logo-pipoca-agil" />
-        </div>
 
-        
-          <a href="index.html">Home</a>
-          <a href="html/galeria.html">Blog</a>
-          <a href="html/episodios.html">Episódios</a>
-          <a href="html/contato.html">Contato</a>
-        
-        <div
-          style="
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
+
+  <title>Popdcast | Agilidade</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navigator">
+      <div class="logo-pipoca">
+        <img src="image/logo-pipoca-agil.png" alt="logo-pipoca-agil" />
+      </div>
+
+      <a href="index.html">Home</a>
+      <a href="html/galeria.html">Galeria</a>
+      <a href="html/episodios.html">Episódios</a>
+      <a href="html/contato.html">Contato</a>
+
+      <div style="
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-          "
-        >
-          <img src="image/🦆 icon _person_.svg" alt="icone pessoa" /><a href="html/login.html"
-            >Login</a
-          >
-        </div>
-      </nav>
-      <div class="container">
-        <h1>“O Podcast mais animado do Mundo Ágil”</h1>
-        <div class="container-bottom">
-          <h2>
-            Assine e seja membro para ter acesso a <br />
-            conteúdos exclusivos.
-          </h2>
-          <button id="assinar" onclick="login()"><a href="html/cadastro.html">Assinar</a></button>
-        </div>
+            position: relative;
+            bottom: 10px;
+          ">
+        <div id="log-login" onclick="login()"><img src="image/🦆 icon _person_.svg" alt="icone pessoa" /><br />Login</div>
       </div>
-    </header>
-    <main>
-      <article>
-        <h1>
-          “O Podcast mais animado <br />
-          do Mundo Ágil”
-        </h1>
-        <section class="desc-logos">
-          <p class="descricao">
-            O Pipoca Ágil é um podcast voltado para o Mundo Ágil e afins. Com o
-            propósito de ser um podcast "chão de fábrica", ajudando na
-            divulgação de conteúdo do Mundo Ágil e contando casos e soluções
-            para a implementação da Transformação Digital nas empresas.
-          </p>
-          <div class="redes-sociais">
-            <p>Siga nossos canais</p>
-            <div class="redes">
-              <a href="https://www.youtube.com/@PipocaAgil" target="_blank"
-                ><img src="image/bi_youtube.svg" alt="logo youtube"
-              /></a>
-              <a href="https://twitter.com/pipoca_agil" target="_blank"
-                ><img src="image/skill-icons_twitter.svg" alt="logo twitter"
-              /></a>
-              <a href="https://www.instagram.com/pipocaagil/" target="_blank"
-                ><img src="image/ri_instagram-fill.svg" alt="logo instagram"
-              /></a>
-              <a href="https://open.spotify.com/show/5J1scP1l7m7kXK6v5RZS7J" target="_blank"
-                ><img src="image/mdi_spotify.svg" alt="logo spotify"
-              /></a>
-              <a href="https://www.linkedin.com/company/pipoca-%C3%A1gil/mycompany/verification/" target="_blank"
-                ><img src="image/bi_linkedin.svg" alt="logo linkedin"
-              /></a>
-              <a href="https://web.facebook.com/pipocaagil/?_rdc=1&_rdr" target="_blank"
-                ><img src="image/ic_outline-facebook.svg" alt="logo facebook"
-              /></a>
-            </div>
+    </nav>
+    <div class="container">
+      <h1>“O Podcast mais animado do Mundo Ágil”</h1>
+      <div class="container-bottom">
+        <h2>
+          Assine e seja membro para ter acesso a <br />
+          conteúdos exclusivos.
+        </h2>
+        <button id="assinar" onclick="assinar()">
+          Assinar
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <article>
+      <h1>
+        “O Podcast mais animado <br />
+        do Mundo Ágil”
+      </h1>
+      <section class="desc-logos">
+        <p class="descricao">
+          O Pipoca Ágil é um podcast voltado para o Mundo Ágil e afins. Com o
+          propósito de ser um podcast "chão de fábrica", ajudando na
+          divulgação de conteúdo do Mundo Ágil e contando casos e soluções
+          para a implementação da Transformação Digital nas empresas.
+        </p>
+        <div class="redes-sociais">
+          <p>Siga nossos canais</p>
+          <div class="redes">
+            <a href="https://www.youtube.com/@PipocaAgil" target="_blank"><img src="image/bi_youtube.svg"
+                alt="logo youtube" /></a>
+            <a href="https://twitter.com/pipoca_agil" target="_blank"><img src="image/skill-icons_twitter.svg"
+                alt="logo twitter" /></a>
+            <a href="https://www.instagram.com/pipocaagil/" target="_blank"><img src="image/ri_instagram-fill.svg"
+                alt="logo instagram" /></a>
+            <a href="https://open.spotify.com/show/5J1scP1l7m7kXK6v5RZS7J" target="_blank"><img
+                src="image/mdi_spotify.svg" alt="logo spotify" /></a>
+            <a href="https://www.linkedin.com/company/pipoca-%C3%A1gil/mycompany/verification/" target="_blank"><img
+                src="image/bi_linkedin.svg" alt="logo linkedin" /></a>
+            <a href="https://web.facebook.com/pipocaagil/?_rdc=1&_rdr" target="_blank"><img
+                src="image/ic_outline-facebook.svg" alt="logo facebook" /></a>
           </div>
-        </section>
-      </article>
-      <article class="apresentacao">
-        <div>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/RvSzTZUvj5o?controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
         </div>
-        <h3>Veja nossa apresentação!</h3>
-      </article>
-      <section>
-        <section class="ultimos">
-          <h3>Últimos podcasts</h3>
-          <div class="videos-ultimos">
-            <div>
-              <iframe
-                width="300"
-                height="197"
-                src="https://www.youtube.com/embed/KHVlEoj90gA?controls=0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-              <p>Projeto Ágil Podcast Pipoca Ágil</p>
-            </div>
-            <div>
-              <iframe
-                width="300"
-                height="197"
-                src="https://www.youtube.com/embed/lWHxluJLULQ"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-              <p>PAPO DE AGILE COACH</p>
-            </div>
-            <div>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/wzzU82SzWjA"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe><p>Vida de PO trabalhando com IA, BI e RPA e mais metodologia Ágil.</p>
-            </div>
-          </div>
-          <div class="bolinha">
-            <a href="#"><img src="image/Ellipse 4.svg" alt="ponto cheio" /></a>
-            <a href="#"><img src="image/Ellipse 3.svg" alt="ponto vazio" /></a>
-            <a href="#"><img src="image/Ellipse 3.svg" alt="ponto vazio" /></a>
-          </div>
-        </section>
       </section>
-    </main>
-    <footer>
-      <div class="logo-rodape">
-        <img src="image/logo-pipoca-agil.png" alt="logo pipoca agil" />
+    </article>
+    <article class="apresentacao">
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RvSzTZUvj5o?controls=0"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
-      <p>
-        Termos de Uso <br />
-        Politica de Privacidade <br />
-        ©Grupo Coral 2023
-      </p>
-      <p>
-        E-mail: <br />
-        pipocaagil@gmail.com
-      </p>
-      <div class="rodape">
-        <p>Redes Sociais</p>
-        <div class="rodape-redes">
-          <a href="https://www.instagram.com/pipocaagil/" target="_blank"
-            ><img src="image/ri_instagram-fill.svg" alt="logo instagram"
-          /></a>
-          <a href="https://www.linkedin.com/company/pipoca-%C3%A1gil/mycompany/verification/" target="_blank"
-            ><img src="image/bi_linkedin.svg" alt="logo linkedin"
-          /></a>
-          <a href="https://web.facebook.com/pipocaagil/?_rdc=1&_rdr" target="_blank"
-            ><img src="image/ic_outline-facebook.svg" alt="logo facebook"
-          /></a>
+      <h3>Veja nossa apresentação!</h3>
+    </article>
+    <section>
+      <section class="ultimos">
+        <h3>Últimos podcasts</h3>
+        <div class="videos-ultimos">
+          <div>
+            <iframe width="300" height="197" src="https://www.youtube.com/embed/KHVlEoj90gA?controls=0"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+            <p>Projeto Ágil Podcast Pipoca Ágil</p>
+          </div>
+          <div>
+            <iframe width="300" height="197" src="https://www.youtube.com/embed/lWHxluJLULQ"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+            <p>PAPO DE AGILE COACH</p>
+          </div>
+          <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wzzU82SzWjA"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+            <p>
+              Vida de PO trabalhando com IA, BI e RPA e mais metodologia Ágil.
+            </p>
+          </div>
         </div>
+        <div class="bolinha">
+          <a href="#"><img src="image/Ellipse 4.svg" alt="ponto cheio" /></a>
+          <a href="#"><img src="image/Ellipse 3.svg" alt="ponto vazio" /></a>
+          <a href="#"><img src="image/Ellipse 3.svg" alt="ponto vazio" /></a>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer>
+    <div class="logo-rodape">
+      <img src="image/logo-pipoca-agil.png" alt="logo pipoca agil" />
+    </div>
+    <p>
+      Termos de Uso <br />
+      Politica de Privacidade <br />
+      ©Grupo Coral 2023
+    </p>
+    <p>
+      E-mail: <br />
+      pipocaagil@gmail.com
+    </p>
+    <div class="rodape">
+      <p>Redes Sociais</p>
+      <div class="rodape-redes">
+        <a href="https://www.instagram.com/pipocaagil/" target="_blank"><img src="image/ri_instagram-fill.svg"
+            alt="logo instagram" /></a>
+        <a href="https://www.linkedin.com/company/pipoca-%C3%A1gil/mycompany/verification/" target="_blank"><img
+            src="image/bi_linkedin.svg" alt="logo linkedin" /></a>
+        <a href="https://web.facebook.com/pipocaagil/?_rdc=1&_rdr" target="_blank"><img
+            src="image/ic_outline-facebook.svg" alt="logo facebook" /></a>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+  <script src="./js/homescript.js"></script>
+</body>
+
 </html>

@@ -127,8 +127,12 @@ nav > ul {
   box-shadow: none;
 }
 
-bottom:hover {
-  background: chartreuse;
+#log-login:hover{
+cursor: pointer;
+}
+
+#assinar:hover {
+cursor: pointer;
 }
 
 .desc-logos {

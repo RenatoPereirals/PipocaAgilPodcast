@@ -114,7 +114,7 @@ h2 {
 }
 
 .errormessage {
-  visibility: hidden;
+  opacity: 0;
   width: 710px;
   height: 88px;
   color: #fff;
@@ -311,12 +311,7 @@ button {
   cursor: pointer;
 }
 
-button:hover{
-  background: #ffffff;
-  color: #000000;
-  transition: 0.5;
 
-}
 
 .form-control.success input {
   border: 1px solid #03a200;

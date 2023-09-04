@@ -166,7 +166,7 @@ h2 {
 }
 
 .errormessage {
-  opacity: 1;
+  opacity: 0;
   width: 710px;
   height: 88px;
   color: #fff;
@@ -194,5 +194,65 @@ h2 {
   font-weight: 700;
   line-height: normal;
   margin-left: 30px;
+}
+
+.formcad {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 979px;
+  height: 1024px;
+}
+
+.loginconta {
+  width: 501px;
+  height: 115px;
+  margin-top: 101px;
+  margin-left: 164px;
+  margin-bottom: 43px;
+  text-align: left;
+}
+
+.loginconta > h2 {
+  margin: 0px;
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.68px;
+}
+
+.loginconta > p {
+  padding-top: 20px;
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.4px;
+}
+
+.cadastre {
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 165px;
+}
+
+.cadastre > a {
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
 }
 

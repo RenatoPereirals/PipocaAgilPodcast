@@ -41,6 +41,12 @@
           <p class="msgerro">Erro no Login! Corrija os erros abaixo!</p>
         </div>
       </div>
+      <div id="bloqerror" class="bloqerro">
+        <div class="errologtext">
+          <img src="../image/🦆 icon _warning_preto.svg" alt="icone de perigo" />
+          <p class="bloqerromsg">Você esta bloqueado temporiamente. Aguarde 60s</p>
+        </div>
+      </div>
       <section>
         <aside class="loginconta">
           <h2>Acesse sua conta</h2>
@@ -54,18 +60,22 @@
       </section>
       <form class="formlog" id="formlogin">
         <div id="e-mail" class="form-control">
-          <label for="email">E-mail</label>
-          <input type="email" id="email">
+          <label for="email">E-mail</label><br>
+          <input name="email" type="email" id="email" class="error-message">
         </div>
         <div id="password1" class="form-control">
-          <label for="password">Senha</label>
-          <input type="password" id="password">
+          <label for="passwordLogin">Senha</label><br>
+          <input name="senhaLogin" type="password" id="passwordLogin" class="error-message">
+          <img
+                src="../image/Hide.png"
+                alt="icone olho"
+                class="olhofechado"
+                id="verSenhaLogin"
+              />
           <p>Senha deve conter mínimo 8 caracteres</p>
         </div>
-        <button type="submit">Confirmar</button>
-
-
-
+        <button type="submit" id="confirma">Confirmar</button>
+        <p id="esqueceu">Esqueceu a senha? <a href="esqueceuasenha.html">Clique aqui!</a></p>
       </form>
     </article>
   </main>

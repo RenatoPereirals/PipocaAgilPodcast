@@ -1,17 +1,16 @@
-const openerro = document.querySelector("#teste");
-// const closerro;
-const irhome = document.querySelector("#irhome");
-const modal = document.querySelector("#popuperro");
-const fade = document.querySelector("#fade");
+let btnSenha = document.querySelector("#verSenhaLogin");
 
-
-const togleModal = () => {
-  [modal, fade].forEach((el) => el.classList.toggle("hide"));
-};
-
-[openerro, , fade].forEach((el) => {
-  el.addEventListener("click", () => togleModal());
+btnSenha.addEventListener("click", () => {
+  let senha = document.querySelector("#passwordLogin");
+  if (senha.getAttribute("type") == "password") {
+    senha.setAttribute("type", "text");
+  } else {
+    senha.setAttribute("type", "password");
+  }
 });
+
+
+
 
 function home() {
   window.location.href = "../index.html";

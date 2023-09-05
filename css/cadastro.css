@@ -54,12 +54,9 @@ h2 {
 }
 
 .formcad {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 5px;
-  width: 979px;
-  height: 1024px;
+  position: absolute;
+  left: 450px;
+  
 }
 
 .crieconta {
@@ -206,7 +203,7 @@ label {
   width: 232px;
   height: 49px;
   position: relative;
-  right:10px;
+  right: 10px;
   border-radius: 5px;
 }
 
@@ -238,7 +235,6 @@ label {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  
 }
 
 #password {
@@ -311,8 +307,6 @@ button {
   cursor: pointer;
 }
 
-
-
 .form-control.success input {
   border: 1px solid #03a200;
   background: #daf8da;
@@ -323,7 +317,7 @@ button {
   background: #fad6d6;
 }
 
-.form-control small {  
+.form-control small {
   visibility: hidden;
   font-family: "Roboto";
   font-size: 12px;
@@ -336,14 +330,13 @@ button {
   visibility: visible;
 }
 
-#e-mail > small{
+#e-mail > small {
   position: relative;
   right: 230px;
   top: 40px;
 }
 
-
-#password2 > small{
+#password2 > small {
   position: relative;
   right: 260px;
   top: 40px;

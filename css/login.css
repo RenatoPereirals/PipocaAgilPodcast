@@ -171,14 +171,14 @@ h2 {
 }
 
 .errormessage {
-position: relative;
+position: fixed;
   opacity: 0;
   width: 710px;
   height: 88px;
   color: #fff;
   background-color: red;
   right: 130px;
-  bottom: 60px;
+  bottom: 550px;
 }
 
 .logtext {
@@ -204,14 +204,15 @@ position: relative;
 }
 
 .bloqerro {
-  position: relative;
+  position: fixed;
     opacity: 0;
     width: 710px;
     height: 88px;
     color: #fff;
     background: #FECF5D;
     right: 130px;
-    bottom: 145px;
+    bottom: 550px;
+    
   }
   
   .errologtext {
@@ -237,23 +238,21 @@ position: relative;
     color: #000;
   }
   
+  #formlogin1{
+    position: absolute;
+    margin-left: 550px;
+    top: 130px;    
+  }
 
 
 
-.formcad {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 5px;
-  width: 979px;
-  height: 1024px;
-}
+
 
 .loginconta {
   width: 501px;
   height: 115px;
-  margin-top: 101px;
-  margin-left: 164px;
+
+  margin-left: 100px;
   margin-bottom: 43px;
   text-align: left;
 }
@@ -287,7 +286,7 @@ position: relative;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-left: 165px;
+  margin-left: 100px;
 }
 
 .cadastre > a {
@@ -302,7 +301,7 @@ position: relative;
 
 #formlogin {
   margin-top: 56px;
-  margin-left: 166px;
+  margin-left: 100px;
 }
 
 .form-control input {

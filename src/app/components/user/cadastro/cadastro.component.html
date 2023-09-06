@@ -1,0 +1,165 @@
+<main class="principal">
+  <article class="bemvindo">
+    <section class="logo-bemvindo">
+      <img
+        class="logo"
+        src="../../../../assets/image/logo-pipoca-agil.png"
+        alt="Logo pipoca Agil"
+      />
+      <h2>Bem - vindo</h2>
+    </section>
+  </article>
+
+  <!-- FORMULÁRIO -->
+  <form [formGroup]="form" id="form">
+    <section class="formcad">
+      <aside class="crieconta">
+        <h2>Crie sua conta</h2>
+        <p>
+          Ganhe acesso a conteúdos especiais e benefícios exclusivos do nosso
+          Clube Assinante.
+        </p>
+      </aside>
+      <p class="login">
+        Já tem conta? <a routerLink="/login" target="_blank">Login</a>
+      </p>
+    </section>
+
+    <!-- INFORMAÇÕES PESSOAIS -->
+    <fieldset>
+      <div class="form-control name">
+        <label for="username">Nome Completo </label>
+        <input
+          class="username"
+          type="text"
+          name="nome"
+          placeholder="Insira o seu nome completo"
+          formControlName="nomeCompleto"
+          [ngClass]="cssValidator(f.nomeCompleto)"
+          [(ngModel)]="user.nomeCompleto"
+        />
+        <div
+          *ngIf="f.nomeCompleto.errors?.required && f.nomeCompleto.touched"
+          class="invalid-feedback"
+        >
+          Nome completo é obrigatório.
+        </div>
+      </div>
+      <div class="email-data">
+        <div class="form-control email">
+          <label for="e-mail">E-mail </label>
+          <input
+            class="username"
+            type="email"
+            name="email"
+            placeholder="exemplo@exemplo.com"
+            formControlName="email"
+            [ngClass]="cssValidator(f.email)"
+            [(ngModel)]="user.email"
+          />
+          <div
+            *ngIf="f.email.errors?.required && f.email.touched"
+            class="invalid-feedback"
+          >
+            E-mail é obrigatório.
+          </div>
+          <div
+            *ngIf="f.email.errors?.email && f.email.touched"
+            class="invalid-feedback"
+          >
+            Precisa ser um e-mail válido.
+          </div>
+        </div>
+        <div class="form-control date">
+          <label for="date">Data de Nascimento </label>
+          <input
+            class="username"
+            type="date"
+            name="data"
+            placeholder="01/01/2000"
+            formControlName="date"
+            [ngClass]="cssValidator(f.date)"
+            [(ngModel)]="user.date"
+          />
+          <div
+            *ngIf="f.date.errors?.required && f.date.touched"
+            class="invalid-feedback"
+          >
+            Data de nascimento é obrigatória.
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="senhas">
+      <div class="form-control password">
+        <label for="password">Senha:</label>
+        <input
+          class="username"
+          type="password"
+          name="senha"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': f.password.errors && f.password.touched }"
+          placeholder="Digite uma Senha"
+        />
+        <div
+          *ngIf="f.password.errors?.required && f.password.touched"
+          class="invalid-feedback"
+        >
+          Senha é obrigatória.
+        </div>
+        <div
+          *ngIf="f.password.errors?.minlength && f.password.touched"
+          class="invalid-feedback"
+        >
+          Deve conter no mínimo 8 caracteres.
+        </div>
+      </div>
+      <div class="form-control password">
+        <label for="passwordconf">Confirmar Senha:</label>
+        <input
+          class="username"
+          type="password"
+          name="confirmasenha"
+          formControlName="confirmePassword"
+          [ngClass]="{
+            'is-invalid':
+              f.confirmePassword.errors && f.confirmePassword.touched
+          }"
+          placeholder="Confirme a senha"
+        />
+        <div
+          *ngIf="f.confirmePassword.errors?.mustMatch"
+          class="invalid-feedback"
+        >
+          As senhas devem ser iguais.
+        </div>
+        <div
+          *ngIf="
+            f.confirmePassword.errors?.required && f.confirmePassword.touched
+          "
+          class="invalid-feedback"
+        >
+          Confirmar Senha é obrigatória.
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-control termos">
+      <input
+        type="checkbox"
+        name="termo"
+        id="termo"
+        formControlName="termo"
+        [ngClass]="{ 'is-invalid': f.termo.errors && f.termo.touched }"
+      />
+      <label for="termo"
+        >Concordo com os <a routerLink="#" target="_blank">Termos de Uso</a>, e
+        <a routerLink="#" target="_blank">Política de Privacidade</a></label
+      >
+    </div>
+    <div class="btn-confirm">
+      <button type="submit" routerLink="/" [disabled]="!form.valid">
+        <p>Confirmar</p>
+      </button>
+    </div>
+  </form>
+</main>

@@ -1,0 +1,209 @@
+/* Estilos comuns */
+label {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h2,
+p {
+  font-family: "Work Sans";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.68px;
+}
+
+/* Principal */
+.principal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Boas Vindas */
+.bemvindo {
+  width: 30%;
+  height: auto;
+  margin-top: -15px;
+  background-image: url("../../../../assets/image/microfone.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo-bemvindo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.logo-bemvindo h2 {
+  text-align: center;
+}
+
+.logo {
+  margin-top: 20%;
+  margin-bottom: 30%;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width:70%;
+  height: 100%;
+  padding: 10% 15%;
+}
+
+.formcad,
+.crieconta {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+
+.crieconta > h2 {
+  margin-top: 45px;
+  font-size: 34px;
+  letter-spacing: -0.68px;
+}
+
+.crieconta > p {
+  padding-top: 20px;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+}
+
+.login {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.login > a {
+  text-decoration-line: underline;
+  color: #fff;
+}
+
+/* Informações Pessoais */
+fieldset {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.email-data,
+.senhas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.name {
+  width: 100%;
+  margin-top: 1px;
+}
+
+.email,
+.date,
+.password,
+.termo {
+  width: 48%;
+  margin-top: 8px;
+}
+
+.password {
+  margin-bottom: 14px;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #201c1c;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.username {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 5px;
+}
+
+/* Outros estilos */
+.olhofechado,
+.olhofechado2 {
+  position: relative;
+  top: 5px;
+  right: 35px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.termos {
+  width: 100%;
+}
+
+.termos label {
+  margin-left: 7px;
+}
+
+.termos > label > a {
+  text-decoration: underline;
+  color: chartreuse;
+}
+
+.btn-confirm {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-confirm button {
+  width: 50%;
+  height: 56px;
+  margin-top: 55px;
+  border-radius: 40px;
+  background-color: var(--color-yellow);
+  color: var(--color-black-medium);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.btn-confirm  p {
+  display: flex;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: start;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+.btn-confirm  p {
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.btn-confirm  p:hover {
+  color: chartreuse;
+}

@@ -1,0 +1,115 @@
+/* Reset e Estilos Globais */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-black);
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+  transition: 0.4s;
+}
+
+a:hover {
+  color: chartreuse;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Variáveis CSS */
+:root {
+  --color-yellow: #fecf5d;
+  --color-yellow-medium: rgba(254, 207, 93, 0.5);
+  --color-white: #fff;
+  --color-white-medium: #d9d9d9;
+  --color-black: #201c1c;
+  --color-black-medium: #000;
+}
+
+/* Estilos para elementos com fonte */
+.roboto-font {
+  font-family: "Roboto", sans-serif;
+}
+
+.work-sans-font {
+  font-family: "Work Sans", sans-serif;
+}
+
+/* Logo Pipoca */
+.logo-pipoca {
+  display: flex;
+  position: relative;
+  right: 10px;
+  top: 15px;
+  margin-bottom: 30px;
+}
+
+/* Mensagens de Erro */
+.invalid-feedback {
+  color: red;
+  font-size: 12px;
+}
+
+/* Textos */
+
+.txt-btn {
+  color: #000;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+/* Botões */
+.btn-access {
+  display: flex;
+  width: 319px;
+  padding: 27px 152px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  background: var(--color-yellow);
+  box-shadow: 1px 14px 9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-confirm {
+  display: flex;
+  width: 248px;
+  height: 62px;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background: var(--color-yellow);
+  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+  background: var(--color-yellow-medium);
+}

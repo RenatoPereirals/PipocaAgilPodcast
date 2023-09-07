@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AbstractControl, AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ValidatorField } from 'src/app/helpers/ValidatorField';
-import { User } from 'src/app/models/user';
+import { User } from 'src/app/models/User';
 
 @Component({
   selector: 'app-cadastro',

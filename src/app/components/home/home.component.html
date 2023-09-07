@@ -81,55 +81,34 @@
     <section class="ultimos">
       <h3>Últimos podcasts</h3>
       <div class="videos-ultimos">
-        <div class="video-text">
-          <iframe
+        <div *ngFor="let video of videos">
+          <div class="video-text">
+            <iframe
             width="305"
             height="197"
-            src="https://www.youtube.com/embed/KHVlEoj90gA?controls=0"
+            [src]="getSafeVideoUrl(video.url)"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
-          ></iframe>
-          <p>Projeto Ágil Podcast Pipoca Ágil</p>
-        </div>
-        <div class="video-text">
-          <iframe
-            width="300"
-            height="197"
-            src="https://www.youtube.com/embed/lWHxluJLULQ"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-          <p>PAPO DE AGILE COACH</p>
-        </div>
-        <div class="video-text">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/wzzU82SzWjA"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-          <p>
-            Vida de PO trabalhando com IA, BI e RPA e mais metodologia Ágil.
-          </p>
+            ></iframe>
+            <p>{{ video.title }}</p>
+          </div>
         </div>
       </div>
-      <div class="bolinha">
-        <a href="#"
-          ><img src="../../../assets/image/Ellipse 4.svg" alt="ponto cheio"
-        /></a>
-        <a href="#"
-          ><img src="../../../assets/image/Ellipse 3.svg" alt="ponto vazio"
-        /></a>
-        <a href="#"
-          ><img src="../../../assets/image/Ellipse 3.svg" alt="ponto vazio"
-        /></a>
+      <div class="pagination">
+        <button
+          [disabled]="pagination.currentPage === 1"
+          (click)="onPageChanged(pagination.currentPage - 1)"
+        >
+          <img src="../../../assets/image/Ellipse 4.svg" alt="Anterior" />
+        </button>
+        <button
+          [disabled]="pagination.currentPage === pagination.totalPages"
+          (click)="onPageChanged(pagination.currentPage + 1)"
+        >
+          <img src="../../../assets/image/Ellipse 3.svg" alt="Próxima" />
+        </button>
       </div>
     </section>
   </section>

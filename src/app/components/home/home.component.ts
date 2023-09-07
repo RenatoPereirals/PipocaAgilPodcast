@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { Pagination } from 'src/app/models/Pagination';
-
 import { JsonDataService } from 'src/app/services/json-data.service';
 
 @Component({
@@ -12,12 +11,9 @@ import { JsonDataService } from 'src/app/services/json-data.service';
 })
 export class HomeComponent implements OnInit {
   videos: any[] = [];
-  pagination: Pagination = {
-    currentPage: 1,
-    itemsPerPage: 3, // Exibe três vídeos por página
-    totalItems: 0,
-    totalPages: 0,
-  };
+  public paginatedVideo = {} as Pagination;
+  public paginatedVi: any[] = [];
+  public paginatedVideos: any[] = []; //
 
   socialMediaUrls = {
     youtube: 'https://www.youtube.com/@PipocaAgil',
@@ -35,8 +31,16 @@ export class HomeComponent implements OnInit {
     private jsonDataService: JsonDataService,
     private sanitizer: DomSanitizer
   ) {}
-  ngOnInit(): void {
+
+  public ngOnInit(): void {
     this.loadVideos();
+    this.paginatedVideo = {
+      currentPage: 1,
+      itemsPerPage: 3,
+      totalItems: 1,
+    } as Pagination;
+    console.log('currentPage:', this.paginatedVideo.currentPage);
+    console.log('totalPages:', this.paginatedVideo.totalPages);
   }
 
   getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
@@ -48,29 +52,32 @@ export class HomeComponent implements OnInit {
   }
 
   loadVideos() {
-    this.jsonDataService.getVideos().subscribe((videos: any[]) => {
-      this.videos = videos || [];
-      this.pagination.totalItems = this.videos.length;
+    this.jsonDataService.getData().subscribe((data: any) => {
+      this.videos = data.videos || [];
+      this.paginatedVideo.totalItems = this.videos.length;
       this.calculateTotalPages();
       this.displayVideosOnCurrentPage();
     });
   }
 
-  onPageChanged(pageNumber: number) {
-    this.pagination.currentPage = pageNumber;
+
+  public onPageChanged(number: number): void {
+    this.paginatedVideo.currentPage = number;
     this.displayVideosOnCurrentPage();
   }
 
+
   displayVideosOnCurrentPage() {
     const startIndex =
-      (this.pagination.currentPage - 1) * this.pagination.itemsPerPage;
-    const endIndex = startIndex + this.pagination.itemsPerPage;
-    this.videos = this.videos.slice(startIndex, endIndex);
+      (this.paginatedVideo.currentPage - 1) * this.paginatedVideo.itemsPerPage;
+    const endIndex = startIndex + this.paginatedVideo.itemsPerPage;
+    this.paginatedVi = this.videos.slice(startIndex, endIndex);
   }
 
+
   calculateTotalPages() {
-    this.pagination.totalPages = Math.ceil(
-      this.pagination.totalItems / this.pagination.itemsPerPage
+    this.paginatedVideo.totalPages = Math.ceil(
+      this.paginatedVideo.totalItems / this.paginatedVideo.itemsPerPage
     );
   }
 }

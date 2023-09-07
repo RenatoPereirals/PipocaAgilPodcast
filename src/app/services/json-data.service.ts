@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, of, take } from 'rxjs';
+import { PaginatedResult } from '../models/Pagination';
+import { Videos } from '../models/Videos';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +13,11 @@ export class JsonDataService {
   constructor(private http: HttpClient) {}
 
   getData(): Observable<any> {
-    return this.http.get(this.jsonUrl);
-  }
-
-  getVideos(): Observable<any[]> {
-    return this.getData().pipe(map((data: any) => data.videos || []));
+    return this.http.get(this.jsonUrl).pipe(
+      catchError((error) => {
+        console.error('Erro ao carregar dados do JSON:', error);
+        return of(null); // Retorna um valor nulo em caso de erro
+      })
+    );
   }
 }

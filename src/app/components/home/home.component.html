@@ -13,37 +13,27 @@
         <div class="redes">
           <li>
             <a [href]="getSafeUrl(socialMediaUrls.youtube)" target="_blank"
-              ><img
-                [src]="path + 'bi_youtube.svg'"
-                alt="logo youtube"
+              ><img [src]="path + 'bi_youtube.svg'" alt="logo youtube"
             /></a>
           </li>
           <li>
             <a [href]="getSafeUrl(socialMediaUrls.twitter)" target="_blank"
-              ><img
-                [src]="path + 'skill-icons_twitter.svg'"
-                alt="logo twitter"
+              ><img [src]="path + 'skill-icons_twitter.svg'" alt="logo twitter"
             /></a>
           </li>
           <li>
             <a [href]="getSafeUrl(socialMediaUrls.instagram)" target="_blank"
-              ><img
-                [src]="path + 'ri_instagram-fill.svg'"
-                alt="logo instagram"
+              ><img [src]="path + 'ri_instagram-fill.svg'" alt="logo instagram"
             /></a>
           </li>
           <li>
             <a [href]="getSafeUrl(socialMediaUrls.spotify)" target="_blank"
-              ><img
-                [src]="path + 'mdi_spotify.svg'"
-                alt="logo spotify"
+              ><img [src]="path + 'mdi_spotify.svg'" alt="logo spotify"
             /></a>
           </li>
           <li>
             <a [href]="getSafeUrl(socialMediaUrls.linkedin)" target="_blank"
-              ><img
-                [src]="path + 'bi_linkedin.svg'"
-                alt="logo linkedin"
+              ><img [src]="path + 'bi_linkedin.svg'" alt="logo linkedin"
             /></a>
           </li>
           <li>
@@ -75,7 +65,7 @@
     <section class="ultimos">
       <h3>Últimos podcasts</h3>
       <div class="videos-ultimos">
-        <div *ngFor="let video of videos">
+        <div *ngFor="let video of paginatedVi">
           <div class="video-text">
             <iframe
               width="305"
@@ -92,14 +82,14 @@
       </div>
       <div class="pagination">
         <button
-          [disabled]="pagination.currentPage === 1"
-          (click)="onPageChanged(pagination.currentPage - 1)"
+          [disabled]="paginatedVideo.currentPage === 1"
+          (click)="onPageChanged(paginatedVideo.currentPage - 1)"
         >
           <img src="../../../assets/image/Ellipse 4.svg" alt="Anterior" />
         </button>
         <button
-          [disabled]="pagination.currentPage === pagination.totalPages"
-          (click)="onPageChanged(pagination.currentPage + 1)"
+          [disabled]="paginatedVideo.currentPage === paginatedVideo.totalPages"
+          (click)="onPageChanged(paginatedVideo.currentPage + 1)"
         >
           <img src="../../../assets/image/Ellipse 3.svg" alt="Próxima" />
         </button>

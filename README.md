@@ -1,27 +1,31 @@
-# Pipoca Ágil
+# APipoca Ágil
 
-Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) na versão 16.1.4.
+Aplicção web para Podcasts
 
-## Servidor de Desenvolvimento
+## Requisitos
 
-Execute `ng serve` para iniciar um servidor de desenvolvimento. Acesse `http://localhost:4200/` em seu navegador. A aplicação será recarregada automaticamente se você modificar algum dos arquivos de origem.
+- Angular CLI
 
-## Geração de Código
+## Como Executar
 
-Execute `ng generate component component-name` para gerar um novo componente. Você também pode usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone o repositório:
 
-## Compilação
+```bash
+git clone https://github.com/NetoPagnani/Squad-Vermelho-Coral.git
+```
 
-Execute `ng build` para compilar o projeto. Os artefatos de compilação serão armazenados no diretório `dist/`.
+2. Configure o cliente:
 
-## Execução de Testes Unitários
+```bash
+cd Front\Squad-Vermelho-Coral
+npm install
+ng serve
+```
 
-Execute `ng test` para executar os testes unitários via [Karma](https://karma-runner.github.io).
+4. Acesse a aplicação em http://localhost:4200 no seu navegador.
 
-## Execução de Testes End-to-End
+## Contato
 
-Execute `ng e2e` para executar testes end-to-end usando uma plataforma de sua escolha. Para usar este comando, você precisa primeiro adicionar um pacote que implemente capacidades de teste end-to-end.
+Para mais informações, entre em contato pelo email: renatopreirals@gmail.com
 
-## Ajuda Adicional
-
-Para obter mais ajuda sobre o Angular CLI, utilize `ng help` ou consulte a [Visão Geral e Referência de Comandos do Angular CLI](https://angular.io/cli).
+---

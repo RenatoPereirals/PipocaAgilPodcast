@@ -12,50 +12,44 @@
         <p>Siga nossos canais</p>
         <div class="redes">
           <li>
-            <a href="https://www.youtube.com/@PipocaAgil" target="_blank"
+            <a [href]="getSafeUrl(socialMediaUrls.youtube)" target="_blank"
               ><img
-                src="../../../assets/image/bi_youtube.svg"
+                [src]="path + 'bi_youtube.svg'"
                 alt="logo youtube"
             /></a>
           </li>
           <li>
-            <a href="https://twitter.com/pipoca_agil" target="_blank"
+            <a [href]="getSafeUrl(socialMediaUrls.twitter)" target="_blank"
               ><img
-                src="../../../assets/image/skill-icons_twitter.svg"
+                [src]="path + 'skill-icons_twitter.svg'"
                 alt="logo twitter"
             /></a>
           </li>
           <li>
-            <a href="https://www.instagram.com/pipocaagil/" target="_blank"
+            <a [href]="getSafeUrl(socialMediaUrls.instagram)" target="_blank"
               ><img
-                src="../../../assets/image/ri_instagram-fill.svg"
+                [src]="path + 'ri_instagram-fill.svg'"
                 alt="logo instagram"
             /></a>
           </li>
           <li>
-            <a
-              href="https://open.spotify.com/show/5J1scP1l7m7kXK6v5RZS7J"
-              target="_blank"
+            <a [href]="getSafeUrl(socialMediaUrls.spotify)" target="_blank"
               ><img
-                src="../../../assets/image/mdi_spotify.svg"
+                [src]="path + 'mdi_spotify.svg'"
                 alt="logo spotify"
             /></a>
           </li>
           <li>
-            <a
-              href="https://www.linkedin.com/company/pipoca-%C3%A1gil/mycompany/verification/"
-              target="_blank"
+            <a [href]="getSafeUrl(socialMediaUrls.linkedin)" target="_blank"
               ><img
-                src="../../../assets/image/bi_linkedin.svg"
+                [src]="path + 'bi_linkedin.svg'"
                 alt="logo linkedin"
             /></a>
           </li>
           <li>
-            <a
-              href="https://web.facebook.com/pipocaagil/?_rdc=1&_rdr"
-              target="_blank"
+            <a [href]="getSafeUrl(socialMediaUrls.facebook)" target="_blank"
               ><img
-                src="../../../assets/image/ic_outline-facebook.svg"
+                [src]="path + 'ic_outline-facebook.svg'"
                 alt="logo facebook"
             /></a>
           </li>
@@ -84,13 +78,13 @@
         <div *ngFor="let video of videos">
           <div class="video-text">
             <iframe
-            width="305"
-            height="197"
-            [src]="getSafeVideoUrl(video.url)"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+              width="305"
+              height="197"
+              [src]="getSafeVideoUrl(video.url)"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
             ></iframe>
             <p>{{ video.title }}</p>
           </div>

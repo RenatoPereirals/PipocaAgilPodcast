@@ -19,6 +19,18 @@ export class HomeComponent implements OnInit {
     totalPages: 0,
   };
 
+  socialMediaUrls = {
+    youtube: 'https://www.youtube.com/@PipocaAgil',
+    twitter: 'https://twitter.com/pipoca_agil',
+    instagram: 'https://www.instagram.com/pipocaagil/',
+    spotify: 'https://open.spotify.com/show/5J1scP1l7m7kXK6v5RZS7J',
+    linkedin:
+      'https://www.linkedin.com/company/pipoca-%C3%A1gil/mycompany/verification/',
+    facebook: 'https://web.facebook.com/pipocaagil/?_rdc=1&_rdr',
+  };
+
+  path = '../../../assets/image/';
+
   constructor(
     private jsonDataService: JsonDataService,
     private sanitizer: DomSanitizer
@@ -29,6 +41,10 @@ export class HomeComponent implements OnInit {
 
   getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
+  }
+
+  getSafeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   loadVideos() {

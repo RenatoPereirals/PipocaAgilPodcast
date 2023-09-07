@@ -34,7 +34,6 @@ a {
   width: 183px;
   height: 183px;
   flex-shrink: 0;
-  margin-left: 134px;
 }
 
 .menu {
@@ -51,7 +50,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 134px;
 }
 
 .navigator {

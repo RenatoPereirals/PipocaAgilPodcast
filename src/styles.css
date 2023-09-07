@@ -14,8 +14,8 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: var(--color-black);
   color: #fff;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-position: center;
 }
 
@@ -84,32 +84,36 @@ img {
 }
 
 /* Botões */
-.btn-access {
+
+/* Botões Genéricos */
+.btn {
   display: flex;
-  width: 319px;
-  padding: 27px 152px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  flex-shrink: 0;
   border-radius: 50px;
   background: var(--color-yellow);
-  box-shadow: 1px 14px 9px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
+.btn:hover {
+  background: var(--color-yellow-medium);
+}
+
+/* Botão de Acesso */
+.btn-access {
+  width: 319px;
+  padding: 27px 152px;
+  gap: 10px;
+}
+
+/* Botão de Confirmação */
 .btn-confirm {
-  display: flex;
   width: 248px;
   height: 62px;
   padding: 16px 24px;
-  justify-content: center;
-  align-items: center;
   gap: 8px;
-  flex-shrink: 0;
-  border-radius: 40px;
-  background: var(--color-yellow);
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-button:hover {
-  background: var(--color-yellow-medium);
-}
+

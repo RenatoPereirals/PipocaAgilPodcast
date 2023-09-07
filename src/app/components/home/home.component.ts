@@ -13,7 +13,10 @@ export class HomeComponent implements OnInit {
   videos: any[] = [];
   public paginatedVideo = {} as Pagination;
   public paginatedVi: any[] = [];
-  public paginatedVideos: any[] = []; //
+  public paginatedVideos: any[] = [];
+  public pages: number[] = [];
+  public currentPage: number = 1;
+  public clickedPage: number | null = null;
 
   socialMediaUrls = {
     youtube: 'https://www.youtube.com/@PipocaAgil',
@@ -39,8 +42,11 @@ export class HomeComponent implements OnInit {
       itemsPerPage: 3,
       totalItems: 1,
     } as Pagination;
-    console.log('currentPage:', this.paginatedVideo.currentPage);
-    console.log('totalPages:', this.paginatedVideo.totalPages);
+
+    this.pages = Array.from(
+      { length: this.paginatedVideo.totalPages },
+      (_, i) => i + 1
+    );
   }
 
   getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
@@ -60,12 +66,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
   public onPageChanged(number: number): void {
     this.paginatedVideo.currentPage = number;
     this.displayVideosOnCurrentPage();
   }
-
 
   displayVideosOnCurrentPage() {
     const startIndex =
@@ -73,7 +77,6 @@ export class HomeComponent implements OnInit {
     const endIndex = startIndex + this.paginatedVideo.itemsPerPage;
     this.paginatedVi = this.videos.slice(startIndex, endIndex);
   }
-
 
   calculateTotalPages() {
     this.paginatedVideo.totalPages = Math.ceil(

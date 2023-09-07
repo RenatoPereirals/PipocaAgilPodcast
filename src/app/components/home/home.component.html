@@ -82,16 +82,49 @@
       </div>
       <div class="pagination">
         <button
+          class="btn-pagination"
           [disabled]="paginatedVideo.currentPage === 1"
-          (click)="onPageChanged(paginatedVideo.currentPage - 1)"
+          (click)="onPageChanged(1)"
+          [ngClass]="{ active: paginatedVideo.currentPage === 1 }"
         >
-          <img src="../../../assets/image/Ellipse 4.svg" alt="Anterior" />
+          <img
+            [src]="
+              paginatedVideo.currentPage === 1
+                ? '../../../assets/image/Ellipse 4.svg'
+                : '../../../assets/image/Ellipse 3.svg'
+            "
+            alt=""
+          />
         </button>
         <button
-          [disabled]="paginatedVideo.currentPage === paginatedVideo.totalPages"
-          (click)="onPageChanged(paginatedVideo.currentPage + 1)"
+          class="btn-pagination"
+          [disabled]="paginatedVideo.currentPage === 2"
+          (click)="onPageChanged(2)"
+          [ngClass]="{ active: paginatedVideo.currentPage === 2 }"
         >
-          <img src="../../../assets/image/Ellipse 3.svg" alt="Próxima" />
+          <img
+            [src]="
+              paginatedVideo.currentPage === 2
+                ? '../../../assets/image/Ellipse 4.svg'
+                : '../../../assets/image/Ellipse 3.svg'
+            "
+            alt=""
+          />
+        </button>
+        <button
+          class="btn-pagination"
+          [disabled]="paginatedVideo.currentPage === 3"
+          (click)="onPageChanged(3)"
+          [ngClass]="{ active: paginatedVideo.currentPage === 3 }"
+        >
+          <img
+            [src]="
+              paginatedVideo.currentPage === 3
+                ? '../../../assets/image/Ellipse 4.svg'
+                : '../../../assets/image/Ellipse 3.svg'
+            "
+            alt=""
+          />
         </button>
       </div>
     </section>

@@ -108,6 +108,24 @@ section {
   line-height: normal;
 }
 
+.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.pagination button {
+  border: none;
+}
+
+.btn-pagination {
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .ultimos .videos-ultimos iframe {
   width: 300px;
   height: 197px;

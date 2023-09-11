@@ -93,14 +93,29 @@
     <fieldset class="senhas">
       <div class="form-control password">
         <label for="password">Senha:</label>
-        <input
-          class="username"
-          type="password"
-          name="senha"
-          formControlName="password"
-          [ngClass]="{ 'is-invalid': f.password.errors && f.password.touched }"
-          placeholder="Digite uma Senha"
-        />
+        <div class="password-input">
+          <input
+            class="username"
+            id="passwordInput"
+            type="password"
+            name="senha"
+            formControlName="password"
+            [ngClass]="{
+              'is-invalid': f.password.errors && f.password.touched
+            }"
+            placeholder="Digite uma Senha"
+          />
+          <img
+            class="hide"
+            id="togglePassword"
+            src="../../../../assets/image/Hide.png"
+            alt=""
+            (click)="
+              togglePasswordVisibility('passwordInput', 'togglePassword')
+            "
+          />
+        </div>
+
         <div
           *ngIf="f.password.errors?.required && f.password.touched"
           class="invalid-feedback"
@@ -116,17 +131,32 @@
       </div>
       <div class="form-control password">
         <label for="passwordconf">Confirmar Senha:</label>
-        <input
-          class="username"
-          type="password"
-          name="confirmasenha"
-          formControlName="confirmePassword"
-          [ngClass]="{
-            'is-invalid':
-              f.confirmePassword.errors && f.confirmePassword.touched
-          }"
-          placeholder="Confirme a senha"
-        />
+        <div class="password-input">
+          <input
+            class="username"
+            id="confirmPasswordInput"
+            type="password"
+            name="confirmasenha"
+            formControlName="confirmePassword"
+            [ngClass]="{
+              'is-invalid':
+                f.confirmePassword.errors && f.confirmePassword.touched
+            }"
+            placeholder="Confirme a senha"
+          />
+          <img
+            class="show"
+            id="toggleConfirmPassword"
+            src="../../../../assets/image/Hide.png"
+            alt=""
+            (click)="
+              togglePasswordVisibility(
+                'confirmPasswordInput',
+                'toggleConfirmPassword'
+              )
+            "
+          />
+        </div>
         <div
           *ngIf="f.confirmePassword.errors?.mustMatch"
           class="invalid-feedback"
@@ -156,9 +186,15 @@
         <a routerLink="#" target="_blank">Política de Privacidade</a></label
       >
     </div>
-    <div class="btn-confirm">
-      <button type="submit" routerLink="/" [disabled]="!form.valid">
-        <p>Confirmar</p>
+    <div>
+      <button
+        class="btn btn-confirm txt-btn"
+        type="submit"
+        routerLink="#"
+        (click)="confirmRegistration()"
+        >
+        <!-- [disabled]="!form.valid" -->
+        Confirmar
       </button>
     </div>
   </form>

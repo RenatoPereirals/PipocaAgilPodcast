@@ -17,6 +17,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { UserComponent } from './components/user/user.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
 import { PaginationComponent } from './components/shared/pagination/pagination.component';
+import { ToastComponent } from './components/shared/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PaginationComponent } from './components/shared/pagination/pagination.c
     UserComponent,
     CadastroComponent,
     PaginationComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,

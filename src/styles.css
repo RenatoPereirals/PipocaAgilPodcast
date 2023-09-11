@@ -25,10 +25,6 @@ a {
   transition: 0.4s;
 }
 
-a:hover {
-  color: chartreuse;
-}
-
 ul,
 li {
   list-style: none;
@@ -76,11 +72,12 @@ img {
 
 .txt-btn {
   color: #000;
-  font-family: "Roboto";
-  font-size: 24px;
+  font-family: Work Sans;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 700;
   line-height: normal;
+  letter-spacing: -0.32px;
 }
 
 /* Botões */
@@ -95,6 +92,8 @@ img {
   background: var(--color-yellow);
   box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn:hover {
@@ -110,10 +109,9 @@ img {
 
 /* Botão de Confirmação */
 .btn-confirm {
-  width: 248px;
-  height: 62px;
-  padding: 16px 24px;
+  width: 188px;
+  height: 56px;
   gap: 8px;
+  padding: 21px 27px;
+  gap: 10px;
 }
-
-

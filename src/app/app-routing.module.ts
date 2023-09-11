@@ -9,6 +9,7 @@ import { PoliticapComponent } from './components/politicap/politicap.component';
 import { TermoeconComponent } from './components/termoecon/termoecon.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
+import { PaginationComponent } from './components/shared/pagination/pagination.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'politicap', component: PoliticapComponent },
   { path: 'termoecon', component: TermoeconComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'pagination', component: PaginationComponent },
 ];
 
 @NgModule({

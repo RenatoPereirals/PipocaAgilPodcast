@@ -14,18 +14,6 @@
     />
 
     <title>Popdcast | Agilidade</title>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then((registration) => {
-            console.log("Service Worker registrado com sucesso:", registration);
-          })
-          .catch((error) => {
-            console.error("Erro ao registrar o Service Worker:", error);
-          });
-      }
-    </script>
   </head>
   <app-root></app-root>
 </html>

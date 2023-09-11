@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { UserComponent } from './components/user/user.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
+import { PaginationComponent } from './components/shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CadastroComponent } from './components/user/cadastro/cadastro.component
     FooterComponent,
     UserComponent,
     CadastroComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

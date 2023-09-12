@@ -2,6 +2,12 @@
 
 Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) na versão 16.1.4.
 
+ **Tecnologias Utilizadas:**
+- HTML
+- CSS
+- TypeScript
+- Angular
+
 ## Servidor de Desenvolvimento
 
 Execute `ng serve` para iniciar um servidor de desenvolvimento. Acesse `http://localhost:4200/` em seu navegador. A aplicação será recarregada automaticamente se você modificar algum dos arquivos de origem.

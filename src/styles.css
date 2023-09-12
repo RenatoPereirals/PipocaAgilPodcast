@@ -62,10 +62,23 @@ img {
   margin-bottom: 30px;
 }
 
-/* Mensagens de Erro */
+/* Mensagens de Erro/Validações */
 .invalid-feedback {
-  color: red;
+  margin-top: 6px;
+  color: #FA0000;
   font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.valid-backgroud {
+  border: 1px solid #03a200;
+  background-color: #daf8da;
+}
+
+.invalid-background {
+  border: 1px solid #fa0000;
+  background-color: #fad6d6;
 }
 
 /* Textos */

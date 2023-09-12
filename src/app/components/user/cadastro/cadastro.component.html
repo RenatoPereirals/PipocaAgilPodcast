@@ -36,6 +36,11 @@
           placeholder="Insira o seu nome completo"
           formControlName="nomeCompleto"
           [ngClass]="cssValidator(f.nomeCompleto)"
+          [ngClass]="
+            f.nomeCompleto.valid
+              ? cssBackgroundValidator(f.nomeCompleto)
+              : cssBackgroundInvalidator(f.nomeCompleto)
+          "
           [(ngModel)]="user.nomeCompleto"
         />
         <div
@@ -43,6 +48,12 @@
           class="invalid-feedback"
         >
           Nome completo é obrigatório.
+        </div>
+        <div
+          *ngIf="f.nomeCompleto.errors?.minlength&& f.nomeCompleto.touched"
+          class="invalid-feedback"
+        >
+        Deve conter no mínimo 4 caracteres.
         </div>
       </div>
       <div class="email-data">
@@ -55,6 +66,11 @@
             placeholder="exemplo@exemplo.com"
             formControlName="email"
             [ngClass]="cssValidator(f.email)"
+            [ngClass]="
+              f.email.valid
+                ? cssBackgroundValidator(f.email)
+                : cssBackgroundInvalidator(f.email)
+            "
             [(ngModel)]="user.email"
           />
           <div
@@ -79,6 +95,11 @@
             placeholder="01/01/2000"
             formControlName="date"
             [ngClass]="cssValidator(f.date)"
+            [ngClass]="
+              f.date.valid
+                ? cssBackgroundValidator(f.date)
+                : cssBackgroundInvalidator(f.date)
+            "
             [(ngModel)]="user.date"
           />
           <div
@@ -86,6 +107,12 @@
             class="invalid-feedback"
           >
             Data de nascimento é obrigatória.
+          </div>
+          <div
+            *ngIf="f.date.errors?.pattern && f.date.touched"
+            class="invalid-feedback"
+          >
+            Insira uma data válida.
           </div>
         </div>
       </div>
@@ -103,6 +130,11 @@
             [ngClass]="{
               'is-invalid': f.password.errors && f.password.touched
             }"
+            [ngClass]="
+              f.password.valid
+                ? cssBackgroundValidator(f.password)
+                : cssBackgroundInvalidator(f.password)
+            "
             placeholder="Digite uma Senha"
           />
           <img
@@ -142,6 +174,11 @@
               'is-invalid':
                 f.confirmePassword.errors && f.confirmePassword.touched
             }"
+            [ngClass]="
+              f.confirmePassword.valid
+                ? cssBackgroundValidator(f.confirmePassword)
+                : cssBackgroundInvalidator(f.confirmePassword)
+            "
             placeholder="Confirme a senha"
           />
           <img
@@ -180,6 +217,11 @@
         id="termo"
         formControlName="termo"
         [ngClass]="{ 'is-invalid': f.termo.errors && f.termo.touched }"
+        [ngClass]="
+          f.termo.valid
+            ? cssBackgroundValidator(f.termo)
+            : cssBackgroundInvalidator(f.termo)
+        "
       />
       <label for="termo"
         >Concordo com os <a routerLink="#" target="_blank">Termos de Uso</a>, e
@@ -192,7 +234,7 @@
         type="submit"
         routerLink="#"
         (click)="confirmRegistration()"
-        >
+      >
         <!-- [disabled]="!form.valid" -->
         Confirmar
       </button>

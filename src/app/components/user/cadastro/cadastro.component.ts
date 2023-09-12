@@ -63,9 +63,9 @@ export class CadastroComponent implements OnInit {
 
     this.form = this.fb.group(
       {
-        nomeCompleto: ['', Validators.required],
+        nomeCompleto: ['', [Validators.required, Validators.minLength(4)]],
         email: ['', [Validators.required, Validators.email]],
-        date: ['', Validators.required],
+        date: ['', [Validators.required, Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)]],
         password: ['', [Validators.required, Validators.minLength(8)]],
         confirmePassword: ['', Validators.required],
         termo: ['', Validators.required],
@@ -76,5 +76,15 @@ export class CadastroComponent implements OnInit {
 
   public cssValidator(campoForm: FormControl | AbstractControl): any {
     return { 'is-invalid': campoForm.errors && campoForm.touched };
+  }
+
+  public cssBackgroundValidator(campoForm: FormControl | AbstractControl): any {
+    return { 'valid-backgroud ': campoForm.valid };
+  }
+
+  public cssBackgroundInvalidator(
+    campoForm: FormControl | AbstractControl
+  ): any {
+    return { 'invalid-background': campoForm.errors && campoForm.touched };
   }
 }

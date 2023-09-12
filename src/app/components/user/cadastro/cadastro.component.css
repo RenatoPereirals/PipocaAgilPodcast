@@ -150,6 +150,17 @@ input {
   height: 50px;
   flex-shrink: 0;
   border-radius: 5px;
+
+}
+
+.valid-backgroud {
+  border: 1px solid #03a200;
+  background-color: #daf8da;
+}
+
+.invalid-background {
+  border: 1px solid #fa0000;
+  background-color: #fad6d6;
 }
 
 /* Outros estilos */

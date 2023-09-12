@@ -1,4 +1,8 @@
-<app-toast></app-toast>
+<app-toast *ngIf="toastService.messageType === 'confirmation'"></app-toast>
+<app-background-toast
+  *ngIf="toastService.messageType === 'error'"
+></app-background-toast>
+
 <main class="container">
   <router-outlet></router-outlet>
 </main>

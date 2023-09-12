@@ -28,12 +28,17 @@
   justify-content: start;
   align-items: center;
 }
+button {
+  border: none;
+  background-color: transparent;
+}
 
-.nav img {
+.nav button > img {
   margin-left: 21px;
   width: 24px;
   height: 24px;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .message-header {

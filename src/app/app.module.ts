@@ -17,7 +17,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { UserComponent } from './components/user/user.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
 import { PaginationComponent } from './components/shared/pagination/pagination.component';
-import { ToastComponent } from './components/shared/toast/toast.component';
+import { ToastComponent } from './components/shared/toasts/toast/toast.component';
+import { BackgroundToastComponent } from './components/shared/toasts/background-toast/background-toast.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ToastComponent } from './components/shared/toast/toast.component';
     CadastroComponent,
     PaginationComponent,
     ToastComponent,
+    BackgroundToastComponent,
   ],
   imports: [
     BrowserModule,

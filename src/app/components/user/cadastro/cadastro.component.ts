@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import {
   AbstractControl,
   AbstractControlOptions,
@@ -21,6 +20,7 @@ import { ToastService } from 'src/app/services/toast.service';
 export class CadastroComponent implements OnInit {
   passwordVisible = false;
   imgShow = false;
+  checked = false;
 
   imageFechadaUrl: string = '../../../../assets/image/Hide.png';
   imageAbertaUrl: string = '../../../../assets/image/show.png';
@@ -40,7 +40,23 @@ export class CadastroComponent implements OnInit {
   }
 
   confirmRegistration(): void {
-    this.toast.addConfirm();
+    this.toast.confirmRegistration();
+  }
+
+  errorRegistration(): void {
+    this.toast.errorRegistration();
+  }
+
+  showErrorForRequiredFields() {
+    // Percorra todos os campos do formulário
+    Object.keys(this.form.controls).forEach((field) => {
+      const control = this.form.get(field);
+      // Verifique se o campo é obrigatório e não foi tocado (não preenchido)
+      if (control?.hasError('required') && !control.touched) {
+        // Exiba a mensagem de erro correspondente
+        control.markAsTouched(); // Marque o campo como tocado para que a mensagem de erro seja exibida
+      }
+    });
   }
 
   togglePasswordVisibility(inputId: string, imgId: string): void {
@@ -56,6 +72,7 @@ export class CadastroComponent implements OnInit {
       : this.imageFechadaUrl;
   }
 
+
   private validation(): void {
     const formOptions: AbstractControlOptions = {
       validators: ValidatorField.MustMatch('password', 'confirmePassword'),
@@ -65,10 +82,10 @@ export class CadastroComponent implements OnInit {
       {
         nomeCompleto: ['', [Validators.required, Validators.minLength(4)]],
         email: ['', [Validators.required, Validators.email]],
-        date: ['', [Validators.required, Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)]],
+        date: ['', Validators.required],
         password: ['', [Validators.required, Validators.minLength(8)]],
         confirmePassword: ['', Validators.required],
-        termo: ['', Validators.required],
+        termo: [false, Validators.requiredTrue],
       },
       formOptions
     );

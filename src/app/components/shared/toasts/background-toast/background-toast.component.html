@@ -1,0 +1,9 @@
+<div class="message-header" *ngIf="toastService.title">
+  <nav class="nav">
+    <img src="../../../../../assets/image/icon-warning.png" />
+  </nav>
+  <div class="message">
+    <h2>{{ toastService.title }}</h2>
+    <p [innerHTML]="toastService.message"></p>
+  </div>
+</div>

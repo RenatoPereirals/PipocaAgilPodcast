@@ -8,7 +8,7 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./toast.component.css'],
 })
 export class ToastComponent implements OnInit {
-  constructor(public toast: ToastService) {}
+  constructor(public toastService: ToastService) {}
 
   ngOnInit(): void {}
 }

@@ -1,6 +1,6 @@
 # APipoca Ágil
 
-Aplicção web para Podcasts
+Aplicação web para Podcasts
 
 ## Requisitos
 

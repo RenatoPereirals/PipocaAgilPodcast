@@ -66,6 +66,7 @@ form {
 
 .formcad,
 .crieconta {
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -73,12 +74,14 @@ form {
 }
 
 .crieconta > h2 {
+  font-family: Work Sans;
   margin-top: 45px;
   font-size: 34px;
   letter-spacing: -0.68px;
 }
 
 .crieconta > p {
+  font-family: Work Sans;
   padding-top: 20px;
   font-size: 20px;
   letter-spacing: -0.4px;
@@ -86,7 +89,7 @@ form {
 
 .login {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: normal;
   margin-top: 43px;
 }

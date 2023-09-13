@@ -1,250 +1,76 @@
-dialog {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 400px;
-  border-radius: 40px;
-  background: #fff;
-  border: none;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-}
-
-#fade,
-#popuperro {
-  transition: 0.5s;
-  opacity: 1;
-  pointer-events: all;
-}
-
-#fade {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.borda {
-  position: static;
-  width: 499.944px;
-  height: 63.734px;
-  transform: rotate(-179.961deg);
-  flex-shrink: 0;
-  border-radius: 20px 20px 40px 40px;
-  background: rgba(254, 207, 93, 0.5);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-#popuperro {
-  display: flex;
-  align-items: center;
-}
-#popuperro h3 {
-  margin-top: 25px;
-  padding: 10px;
-  position: relative;
-  left: 50px;
-  width: 381px;
-  color: #000;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-#popuperro p {
-  position: relative;
-  padding: 25px;
-  width: 473px;
-  height: 69px;
-  color: #201c1c;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 20px;
+/* Estilos comuns */
+label {
+  font-family: "Work Sans";
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-#popuperro p strong {
-  color: #201c1c;
-  font-family: Roboto;
-  font-size: 20px;
+h2,
+p {
+  font-family: "Work Sans";
+  font-size: 34px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  letter-spacing: -0.68px;
 }
 
-.popbutton {
-  display: flex;
-  width: 248.942px;
-  height: 62px;
-  padding: 16px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  position: relative;
-  left: 100px;
-  top: 50px;
-  border-radius: 40px;
-  background: #fecf5d;
-  box-shadow: 1px 10px 4px 0px rgba(0, 0, 0, 0.25);
-  color: #000;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-}
-
-#popuperro.hide,
-#fade.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-#popuperro.hide {
-  top: 0;
-}
-
+/* Principal */
 .principal {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  min-height: 1024px;
 }
 
+/* Boas Vindas */
 .bemvindo {
-  display: flex;
-  padding: 10px;
   width: 489px;
-  height: 1024px;
+  margin-top: -15px;
   background-image: url("../../../../assets/image/microfone.png");
-  background-position: center center;
-  background-size: auto;
+  background-size: 489px 100%;
   background-repeat: no-repeat;
 }
 
 .logo-bemvindo {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.logo-bemvindo h2 {
+  text-align: center;
 }
 
 .logo {
-  margin-top: 84px;
-  margin-left: 121px;
-  margin-bottom: 130px;
-  width: 224px;
-  height: 224px;
+  margin-top: 20%;
+  margin-bottom: 30%;
 }
 
-h2 {
-  color: #fff;
-  font-family: "Work Sans";
-  font-size: 34px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.68px;
-  margin-left: 147px;
-}
-
-.errormessage {
-position: fixed;
-  opacity: 0;
-  width: 710px;
-  height: 88px;
-  color: #fff;
-  background-color: red;
-  right: 130px;
-  bottom: 550px;
-}
-
-.logtext {
+/* Formulário */
+form {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 500px;
+  margin-left: 140px;
+
 }
-
-.logtext > img {
-  width: 32px;
-  height: 32px;
-  margin-top: 28px;
-  margin-left: 27px;
-  margin-bottom: 28px;
-}
-
-.msgerro {
-  font-family: "Roboto";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-left: 30px;
-}
-
-.bloqerro {
-  position: fixed;
-    opacity: 0;
-    width: 710px;
-    height: 88px;
-    color: #fff;
-    background: #FECF5D;
-    right: 130px;
-    bottom: 550px;
-
-  }
-
-  .errologtext {
-    display: flex;
-    align-items: center;
-  }
-
-  .errologtext > img {
-    width: 32px;
-    height: 32px;
-    margin-top: 28px;
-    margin-left: 27px;
-    margin-bottom: 28px;
-  }
-
-  .bloqerromsg {
-    font-family: "Roboto";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-left: 30px;
-    color: #000;
-  }
-
-  #formlogin1{
-    position: absolute;
-    margin-left: 550px;
-    top: 130px;
-  }
-
-
-
-
-
-.loginconta {
-  width: 501px;
+.crieconta {
+  width: 606px;
   height: 115px;
-
-  margin-left: 100px;
-  margin-bottom: 43px;
-  text-align: left;
+  flex-shrink: 0;
+  margin-top: 104px;
 }
 
-.loginconta > h2 {
-  margin: 0px;
-  color: #fff;
-  font-family: "Work Sans";
+.crieconta > h2 {
+  font-family: Work Sans;
   font-size: 34px;
   font-style: normal;
   font-weight: 700;
@@ -252,50 +78,58 @@ position: fixed;
   letter-spacing: -0.68px;
 }
 
-.loginconta > p {
-  padding-top: 20px;
-  color: #fff;
-  font-family: "Work Sans";
+.crieconta > p {
+  font-family: Work Sans;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.4px;
+  margin-top: 50px;
 }
 
-.cadastre {
-  color: #fff;
-  font-family: "Roboto";
+.login {
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-left: 100px;
-}
-
-.cadastre > a {
-  color: #fff;
-  font-family: "Roboto";
-  font-size: 16px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-top: 43px;
+}
+
+.login > a {
   text-decoration-line: underline;
+  color: #fff;
 }
 
-#formlogin {
-  margin-top: 56px;
-  margin-left: 100px;
+/* Informações Pessoais */
+.registration {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.form-control input {
+.email,
+.password {
   width: 232px;
   height: 49px;
   flex-shrink: 0;
-  border-radius: 5px;
+  margin-top: 46px;
+}
+
+input {
   padding: 5px;
   border: 1px solid #000;
   background: #fff;
+  color: #201c1c;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 5px;
+}
+
+input::placeholder {
   color: #201c1c;
   font-family: Roboto;
   font-size: 14px;
@@ -304,83 +138,76 @@ position: fixed;
   line-height: normal;
 }
 
-.form-control label {
-  color: #fff;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+.username {
+  margin-top: 14px;
+  width: 100%;
+  height: 50px;
+  flex-shrink: 0;
 }
 
-#email {
-  margin-top: 19px;
-  margin-bottom: 23px;
+.password-input {
+  position: relative;
 }
 
-#passwordLogin {
-  margin-top: 10px;
-  margin-bottom: 9px;
-}
-
-#password1 p {
+.minPassword {
+  flex-shrink: 0;
   color: rgba(255, 255, 255, 0.6);
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: 6px;
 }
 
-.olhofechado {
-  position: relative;
-  top: 5px;
-  right: 35px;
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-#confirma {
-  margin-top: 90px;
-  display: flex;
-  width: 188px;
-  height: 56px;
-  padding: 21px 27px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 40px;
-  background: #fecf5d;
-  box-shadow: 1px 14px 9px 0px rgba(0, 0, 0, 0.25);
-  color: #000;
-  font-family: Work Sans;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.32px;
-}
-
-#esqueceu {
+.newPassword {
   margin-top: 20px;
+  width: 242px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.newPassword p {
+  width: 242px;
+  height: 14px;
+  flex-shrink: 0;
   color: #fff;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
 }
 
-#esqueceu a{
-  color: #fff;
+.newPassword p > a {
+  text-decoration: underline;
 }
 
-.form-control.success input {
+/* validações */
+
+.valid-backgroud {
   border: 1px solid #03a200;
-  background: #daf8da;
+  background-color: #daf8da;
 }
 
-.form-control.error input {
+.invalid-background {
   border: 1px solid #fa0000;
-  background: #fad6d6;
+  background-color: #fad6d6;
+}
+
+/* Outros estilos */
+.hide,
+.show {
+  position: absolute;
+  top: 39px;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.btn-confirm {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 90px;
+  border: none;
 }

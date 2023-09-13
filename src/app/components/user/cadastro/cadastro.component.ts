@@ -44,7 +44,6 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-
   }
 
   confirmRegistration(): void {
@@ -61,7 +60,9 @@ export class CadastroComponent implements OnInit {
 
       if (control?.hasError('required') && !control.touched) {
         control.markAsTouched();
-        console.log(`Field: ${field}, Touched: ${control.touched}, Valid: ${control.valid}`);
+        console.log(
+          `Field: ${field}, Touched: ${control.touched}, Valid: ${control.valid}`
+        );
       }
     });
   }
@@ -98,20 +99,19 @@ export class CadastroComponent implements OnInit {
   }
 
   // Função de validação de idade personalizada
-validateAge(control: AbstractControl): { [key: string]: any } | null {
-  const birthDate = new Date(control.value);
-  const today = new Date();
-  const age = today.getFullYear() - birthDate.getFullYear();
+  validateAge(control: AbstractControl): { [key: string]: any } | null {
+    const birthDate = new Date(control.value);
+    const today = new Date();
+    const age = today.getFullYear() - birthDate.getFullYear();
 
-  if (age < 18) {
-    this.showAgeError = true;
-    return { ageInvalid: true };
-  } else {
-    this.showAgeError = false; 
-    return null;
+    if (age < 18) {
+      this.showAgeError = true;
+      return { ageInvalid: true };
+    } else {
+      this.showAgeError = false;
+      return null;
+    }
   }
-}
-
 
   public cssValidator(campoForm: FormControl | AbstractControl): any {
     return { 'is-invalid': campoForm.errors && campoForm.touched };

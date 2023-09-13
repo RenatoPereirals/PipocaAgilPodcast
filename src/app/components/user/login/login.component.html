@@ -101,7 +101,7 @@
         class="btn btn-confirm txt-btn"
         type="submit"
         (click)="form.valid ? '' : errorRegistration()"
-        (click)="form.valid ? showErrorForRequiredFields() : ''"
+        (click)="form.valid ? '' : showErrorForRequiredFields()"
       >
         Confirmar
       </button>

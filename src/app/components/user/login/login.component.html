@@ -9,8 +9,8 @@
       <h2>Bem - vindo</h2>
     </section>
   </article>
-  <form id="formlogin1">
-    <section>
+  <form [formGroup]="form" id="formlogin1">
+    <section class="formcad">
       <aside class="crieconta">
         <h2>Acesse sua conta</h2>
         <p>
@@ -101,19 +101,13 @@
         class="btn btn-confirm txt-btn"
         type="submit"
         (click)="form.valid ? '' : errorRegistration()"
-        (click)="
-          form.valid ? showErrorForRequiredFields() : ''
-        "
+        (click)="form.valid ? showErrorForRequiredFields() : ''"
       >
-        <!-- [disabled]="!form.valid" -->
         Confirmar
       </button>
       <div class="newPassword">
-        <p>
-        Esqueceu a senha? <a href="#">Clique aqui!</a>
-      </p>
+        <p>Esqueceu a senha? <a href="#">Clique aqui!</a></p>
       </div>
-
     </fieldset>
   </form>
 </main>

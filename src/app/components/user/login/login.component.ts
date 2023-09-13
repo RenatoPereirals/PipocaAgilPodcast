@@ -20,22 +20,21 @@ import { ToastService } from 'src/app/services/toast.service';
 export class LoginComponent implements OnInit {
   passwordVisible = false;
   imgShow = false;
-  
+
   form!: FormGroup;
   user = {} as User;
 
   imageFechadaUrl: string = '../../../../assets/image/Hide.png';
   imageAbertaUrl: string = '../../../../assets/image/show.png';
-  validateAge: any;
 
   constructor(private fb: FormBuilder, private toast: ToastService) {}
+
   get f(): any {
     return this.form.controls;
   }
 
   ngOnInit(): void {
     this.validation();
-    console.log(this.form.valid)
   }
 
   errorRegistration(): void {

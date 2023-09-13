@@ -57,7 +57,6 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
   flex-wrap: wrap;
   width: 500px;
   margin-left: 140px;
@@ -66,7 +65,6 @@ form {
 
 .formcad,
 .crieconta {
-
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -83,6 +81,9 @@ form {
 .crieconta > p {
   font-family: Work Sans;
   padding-top: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   font-size: 20px;
   letter-spacing: -0.4px;
 }

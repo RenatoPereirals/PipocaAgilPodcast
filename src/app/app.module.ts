@@ -20,7 +20,6 @@ import { PaginationComponent } from './components/shared/pagination/pagination.c
 import { ToastComponent } from './components/shared/toasts/toast/toast.component';
 import { BackgroundToastComponent } from './components/shared/toasts/background-toast/background-toast.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
-import { DatePickerComponent } from './components/shared/date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { DatePickerComponent } from './components/shared/date-picker/date-picker
     ToastComponent,
     BackgroundToastComponent,
     SpinnerComponent,
-    DatePickerComponent,
   ],
   imports: [
     BrowserModule,

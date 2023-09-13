@@ -10,6 +10,7 @@ import {
 
 import { ValidatorField } from 'src/app/helpers/ValidatorField';
 import { User } from 'src/app/models/User';
+import { DatePickerService } from 'src/app/services/date-picker.service';
 import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
@@ -28,7 +29,13 @@ export class CadastroComponent implements OnInit {
   form!: FormGroup;
   user = {} as User;
 
-  constructor(private fb: FormBuilder, private toast: ToastService) {}
+  constructor(
+    private fb: FormBuilder,
+    private toast: ToastService,
+    private dateService: DatePickerService
+  ) {
+    this.form = this.dateService.createForm();
+  }
 
   get f(): any {
     return this.form.controls;
@@ -36,7 +43,6 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-    console.log('o valor do formulário é: ' + this.form.valid);
   }
 
   confirmRegistration(): void {
@@ -48,13 +54,11 @@ export class CadastroComponent implements OnInit {
   }
 
   showErrorForRequiredFields() {
-    // Percorra todos os campos do formulário
     Object.keys(this.form.controls).forEach((field) => {
       const control = this.form.get(field);
-      // Verifique se o campo é obrigatório e não foi tocado (não preenchido)
+
       if (control?.hasError('required') && !control.touched) {
-        // Exiba a mensagem de erro correspondente
-        control.markAsTouched(); // Marque o campo como tocado para que a mensagem de erro seja exibida
+        control.markAsTouched();
       }
     });
   }
@@ -72,7 +76,6 @@ export class CadastroComponent implements OnInit {
       : this.imageFechadaUrl;
   }
 
-
   private validation(): void {
     const formOptions: AbstractControlOptions = {
       validators: ValidatorField.MustMatch('password', 'confirmePassword'),
@@ -82,7 +85,7 @@ export class CadastroComponent implements OnInit {
       {
         nomeCompleto: ['', [Validators.required, Validators.minLength(4)]],
         email: ['', [Validators.required, Validators.email]],
-        date: ['', Validators.required],
+        date: ['', [Validators.required]],
         password: ['', [Validators.required, Validators.minLength(8)]],
         confirmePassword: ['', Validators.required],
         termo: [false, Validators.requiredTrue],

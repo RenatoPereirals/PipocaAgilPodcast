@@ -86,11 +86,12 @@
             Precisa ser um e-mail válido.
           </div>
         </div>
+
         <div class="form-control date">
-          <label for="date">Data de Nascimento </label>
-          <app-date-picker
+          <label for="date">Data de Nascimento</label>
+          <input
             class="username"
-            type="date"
+            type="text"
             name="data"
             placeholder="DD/MM/AAAA"
             formControlName="date"
@@ -101,7 +102,7 @@
                 : cssBackgroundInvalidator(f.date)
             "
             [(ngModel)]="user.date"
-          ></app-date-picker>
+          />
           <div
             *ngIf="f.date.errors?.required && f.date.touched"
             class="invalid-feedback"

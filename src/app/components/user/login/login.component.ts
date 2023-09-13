@@ -8,7 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { User } from 'src/app/models/User';
+import { User } from 'src/app/models/user';
 
 import { ToastService } from 'src/app/services/toast.service';
 

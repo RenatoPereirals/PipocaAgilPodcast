@@ -9,7 +9,7 @@ import {
 } from '@angular/forms';
 
 import { ValidatorField } from 'src/app/helpers/ValidatorField';
-import { User } from 'src/app/models/User';
+import { User } from 'src/app/models/user';
 import { DatePickerService } from 'src/app/services/date-picker.service';
 import { ToastService } from 'src/app/services/toast.service';
 

@@ -20,13 +20,11 @@
           Clube Assinante.
         </p>
       </aside>
-      <p class="login">
-        Já tem conta? <a routerLink="/login" target="_blank">Login</a>
-      </p>
+      <p class="login">Já tem conta? <a routerLink="/login">Login</a></p>
     </section>
 
     <!-- INFORMAÇÕES PESSOAIS -->
-    <fieldset>
+    <fieldset class="registration">
       <div class="form-control name">
         <label for="username">Nome Completo </label>
         <input
@@ -91,8 +89,9 @@
           <label for="date">Data de Nascimento</label>
           <input
             class="username"
-            type="text"
+            type="date"
             name="data"
+            id="data"
             placeholder="DD/MM/AAAA"
             formControlName="date"
             [ngClass]="cssValidator(f.date)"
@@ -103,6 +102,7 @@
             "
             [(ngModel)]="user.date"
           />
+          <p class="age">Para assinar precisa ser maior de 18 anos</p>
           <div
             *ngIf="f.date.errors?.required && f.date.touched"
             class="invalid-feedback"
@@ -114,6 +114,9 @@
             class="invalid-feedback"
           >
             Insira uma data válida.
+          </div>
+          <div *ngIf="showAgeError" class="invalid-feedback">
+            Você deve ter pelo menos 18 anos.
           </div>
         </div>
       </div>
@@ -147,6 +150,7 @@
               togglePasswordVisibility('passwordInput', 'togglePassword')
             "
           />
+          <p class="age">Senha deve conter mínimo 8 caracteres</p>
         </div>
 
         <div
@@ -236,7 +240,6 @@
       <button
         class="btn btn-confirm txt-btn"
         type="submit"
-        routerLink="#"
         (click)="form.valid ? confirmRegistration() : errorRegistration()"
         (click)="
           form.valid ? confirmRegistration() : showErrorForRequiredFields()

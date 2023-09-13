@@ -1,6 +1,6 @@
 <div class="message" *ngIf="toastService.title">
   <nav class="nav">
-    <button (click)="toastService.clear()">
+    <button class="close" (click)="toastService.clear()">
       <img src="../../../../assets/image/close.svg" />
     </button>
   </nav>
@@ -8,7 +8,7 @@
     <h2>{{ toastService.title }}</h2>
     <p [innerHTML]="toastService.message"></p>
   </div>
-  <button class="btn btn-access" (click)="toastService.clear()">
+  <button class="btn txt-btn" (click)="toastService.clear()">
     Voltar para a página inicial
   </button>
 </div>

@@ -22,6 +22,7 @@ export class CadastroComponent implements OnInit {
   passwordVisible = false;
   imgShow = false;
   checked = false;
+  showAgeError = false;
 
   imageFechadaUrl: string = '../../../../assets/image/Hide.png';
   imageAbertaUrl: string = '../../../../assets/image/show.png';
@@ -43,6 +44,7 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
+
   }
 
   confirmRegistration(): void {
@@ -59,6 +61,7 @@ export class CadastroComponent implements OnInit {
 
       if (control?.hasError('required') && !control.touched) {
         control.markAsTouched();
+        console.log(`Field: ${field}, Touched: ${control.touched}, Valid: ${control.valid}`);
       }
     });
   }
@@ -85,7 +88,7 @@ export class CadastroComponent implements OnInit {
       {
         nomeCompleto: ['', [Validators.required, Validators.minLength(4)]],
         email: ['', [Validators.required, Validators.email]],
-        date: ['', [Validators.required]],
+        date: ['', [Validators.required, this.validateAge.bind(this)]],
         password: ['', [Validators.required, Validators.minLength(8)]],
         confirmePassword: ['', Validators.required],
         termo: [false, Validators.requiredTrue],
@@ -93,6 +96,22 @@ export class CadastroComponent implements OnInit {
       formOptions
     );
   }
+
+  // Função de validação de idade personalizada
+validateAge(control: AbstractControl): { [key: string]: any } | null {
+  const birthDate = new Date(control.value);
+  const today = new Date();
+  const age = today.getFullYear() - birthDate.getFullYear();
+
+  if (age < 18) {
+    this.showAgeError = true;
+    return { ageInvalid: true };
+  } else {
+    this.showAgeError = false; 
+    return null;
+  }
+}
+
 
   public cssValidator(campoForm: FormControl | AbstractControl): any {
     return { 'is-invalid': campoForm.errors && campoForm.touched };

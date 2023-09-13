@@ -7,7 +7,12 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { User } from 'src/app/models/User';
+<<<<<<< HEAD
+import { User } from 'src/app/models/user';
+=======
+
+import { User } from 'src/app/models/user';
+>>>>>>> feature
 
 import { ToastService } from 'src/app/services/toast.service';
 

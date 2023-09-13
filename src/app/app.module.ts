@@ -19,6 +19,8 @@ import { CadastroComponent } from './components/user/cadastro/cadastro.component
 import { PaginationComponent } from './components/shared/pagination/pagination.component';
 import { ToastComponent } from './components/shared/toasts/toast/toast.component';
 import { BackgroundToastComponent } from './components/shared/toasts/background-toast/background-toast.component';
+import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+import { DatePickerComponent } from './components/shared/date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { BackgroundToastComponent } from './components/shared/toasts/background-
     PaginationComponent,
     ToastComponent,
     BackgroundToastComponent,
+    SpinnerComponent,
+    DatePickerComponent,
   ],
   imports: [
     BrowserModule,

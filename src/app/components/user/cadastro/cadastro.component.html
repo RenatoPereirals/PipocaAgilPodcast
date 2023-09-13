@@ -88,7 +88,7 @@
         </div>
         <div class="form-control date">
           <label for="date">Data de Nascimento </label>
-          <input
+          <app-date-picker
             class="username"
             type="date"
             name="data"
@@ -101,7 +101,7 @@
                 : cssBackgroundInvalidator(f.date)
             "
             [(ngModel)]="user.date"
-          />
+          ></app-date-picker>
           <div
             *ngIf="f.date.errors?.required && f.date.touched"
             class="invalid-feedback"

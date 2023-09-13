@@ -1,0 +1,19 @@
+<div class="date-container">
+  <div class="date-picker">
+    <select class="date custom-text" id="day" [(ngModel)]="selectedDay">
+      <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+    </select>
+  </div>
+
+  <div class="date-picker">
+    <select class="date custom-text" id="month" [(ngModel)]="selectedMonth">
+      <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+    </select>
+  </div>
+
+  <div class="date-picker">
+    <select class="date custom-text" id="year" [(ngModel)]="selectedYear">
+      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+  </div>
+</div>

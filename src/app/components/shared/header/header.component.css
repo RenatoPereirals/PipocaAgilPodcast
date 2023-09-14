@@ -7,8 +7,6 @@ header {
   width: 100%;
   height: 810px;
   position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
 header::before {
@@ -30,7 +28,7 @@ a {
   line-height: normal;
 }
 
-.logo-popoca-agil-1 {
+.logo-pipoca {
   width: 183px;
   height: 183px;
   flex-shrink: 0;
@@ -54,38 +52,49 @@ a {
 
 .navigator {
   width: 100%;
-  height: 222px;
   display: flex;
-  justify-content: space-around;
+  padding-top: 50px;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  flex-direction: wrap;
+  align-items: center;
+  padding-left: 135px;
+  padding-right: 135px;
 }
 
 .container {
   width: 100%;
   max-width: 1400px;
   height: 500px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: flex-start;
-  align-items: center;
+  align-items: start;
+  padding-left: 135px;
 }
 
-.container > h1 {
-  width: 1185px;
+.title-background {
+  width: 100%;
+  max-width: 1185px;
   height: 284px;
   background: rgba(7, 2, 2, 0.3);
   flex-shrink: 0;
+  border-radius: 90px;
+  overflow: hidden; /* Para ocultar partes do fundo fora do contêiner */
+  margin-left: -70px;
+}
+
+.title {
   font-size: 96px;
-  font-weight: 900px;
-  text-align: flex-start;
+  font-weight: 900;
   color: var(--color-yellow);
   backdrop-filter: blur(2px);
   background-color: rgba(11, 9, 9, 0.159);
-  border-radius: 90px;
-  padding-left: 30px;
+  height: 100%; /* Para preencher a altura do contêiner pai */
+  display: flex;
+  align-items: center; /* Centralize verticalmente o texto */
+  margin-left: 70px;
 }
 
 .container h2 {
@@ -99,22 +108,43 @@ a {
   font-weight: 700;
   line-height: normal;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-left: 134px;
 }
 
 .container-button {
-  margin-left: 30px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
+  flex-direction: row;
+  justify-content: flex-start;
   width: 100%;
-  align-self: flex-start;
 }
 
 .container-button > h2 {
+  width: 629px;
+  height: 80px;
+  flex-shrink: 0;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 32px;
-  text-align: start;
-  font-weight: bold;
-  color: var(--color-white);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+button {
+  margin-left: 42px;
+  border: none;
+  display: flex;
+  width: 319px;
+  padding: 27px 152px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+button p {
+  color: #000;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
 }

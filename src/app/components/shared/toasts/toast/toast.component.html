@@ -1,0 +1,14 @@
+<div class="message" *ngIf="toastService.title">
+  <nav class="nav">
+    <button class="close" (click)="toastService.clear()">
+      <img src="../../../../assets/image/close.svg" />
+    </button>
+  </nav>
+  <div class="message-header">
+    <h2>{{ toastService.title }}</h2>
+    <p [innerHTML]="toastService.message"></p>
+  </div>
+  <button class="btn txt-btn" (click)="toastService.clear()">
+    Voltar para a página inicial
+  </button>
+</div>

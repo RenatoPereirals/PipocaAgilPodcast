@@ -1,0 +1,9 @@
+<app-spinner *ngIf="spinnerService.show()"></app-spinner>
+<app-toast *ngIf="toastService.messageType === 'confirmation'"></app-toast>
+<app-background-toast
+  *ngIf="toastService.messageType === 'error'"
+></app-background-toast>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

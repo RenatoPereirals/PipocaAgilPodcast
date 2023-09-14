@@ -1,0 +1,113 @@
+<main class="principal">
+  <article class="bemvindo">
+    <section class="logo-bemvindo">
+      <img
+        src="../../../../assets/image/logo-pipoca-agil.png"
+        alt="Logo pipoca Agil"
+        class="logo"
+      />
+      <h2>Bem - vindo</h2>
+    </section>
+  </article>
+  <form [formGroup]="form" id="formlogin1">
+    <section class="formcad">
+      <aside class="crieconta">
+        <h2>Acesse sua conta</h2>
+        <p>
+          Acesse à conteúdos especiais e benefícios exclusivos do nosso Clube
+          Assinante.
+        </p>
+      </aside>
+      <p class="login">
+        Não tem conta?
+        <a routerLink="/cadastro" target="_parent">Cadastre aqui!</a>
+      </p>
+    </section>
+    <fieldset class="registration">
+      <div class="email">
+        <label for="e-mail">E-mail </label>
+        <input
+          class="username"
+          type="email"
+          name="email"
+          placeholder="exemplo@exemplo.com"
+          formControlName="email"
+          [ngClass]="cssValidator(f.email)"
+          [ngClass]="
+            f.email.valid
+              ? cssBackgroundValidator(f.email)
+              : cssBackgroundInvalidator(f.email)
+          "
+          [(ngModel)]="user.email"
+        />
+        <div
+          *ngIf="f.email.errors?.required && f.email.touched"
+          class="invalid-feedback"
+        >
+          E-mail é obrigatório.
+        </div>
+        <div
+          *ngIf="f.email.errors?.email && f.email.touched"
+          class="invalid-feedback"
+        >
+          Precisa ser um e-mail válido.
+        </div>
+      </div>
+      <div class="password">
+        <label for="password">Senha:</label>
+        <div class="password-input">
+          <input
+            class="username"
+            id="passwordInput"
+            type="password"
+            name="senha"
+            formControlName="password"
+            [ngClass]="{
+              'is-invalid': f.password.errors && f.password.touched
+            }"
+            [ngClass]="
+              f.password.valid
+                ? cssBackgroundValidator(f.password)
+                : cssBackgroundInvalidator(f.password)
+            "
+            placeholder="Digite uma Senha"
+          />
+          <img
+            class="hide"
+            id="togglePassword"
+            src="../../../../assets/image/Hide.png"
+            alt=""
+            (click)="
+              togglePasswordVisibility('passwordInput', 'togglePassword')
+            "
+          />
+          <p class="minPassword">Senha deve conter mínimo 8 caracteres</p>
+        </div>
+
+        <div
+          *ngIf="f.password.errors?.required && f.password.touched"
+          class="invalid-feedback"
+        >
+          Senha é obrigatória.
+        </div>
+        <div
+          *ngIf="f.password.errors?.minlength && f.password.touched"
+          class="invalid-feedback"
+        >
+          Deve conter no mínimo 8 caracteres.
+        </div>
+      </div>
+      <button
+        class="btn btn-confirm txt-btn"
+        type="submit"
+        (click)="form.valid ? '' : errorRegistration()"
+        (click)="form.valid ? '' : showErrorForRequiredFields()"
+      >
+        Confirmar
+      </button>
+      <div class="newPassword">
+        <p>Esqueceu a senha? <a href="#">Clique aqui!</a></p>
+      </div>
+    </fieldset>
+  </form>
+</main>

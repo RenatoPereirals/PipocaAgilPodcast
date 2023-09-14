@@ -1,0 +1,86 @@
+/* Estilize o overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo escura com opacidade */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Certifique-se de que ele esteja acima de outros elementos */
+}
+
+.spinner-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 30px; /* Tamanho da bolinha */
+  height: 30px; /* Tamanho da bolinha */
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  animation: fillEmpty 6s linear infinite;
+}
+
+/* Configuração de cores para cada bolinha */
+.circle:nth-child(1) {
+  border: none;
+  animation-delay: 0s;
+  border-color: #fecf5d; /* Cor da primeira bolinha */
+}
+
+.circle:nth-child(2) {
+  border: none;
+  animation-delay: 0.5s;
+  border-color: #fecf5d; /* Cor da segunda bolinha */
+}
+
+.circle:nth-child(3) {
+  border: none;
+  animation-delay: 1s;
+  border-color: #fecf5d; /* Cor da terceira bolinha */
+}
+
+@keyframes fillEmpty {
+  0% {
+    background-color: transparent;
+  }
+  10% {
+    background-color: #fecf5d; /* Bolinhas preenchidas por 10% da animação */
+  }
+  20% {
+    background-color: transparent; /* Bolinhas ficam transparentes por 20% da animação */
+  }
+  30% {
+    background-color: transparent; /* Bolinhas ficam transparentes por 10% da animação */
+  }
+  40% {
+    background-color: #fecf5d; /* Bolinhas preenchidas por 10% da animação */
+  }
+  50% {
+    background-color: transparent; /* Bolinhas ficam transparentes por 20% da animação */
+  }
+  60% {
+    background-color: transparent; /* Bolinhas ficam transparentes por 10% da animação */
+  }
+  70% {
+    background-color: #fecf5d; /* Bolinhas preenchidas por 10% da animação */
+  }
+  80% {
+    background-color: transparent;
+  }
+  90% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}

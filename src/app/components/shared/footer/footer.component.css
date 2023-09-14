@@ -1,0 +1,65 @@
+/* Estilo do container do rodapé */
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 322px;
+}
+
+/* Estilo do logotipo do rodapé */
+.logo-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 173px;
+  height: 173px;
+}
+
+/* Estilo comum para os elementos de email e termos de política */
+.email,
+.term-policy {
+  height: 159px;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.term-policy {
+  line-height: 2.5;
+}
+
+.email p {
+  text-decoration-line: underline;
+}
+
+/* Estilo do conteúdo geral, dos parágrafos e dos icones do rodapé */
+.rodape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.rodape p {
+  width: 243px;
+  height: 49px;
+  flex-shrink: 0;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+
+.icon-redes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}

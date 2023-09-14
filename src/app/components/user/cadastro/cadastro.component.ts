@@ -10,7 +10,9 @@ import {
 
 import { ValidatorField } from 'src/app/helpers/ValidatorField';
 import { User } from 'src/app/models/user';
+
 import { DatePickerService } from 'src/app/services/date-picker.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
 import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
@@ -33,7 +35,8 @@ export class CadastroComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private toast: ToastService,
-    private dateService: DatePickerService
+    private dateService: DatePickerService,
+    private spinnerService: SpinnerService
   ) {
     this.form = this.dateService.createForm();
   }
@@ -44,6 +47,10 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
+  }
+
+  spinner() {
+    this.spinnerService.show();
   }
 
   confirmRegistration(): void {

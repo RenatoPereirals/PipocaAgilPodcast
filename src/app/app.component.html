@@ -1,6 +1,5 @@
+<app-spinner *ngIf="spinnerService.show()"></app-spinner>
 <app-toast *ngIf="toastService.messageType === 'confirmation'"></app-toast>
-<app-spinner></app-spinner>
-
 <app-background-toast
   *ngIf="toastService.messageType === 'error'"
 ></app-background-toast>

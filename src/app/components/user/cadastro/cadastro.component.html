@@ -241,6 +241,7 @@
         class="btn btn-confirm txt-btn"
         type="submit"
         (click)="form.valid ? confirmRegistration() : errorRegistration()"
+        (click)="form.valid ? spinner() : ''"
         (click)="
           form.valid ? confirmRegistration() : showErrorForRequiredFields()
         "

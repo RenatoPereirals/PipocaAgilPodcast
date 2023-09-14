@@ -13,7 +13,7 @@ import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'conatatos', component: ContatoComponent },
   { path: 'episosdios', component: EpisodiosComponent },
   { path: 'galeria', component: GaleriaComponent },

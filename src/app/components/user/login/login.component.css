@@ -26,32 +26,6 @@ p {
   min-height: 1024px;
 }
 
-/* Boas Vindas */
-.bemvindo {
-  width: 489px;
-  margin-top: -15px;
-  background-image: url("../../../../assets/image/microfone.png");
-  background-size: 489px 100%;
-  background-repeat: no-repeat;
-}
-
-.logo-bemvindo {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.logo-bemvindo h2 {
-  text-align: center;
-}
-
-.logo {
-  margin-top: 20%;
-  margin-bottom: 30%;
-}
-
 /* Formulário */
 form {
   display: flex;

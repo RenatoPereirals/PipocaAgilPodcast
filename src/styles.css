@@ -44,6 +44,46 @@ img {
   --color-black-medium: #000;
 }
 
+/* logo marca e background */
+.bemvindo {
+  width: 489px;
+  margin-top: -15px;
+  background-image: url("assets/image/microfone.png");
+  background-size: 489px 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.bemvindo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.logo-bemvindo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-bemvindo h2 {
+  text-align: center;
+}
+
+.logo {
+  margin-top: 20%;
+  margin-bottom: 30%;
+}
+
 /* Estilos para elementos com fonte */
 .roboto-font {
   font-family: "Roboto", sans-serif;
@@ -105,6 +145,7 @@ img {
   background: var(--color-yellow);
   box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  border: none;
   justify-content: center;
   align-items: center;
 }

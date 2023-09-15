@@ -9,8 +9,13 @@ import { PoliticapComponent } from './components/politicap/politicap.component';
 import { TermoeconComponent } from './components/termoecon/termoecon.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
+import { ToastComponent } from './components/shared/toasts/toast/toast.component';
+import { BackgroundToastComponent } from './components/shared/toasts/background-toast/background-toast.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+
 
 const routes: Routes = [
+
   { path: '', component: HomeComponent },
   { path: 'conatatos', component: ContatoComponent },
   { path: 'episosdios', component: EpisodiosComponent },
@@ -19,6 +24,8 @@ const routes: Routes = [
   { path: 'termoecon', component: TermoeconComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
+
+
 ];
 
 @NgModule({

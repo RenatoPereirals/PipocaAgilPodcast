@@ -497,24 +497,56 @@
 - Tipo: Texto ou URL
 - Descrição: Uma URL ou referência a recursos adicionais relacionados à análise, como relatórios detalhados.
 
-# Redes sociais
+Entendi que você deseja aplicar a mesma estrutura de descrição para os dados relacionados às redes sociais. Aqui está a configuração com base no seu texto:
 
-1. **ID**: Um identificador único para cada registro de conta de rede social. Isso é essencial para garantir que cada conta seja única e possa ser associada corretamente às entidades apropriadas (usuários comuns, eventos, palestrantes).
+## Rede Social
 
-2. **Tipo de Rede Social**: Uma indicação do tipo de rede social associado. Isso pode ser um valor enumerado (por exemplo, Facebook, Twitter, LinkedIn) ou uma string.
+**1. ID da Conta de Rede Social (Social Media Account ID):**
 
-3. **URL do Perfil**: A URL direta para o perfil da conta de rede social. Isso permitirá que os usuários acessem facilmente o perfil associado.
+- Tipo: Identificador Único (por exemplo, UUID)
+- Descrição: Um identificador único para cada registro de conta de rede social, garantindo sua singularidade e associação correta às entidades relevantes (usuários comuns, eventos, palestrantes).
 
-4. **Ícone da Rede Social**: Isso pode ser uma string ou um caminho para um arquivo de imagem que represente o ícone da rede social. Isso é útil para exibir ícones de redes sociais ao lado dos links nas páginas de perfil.
+**2. Tipo de Rede Social (Social Media Type):**
 
-5. **ID da Entidade Associada**: Um campo que armazena o ID da entidade (usuário comum, evento ou palestrante) à qual a conta de rede social está associada. Isso é importante para manter o relacionamento entre as contas de rede social e as entidades correspondentes.
+- Tipo: String (ou Enum)
+- Descrição: Uma indicação do tipo de rede social associado, podendo ser um valor enumerado (por exemplo, Facebook, Twitter, LinkedIn) ou uma string.
 
-6. **Data de Criação**: A data em que a conta de rede social foi associada à entidade.
+**3. URL do Perfil (Profile URL):**
 
-7. **Data de Modificação**: A data da última modificação da conta de rede social.
+- Tipo: Texto ou URL
+- Descrição: A URL direta para o perfil da conta de rede social, permitindo fácil acesso ao perfil associado.
 
-8. **Visibilidade**: Um campo que permite aos usuários definirem a visibilidade da conta de rede social. Pode ser configurado como "Público" ou "Privado".
+**4. Ícone da Rede Social (Social Media Icon):**
 
-9. **Status Ativo/Inativo**: Um campo que permite aos usuários desativarem temporariamente uma conta de rede social, caso desejem.
+- Tipo: String ou Caminho para um Arquivo de Imagem
+- Descrição: Uma representação visual da rede social, que pode ser uma string ou um caminho para um arquivo de imagem usado para exibir o ícone da rede social ao lado dos links nas páginas de perfil.
 
-10. **Descrição**: Um campo para adicionar notas ou uma breve descrição sobre a conta de rede social.
+**5. ID da Entidade Associada (Associated Entity ID):**
+
+- Tipo: Identificador Único
+- Descrição: Armazena o ID da entidade (usuário comum, evento ou palestrante) à qual a conta de rede social está associada, mantendo o relacionamento entre as contas de rede social e as entidades correspondentes.
+
+**6. Data de Criação (Creation Date):**
+
+- Tipo: Data
+- Descrição: A data em que a conta de rede social foi associada à entidade.
+
+**7. Data de Modificação (Modification Date):**
+
+- Tipo: Data
+- Descrição: A data da última modificação da conta de rede social.
+
+**8. Visibilidade (Visibility):**
+
+- Tipo: String (ou Enum)
+- Descrição: Permite aos usuários definirem a visibilidade da conta de rede social, podendo ser configurada como "Pública" ou "Privada".
+
+**9. Status Ativo/Inativo (Active/Inactive Status):**
+
+- Tipo: Booleano
+- Descrição: Permite aos usuários desativarem temporariamente uma conta de rede social, se desejarem, indicando se a conta está ativa ou inativa.
+
+**10. Descrição (Description):**
+
+- Tipo: Texto (ou Texto Longo)
+- Descrição: Um campo para adicionar notas ou uma breve descrição sobre a conta de rede social.

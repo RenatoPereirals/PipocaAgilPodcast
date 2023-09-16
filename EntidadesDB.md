@@ -23,20 +23,32 @@
 
    - Armazenará informações sobre os membros do clube de assinantes, como data de adesão, status de assinatura atual e detalhes de pagamento.
 
-6. **Compartilhamentos:**
-
-   - Registrar informações sobre ações de compartilhamento de conteúdo, incluindo o tipo de conteúdo compartilhado (foto, evento, episódio), a plataforma de compartilhamento e as informações de origem (usuário que compartilhou).
-
-7. **Avaliações e Comentários**
+6. **Avaliações, compartilhamentos e Comentários**
 
    - Se você planeja permitir que os usuários avaliem e comentem sobre fotos, eventos ou episódios, considere entidades separadas para registrar essas interações.
 
-8. **Logs de Administração:**
+7. **Logs de Administração:**
 
    - Armazenará registros de atividades de administração, como adições, edições e exclusões de conteúdo por administradores.
 
-9. **Dados de Análise e Estatísticas (Opcional):**
+8. **Dados de Análise e Estatísticas:**
+
    - Se você planeja coletar dados de análise e estatísticas, considere como esses dados serão estruturados no banco de dados para proteger os dados do usuário. Além disso, mantenha a documentação do banco de dados atualizada à medida que você projeta e implementa o esquema do banco de dados.
+
+9. **Redes Sociais:**
+
+- Cada registro representará um perfil de rede social associado a um usuário ou palestrante.
+- Campos incluirão o tipo de rede social (por exemplo, Facebook, Twitter, LinkedIn, Instagram), o nome de usuário ou URL do perfil e um relacionamento com a entidade de Usuários ou Palestrantes para indicar a associação.
+
+11. **Palestrantes:**
+
+- Cada registro representará um palestrante que pode estar associado a eventos.
+- Campos incluirão nome, biografia, foto do palestrante (em formato binário ou URL), informações de contato (por exemplo, endereço de e-mail, número de telefone) e uma lista de eventos em que o palestrante está envolvido.
+
+12. **Administradores:**
+
+- Cada registro representará um administrador do sistema.
+- Campos incluirão nome, endereço de e-mail, credenciais de login (nome de usuário e senha) e informações adicionais, como data de contratação e cargo.
 
 ## Administrador
 
@@ -97,10 +109,6 @@
 12. **Informações de Contato:** Informações de contato adicionais, como número de telefone, endereço ou redes sociais, se necessário.
 
 13. **Notificações:** Preferências de notificação para o usuário, como receber alertas por e-mail sobre atividades importantes no sistema.
-
-14. **Configurações de Conta:** Configurações personalizadas para a conta do usuário, como preferências de idioma, temas, notificações, entre outros.
-
-15. **Interesses:** Os interesses ou preferências do usuário, que podem ser usados para personalizar o conteúdo recomendado ou as interações no sistema.
 
 ## Fotos
 
@@ -488,3 +496,25 @@
 
 - Tipo: Texto ou URL
 - Descrição: Uma URL ou referência a recursos adicionais relacionados à análise, como relatórios detalhados.
+
+# Redes sociais
+
+1. **ID**: Um identificador único para cada registro de conta de rede social. Isso é essencial para garantir que cada conta seja única e possa ser associada corretamente às entidades apropriadas (usuários comuns, eventos, palestrantes).
+
+2. **Tipo de Rede Social**: Uma indicação do tipo de rede social associado. Isso pode ser um valor enumerado (por exemplo, Facebook, Twitter, LinkedIn) ou uma string.
+
+3. **URL do Perfil**: A URL direta para o perfil da conta de rede social. Isso permitirá que os usuários acessem facilmente o perfil associado.
+
+4. **Ícone da Rede Social**: Isso pode ser uma string ou um caminho para um arquivo de imagem que represente o ícone da rede social. Isso é útil para exibir ícones de redes sociais ao lado dos links nas páginas de perfil.
+
+5. **ID da Entidade Associada**: Um campo que armazena o ID da entidade (usuário comum, evento ou palestrante) à qual a conta de rede social está associada. Isso é importante para manter o relacionamento entre as contas de rede social e as entidades correspondentes.
+
+6. **Data de Criação**: A data em que a conta de rede social foi associada à entidade.
+
+7. **Data de Modificação**: A data da última modificação da conta de rede social.
+
+8. **Visibilidade**: Um campo que permite aos usuários definirem a visibilidade da conta de rede social. Pode ser configurado como "Público" ou "Privado".
+
+9. **Status Ativo/Inativo**: Um campo que permite aos usuários desativarem temporariamente uma conta de rede social, caso desejem.
+
+10. **Descrição**: Um campo para adicionar notas ou uma breve descrição sobre a conta de rede social.

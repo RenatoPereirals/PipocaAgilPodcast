@@ -497,8 +497,6 @@
 - Tipo: Texto ou URL
 - Descrição: Uma URL ou referência a recursos adicionais relacionados à análise, como relatórios detalhados.
 
-Entendi que você deseja aplicar a mesma estrutura de descrição para os dados relacionados às redes sociais. Aqui está a configuração com base no seu texto:
-
 ## Rede Social
 
 **1. ID da Conta de Rede Social (Social Media Account ID):**

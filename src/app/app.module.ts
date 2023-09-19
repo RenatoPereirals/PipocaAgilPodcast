@@ -19,6 +19,7 @@ import { CadastroComponent } from './components/user/cadastro/cadastro.component
 import { ToastComponent } from './components/shared/toasts/toast/toast.component';
 import { BackgroundToastComponent } from './components/shared/toasts/background-toast/background-toast.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+import { SpinnerService } from './services/spinner.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,6 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     BackgroundToastComponent,
     SpinnerComponent,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -46,7 +46,7 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [SpinnerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

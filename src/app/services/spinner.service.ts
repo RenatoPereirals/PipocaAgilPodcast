@@ -5,23 +5,19 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SpinnerService {
-  private showSpinnerSubject = new BehaviorSubject<boolean>(false);
+  public showSpinnerSubject = false;
 
   constructor() {}
 
   show(): void {
-    this.showSpinnerSubject.next(true);
+    this.showSpinnerSubject = true;
 
     setTimeout(() => {
       this.hide();
-    }, 2000);
+    }, 4000);
   }
 
   hide(): void {
-    this.showSpinnerSubject.next(false);
-  }
-
-  getSpinnerVisibility(): Observable<boolean> {
-    return this.showSpinnerSubject.asObservable();
+    this.showSpinnerSubject = true;
   }
 }

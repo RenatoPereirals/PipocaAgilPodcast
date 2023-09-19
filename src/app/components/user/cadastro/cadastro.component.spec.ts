@@ -3,6 +3,7 @@ import {
   ComponentFixture,
   TestBed,
   fakeAsync,
+  flushMicrotasks,
   tick,
 } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -76,7 +77,7 @@ describe('CadastroComponent', () => {
     expect(form.valid).toBeTruthy();
   });
 
-  it('deve registrar o usuário com sucesso', fakeAsync(() => {
+  it('deve registrar o usuário com sucesso', () => {
     const user = {
       nomeCompleto: 'John Doe',
       email: 'john@example.com',
@@ -86,17 +87,17 @@ describe('CadastroComponent', () => {
       termo: true,
     };
 
-    spyOn(userService, 'register').and.returnValue(of());
+    spyOn(userService, 'register').and.returnValue(of(void 0));
+
+    spyOn(toastService, 'errorRegistration');
 
     component.form.setValue(user);
-    component.registerUser();
 
-    fixture.detectChanges();
-    tick();
+    component.registerUser();
 
     expect(userService.register).toHaveBeenCalledWith(user);
     expect(toastService.errorRegistration).not.toHaveBeenCalled();
-  }));
+  });
 
   it('deve lidar com erro durante o registro', () => {
     spyOn(userService, 'register').and.returnValue(

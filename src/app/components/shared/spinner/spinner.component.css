@@ -27,59 +27,65 @@
   border-radius: 50%;
   background-color: transparent;
   animation: fillEmpty 6s linear infinite;
+  border: 5px solid #fecf5d;
+  box-sizing: border-box; /* Mantém o tamanho total fixo incluindo a borda */
 }
 
 /* Configuração de cores para cada bolinha */
 .circle:nth-child(1) {
-  border: none;
+  border: 5px solid #fecf5d;
   animation-delay: 0s;
-  border-color: #fecf5d; /* Cor da primeira bolinha */
 }
 
 .circle:nth-child(2) {
-  border: none;
+  border: 5px solid #fecf5d;
   animation-delay: 0.5s;
-  border-color: #fecf5d; /* Cor da segunda bolinha */
 }
 
 .circle:nth-child(3) {
-  border: none;
+  border: 5px solid #fecf5d;
   animation-delay: 1s;
-  border-color: #fecf5d; /* Cor da terceira bolinha */
 }
 
 @keyframes fillEmpty {
   0% {
+    background-color: #fecf5d; /* Todas as bolinhas começam preenchidas */
+    border-color: #fecf5d;
+  }
+  8.33% {
+    background-color: #fecf5d; /* Primeira bolinha preenchida por 8.33% da animação (~0.25 segundos) */
+  }
+  16.67% {
+    background-color: transparent; /* Primeira bolinha fica vazia por 8.33% da animação (~0.25 segundos) */
+  }
+  25% {
     background-color: transparent;
   }
-  10% {
-    background-color: #fecf5d; /* Bolinhas preenchidas por 10% da animação */
+  33.33% {
+    background-color: #fecf5d; /* Segunda bolinha preenchida por 8.33% da animação (~0.25 segundos) */
   }
-  20% {
-    background-color: transparent; /* Bolinhas ficam transparentes por 20% da animação */
-  }
-  30% {
-    background-color: transparent; /* Bolinhas ficam transparentes por 10% da animação */
-  }
-  40% {
-    background-color: #fecf5d; /* Bolinhas preenchidas por 10% da animação */
+  41.67% {
+    background-color: transparent; /* Segunda bolinha fica vazia por 8.33% da animação (~0.25 segundos) */
   }
   50% {
-    background-color: transparent; /* Bolinhas ficam transparentes por 20% da animação */
-  }
-  60% {
-    background-color: transparent; /* Bolinhas ficam transparentes por 10% da animação */
-  }
-  70% {
-    background-color: #fecf5d; /* Bolinhas preenchidas por 10% da animação */
-  }
-  80% {
     background-color: transparent;
   }
-  90% {
+  58.33% {
+    background-color: #fecf5d; /* Terceira bolinha preenchida por 8.33% da animação (~0.25 segundos) */
+  }
+  66.67% {
+    background-color: transparent; /* Terceira bolinha fica vazia por 8.33% da animação (~0.25 segundos) */
+  }
+  75% {
     background-color: transparent;
+  }
+  83.33% {
+    background-color: #fecf5d; /* Todas as bolinhas ficam preenchidas novamente por 8.33% da animação (~0.25 segundos) */
+  }
+  91.67% {
+    background-color: #fecf5d;
   }
   100% {
-    background-color: transparent;
+    background-color: transparent; /* Todas as bolinhas ficam vazias por 8.33% da animação (~0.25 segundos) */
   }
 }

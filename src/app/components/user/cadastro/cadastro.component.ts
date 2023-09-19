@@ -51,6 +51,10 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
+    console.log(this.spinnerService.showSpinnerSubject);
+    this.spinnerService.show();
+    console.log(this.spinnerService.showSpinnerSubject);
+    this.spinnerService.hide();
   }
 
   showErrorForRequiredFields() {
@@ -127,14 +131,29 @@ export class CadastroComponent implements OnInit {
   }
 
   registerUser(): void {
+    this.spinnerService.show();
+
+    if (this.form.invalid) {
+      this.showErrorForRequiredFields();
+      this.toast.errorRegistration();
+
+      return;
+    }
+
     this.user = { ...this.form.value };
 
-    this.userService
-      .register(this.user)
-      .subscribe(() => this.router.navigateByUrl('/')),
-      this.toast.confirmRegistration();
-    (error: any) => {
-      this.toast.errorRegistration(), console.log('Erro ao cadastrar');
-    };
+    this.userService.register(this.user).subscribe({
+      next: () => {},
+      error: (error) => {
+        this.toast.errorRegistration();
+        console.log('Erro ao cadastrar', error);
+      },
+      complete: () => {
+        setTimeout(() => {
+          this.spinnerService.hide();
+          this.toast.confirmRegistration(); // Exiba o toast após a conclusão do spinner.
+        }, 4000);
+      },
+    });
   }
 }

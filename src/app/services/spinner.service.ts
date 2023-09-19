@@ -14,10 +14,10 @@ export class SpinnerService {
 
     setTimeout(() => {
       this.hide();
-    }, 4000);
+    }, 2000);
   }
 
   hide(): void {
-    this.showSpinnerSubject = true;
+    this.showSpinnerSubject = false;
   }
 }

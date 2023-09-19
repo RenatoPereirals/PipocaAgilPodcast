@@ -152,7 +152,7 @@ export class CadastroComponent implements OnInit {
         setTimeout(() => {
           this.spinnerService.hide();
           this.toast.confirmRegistration(); // Exiba o toast após a conclusão do spinner.
-        }, 4000);
+        }, 2000);
       },
     });
   }

@@ -2,6 +2,6 @@ export interface User {
   id: number;
   nomeCompleto: string;
   email: string;
-  date: string;
+  date: Date;
   password: string;
 }

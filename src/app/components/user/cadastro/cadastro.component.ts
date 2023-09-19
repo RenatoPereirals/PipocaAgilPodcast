@@ -7,6 +7,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { ValidatorField } from 'src/app/helpers/ValidatorField';
 import { User } from 'src/app/models/user';
@@ -14,6 +15,7 @@ import { User } from 'src/app/models/user';
 import { DatePickerService } from 'src/app/services/date-picker.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { UserFakeService } from 'src/app/services/user-fake.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -36,7 +38,9 @@ export class CadastroComponent implements OnInit {
     private fb: FormBuilder,
     private toast: ToastService,
     private dateService: DatePickerService,
-    private spinnerService: SpinnerService
+    private spinnerService: SpinnerService,
+    private userService: UserFakeService,
+    public router: Router
   ) {
     this.form = this.dateService.createForm();
   }
@@ -47,18 +51,6 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-  }
-
-  spinner() {
-    this.spinnerService.show();
-  }
-
-  confirmRegistration(): void {
-    this.toast.confirmRegistration();
-  }
-
-  errorRegistration(): void {
-    this.toast.errorRegistration();
   }
 
   showErrorForRequiredFields() {
@@ -132,5 +124,17 @@ export class CadastroComponent implements OnInit {
     campoForm: FormControl | AbstractControl
   ): any {
     return { 'invalid-background': campoForm.errors && campoForm.touched };
+  }
+
+  registerUser(): void {
+    this.user = { ...this.form.value };
+
+    this.userService
+      .register(this.user)
+      .subscribe(() => this.router.navigateByUrl('/')),
+      this.toast.confirmRegistration();
+    (error: any) => {
+      this.toast.errorRegistration(), console.log('Erro ao cadastrar');
+    };
   }
 }

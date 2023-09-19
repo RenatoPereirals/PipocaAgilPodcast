@@ -23,6 +23,7 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
 @NgModule({
   declarations: [
     AppComponent,
+    ToastComponent,
     ContatoComponent,
     EpisodiosComponent,
     GaleriaComponent,
@@ -34,7 +35,6 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     FooterComponent,
     UserComponent,
     CadastroComponent,
-    ToastComponent,
     BackgroundToastComponent,
     SpinnerComponent,
   ],

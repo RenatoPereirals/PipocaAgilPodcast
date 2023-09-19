@@ -12,7 +12,7 @@ import { CadastroComponent } from './components/user/cadastro/cadastro.component
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'conatatos', component: ContatoComponent },
+  { path: 'contatos', component: ContatoComponent },
   { path: 'episosdios', component: EpisodiosComponent },
   { path: 'galeria', component: GaleriaComponent },
   { path: 'politicap', component: PoliticapComponent },

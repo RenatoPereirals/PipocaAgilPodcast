@@ -31,7 +31,7 @@
 .nav {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-end;
   align-items: center;
   width: 499.944px;
   height: 63.73px;
@@ -46,8 +46,8 @@
   background-color: transparent;
 }
 
-.nav button > img {
-  margin-left: 21px;
+img {
+  margin-right: 21px;
   width: 24px;
   height: 24px;
   flex-shrink: 0;

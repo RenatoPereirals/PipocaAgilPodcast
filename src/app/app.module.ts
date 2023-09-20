@@ -20,6 +20,7 @@ import { ToastComponent } from './components/shared/toasts/toast/toast.component
 import { BackgroundToastComponent } from './components/shared/toasts/background-toast/background-toast.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 import { SpinnerService } from './services/spinner.service';
+import { RecuperarSenhaComponent } from './components/user/recuperar-senha/recuperar-senha.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SpinnerService } from './services/spinner.service';
     CadastroComponent,
     BackgroundToastComponent,
     SpinnerComponent,
+    RecuperarSenhaComponent,
   ],
   imports: [
     BrowserModule,

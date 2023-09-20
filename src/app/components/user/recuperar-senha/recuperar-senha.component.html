@@ -12,11 +12,8 @@
   <form [formGroup]="form" id="formlogin1">
     <section class="formcad">
       <aside class="crieconta">
-        <h2>Acesse sua conta</h2>
-        <p>
-          Acesse à conteúdos especiais e benefícios exclusivos do nosso Clube
-          Assinante.
-        </p>
+        <h2>Redefinir Senha</h2>
+        <p>Digite sua nova senha no campo abaixa e confirme</p>
       </aside>
       <p class="login">
         Não tem conta?
@@ -24,35 +21,6 @@
       </p>
     </section>
     <fieldset class="registration">
-      <div class="email">
-        <label for="e-mail">E-mail </label>
-        <input
-          class="username"
-          type="email"
-          name="email"
-          placeholder="exemplo@exemplo.com"
-          formControlName="email"
-          [ngClass]="cssValidator(f.email)"
-          [ngClass]="
-            f.email.valid
-              ? cssBackgroundValidator(f.email)
-              : cssBackgroundInvalidator(f.email)
-          "
-          [(ngModel)]="user.email"
-        />
-        <div
-          *ngIf="f.email.errors?.required && f.email.touched"
-          class="invalid-feedback"
-        >
-          E-mail é obrigatório.
-        </div>
-        <div
-          *ngIf="f.email.errors?.email && f.email.touched"
-          class="invalid-feedback"
-        >
-          Precisa ser um e-mail válido.
-        </div>
-      </div>
       <div class="password">
         <label for="password">Senha:</label>
         <div class="password-input">
@@ -97,6 +65,52 @@
           Deve conter no mínimo 8 caracteres.
         </div>
       </div>
+
+      <div class="password">
+        <label for="passwordconf">Confirmar Senha:</label>
+        <div class="password-input">
+          <input
+            class="username"
+            id="confirmePassword"
+            type="password"
+            name="confirmasenha"
+            formControlName="confirmePassword"
+            [ngClass]="{
+              'is-invalid':
+                f.confirmePassword.errors && f.confirmePassword.touched
+            }"
+            [ngClass]="
+              f.confirmePassword.valid
+                ? cssBackgroundValidator(f.confirmePassword)
+                : cssBackgroundInvalidator(f.confirmePassword)
+            "
+            placeholder="Confirme a senha"
+          />
+          <img
+            class="show"
+            id="toggleConfirmPassword"
+            src="../../../../assets/image/Hide.png"
+            alt=""
+            (click)="
+            togglePasswordVisibility('confirmePassword', 'toggleConfirmPassword')
+            "
+          />
+        </div>
+        <div
+          *ngIf="f.confirmePassword.errors?.mustMatch"
+          class="invalid-feedback"
+        >
+          As senhas devem ser iguais.
+        </div>
+        <div
+          *ngIf="
+            f.confirmePassword.errors?.required && f.confirmePassword.touched
+          "
+          class="invalid-feedback"
+        >
+          Confirmar Senha é obrigatória.
+        </div>
+      </div>
       <button
         class="btn btn-confirm txt-btn"
         type="submit"
@@ -105,9 +119,6 @@
       >
         Confirmar
       </button>
-      <div class="newPassword">
-        <p>Esqueceu a senha? <a href="/forgot-password">Clique aqui!</a></p>
-      </div>
     </fieldset>
   </form>
 </main>

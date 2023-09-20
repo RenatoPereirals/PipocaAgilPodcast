@@ -9,6 +9,7 @@ import { PoliticapComponent } from './components/politicap/politicap.component';
 import { TermoeconComponent } from './components/termoecon/termoecon.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
+import { RecuperarSenhaComponent } from './components/user/recuperar-senha/recuperar-senha.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'termoecon', component: TermoeconComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: RecuperarSenhaComponent },
 ];
 
 @NgModule({

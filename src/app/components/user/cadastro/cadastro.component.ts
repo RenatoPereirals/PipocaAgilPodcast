@@ -38,7 +38,7 @@ export class CadastroComponent implements OnInit {
     private fb: FormBuilder,
     private toast: ToastService,
     private dateService: DatePickerService,
-    private spinnerService: SpinnerService,
+    public spinnerService: SpinnerService,
     private userService: UserFakeService,
     public router: Router
   ) {
@@ -157,4 +157,3 @@ export class CadastroComponent implements OnInit {
     });
   }
 }
- 

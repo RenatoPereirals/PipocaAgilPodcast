@@ -2,6 +2,10 @@
 
 Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) na versão 16.1.4.
 
+## Visão Geral
+
+Desenvolver uma plataforma de conteúdo multimídia onde os usuários possam acessar fotos, eventos e episódios de podcast. Os usuários podem explorar, pesquisar e interagir com o conteúdo. Os administradores podem gerenciar o conteúdo e as análises da plataforma.
+
 **Tecnologias Utilizadas:**
 - HTML
 - CSS

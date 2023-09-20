@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,14 +16,15 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { UserComponent } from './components/user/user.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
-import { PaginationComponent } from './components/shared/pagination/pagination.component';
 import { ToastComponent } from './components/shared/toasts/toast/toast.component';
 import { BackgroundToastComponent } from './components/shared/toasts/background-toast/background-toast.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+import { SpinnerService } from './services/spinner.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ToastComponent,
     ContatoComponent,
     EpisodiosComponent,
     GaleriaComponent,
@@ -35,8 +36,6 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     FooterComponent,
     UserComponent,
     CadastroComponent,
-    PaginationComponent,
-    ToastComponent,
     BackgroundToastComponent,
     SpinnerComponent,
   ],
@@ -47,7 +46,7 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [SpinnerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

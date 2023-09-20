@@ -2,14 +2,14 @@
   <nav class="navigator">
     <div class="logo-pipoca">
       <img
-      class="logo-popoca-agil-1"
+        class="logo-popoca-agil-1"
         src="../../../../assets/image/logo-pipoca-agil.png"
         alt="logo-pipoca-agil"
       />
     </div>
     <div class="menu">
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/cadastro">Blog</a></li>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/blog">Blog</a></li>
       <li><a routerLink="/episosdios">Episódios</a></li>
       <li><a routerLink="/contatos">Contato</a></li>
     </div>
@@ -21,14 +21,21 @@
     </div>
   </nav>
   <div class="container">
-    <h1>“O Podcast mais animado do Mundo Ágil”</h1>
+    <div class="title-background">
+      <div class="title">“O Podcast mais animado do Mundo Ágil”</div>
+    </div>
     <div class="container-button">
       <h2>
         Assine e seja membro para ter acesso a <br />
         conteúdos exclusivos.
       </h2>
-      <button class="btn btn-confirm txt-btn" id="assinar" onclick="login()">
-        Assinar
+      <button
+        routerLink="/cadastro"
+        class="btn btn-confirm txt-btn"
+        id="assinar"
+        onclick="login()"
+      >
+        <p>ASSINAR</p>
       </button>
     </div>
   </div>

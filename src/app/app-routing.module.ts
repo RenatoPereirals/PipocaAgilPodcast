@@ -9,20 +9,16 @@ import { PoliticapComponent } from './components/politicap/politicap.component';
 import { TermoeconComponent } from './components/termoecon/termoecon.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
-import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
-
-  { path: 'home', component: HomeComponent },
-  { path: 'conatatos', component: ContatoComponent },
+  { path: '', component: HomeComponent },
+  { path: 'contatos', component: ContatoComponent },
   { path: 'episosdios', component: EpisodiosComponent },
   { path: 'galeria', component: GaleriaComponent },
   { path: 'politicap', component: PoliticapComponent },
   { path: 'termoecon', component: TermoeconComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
-
-
 ];
 
 @NgModule({

@@ -1,26 +1,91 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
 .spinner-container {
   position: fixed;
-  top: 5em;
-  margin-left: 50%;
-  left: -25%;
-  flex-shrink: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-.spinner {
-  border: 4px solid rgba(255, 255, 255, 0.3);
+.circle {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
   border-radius: 50%;
-  border-top: 4px solid #3498db;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
+  background-color: transparent;
+  animation: fillEmpty 6s linear infinite;
+  border: 5px solid #fecf5d;
+  box-sizing: border-box; /* Mantém o tamanho total fixo incluindo a borda */
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* Configuração de cores para cada bolinha */
+.circle:nth-child(1) {
+  border: 5px solid #fecf5d;
+  animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+  border: 5px solid #fecf5d;
+  animation-delay: 0.5s;
+}
+
+.circle:nth-child(3) {
+  border: 5px solid #fecf5d;
+  animation-delay: 1s;
+}
+
+@keyframes fillEmpty {
+  0% {
+    background-color: #fecf5d; /* Todas as bolinhas começam preenchidas */
+    border-color: #fecf5d;
+  }
+  8.33% {
+    background-color: #fecf5d; /* Primeira bolinha preenchida por 8.33% da animação (~0.25 segundos) */
+  }
+  16.67% {
+    background-color: transparent; /* Primeira bolinha fica vazia por 8.33% da animação (~0.25 segundos) */
+  }
+  25% {
+    background-color: transparent;
+  }
+  33.33% {
+    background-color: #fecf5d; /* Segunda bolinha preenchida por 8.33% da animação (~0.25 segundos) */
+  }
+  41.67% {
+    background-color: transparent; /* Segunda bolinha fica vazia por 8.33% da animação (~0.25 segundos) */
+  }
+  50% {
+    background-color: transparent;
+  }
+  58.33% {
+    background-color: #fecf5d; /* Terceira bolinha preenchida por 8.33% da animação (~0.25 segundos) */
+  }
+  66.67% {
+    background-color: transparent; /* Terceira bolinha fica vazia por 8.33% da animação (~0.25 segundos) */
+  }
+  75% {
+    background-color: transparent;
+  }
+  83.33% {
+    background-color: #fecf5d; /* Todas as bolinhas ficam preenchidas novamente por 8.33% da animação (~0.25 segundos) */
+  }
+  91.67% {
+    background-color: #fecf5d;
+  }
+  100% {
+    background-color: transparent; /* Todas as bolinhas ficam vazias por 8.33% da animação (~0.25 segundos) */
+  }
 }

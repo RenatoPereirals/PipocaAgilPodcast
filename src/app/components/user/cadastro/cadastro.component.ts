@@ -7,11 +7,15 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { ValidatorField } from 'src/app/helpers/ValidatorField';
 import { User } from 'src/app/models/user';
+
 import { DatePickerService } from 'src/app/services/date-picker.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { UserFakeService } from 'src/app/services/user-fake.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -33,7 +37,10 @@ export class CadastroComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private toast: ToastService,
-    private dateService: DatePickerService
+    private dateService: DatePickerService,
+    public spinnerService: SpinnerService,
+    private userService: UserFakeService,
+    public router: Router
   ) {
     this.form = this.dateService.createForm();
   }
@@ -44,14 +51,10 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-  }
-
-  confirmRegistration(): void {
-    this.toast.confirmRegistration();
-  }
-
-  errorRegistration(): void {
-    this.toast.errorRegistration();
+    console.log(this.spinnerService.showSpinnerSubject);
+    this.spinnerService.show();
+    console.log(this.spinnerService.showSpinnerSubject);
+    this.spinnerService.hide();
   }
 
   showErrorForRequiredFields() {
@@ -125,5 +128,32 @@ export class CadastroComponent implements OnInit {
     campoForm: FormControl | AbstractControl
   ): any {
     return { 'invalid-background': campoForm.errors && campoForm.touched };
+  }
+
+  registerUser(): void {
+    this.spinnerService.show();
+
+    if (this.form.invalid) {
+      this.showErrorForRequiredFields();
+      this.toast.errorRegistration();
+
+      return;
+    }
+
+    this.user = { ...this.form.value };
+
+    this.userService.register(this.user).subscribe({
+      next: () => {},
+      error: (error) => {
+        this.toast.errorRegistration();
+        console.log('Erro ao cadastrar', error);
+      },
+      complete: () => {
+        setTimeout(() => {
+          this.spinnerService.hide();
+          this.toast.confirmRegistration(); // Exiba o toast após a conclusão do spinner.
+        }, 2000);
+      },
+    });
   }
 }

@@ -11,7 +11,7 @@
   </article>
 
   <!-- FORMULÁRIO -->
-  <form [formGroup]="form" id="form">
+  <form [formGroup]="form" id="form" (ngSubmit)="registerUser()">
     <section class="formcad">
       <aside class="crieconta">
         <h2>Crie sua conta</h2>
@@ -171,7 +171,7 @@
         <div class="password-input">
           <input
             class="username"
-            id="confirmPasswordInput"
+            id="confirmePassword"
             type="password"
             name="confirmasenha"
             formControlName="confirmePassword"
@@ -226,8 +226,11 @@
         [checked]="f.termo.value"
       />
       <label for="termo"
-        >Concordo com os <a routerLink="#" target="_blank">Termos de Uso</a> e
-        <a routerLink="#" target="_blank">Política de Privacidade</a></label
+        >Concordo com os
+        <a routerLink="/termoecon" target="_blank">Termos de Uso</a> e
+        <a routerLink="/politicap" target="_blank"
+          >Política de Privacidade</a
+        ></label
       >
       <div
         *ngIf="f.termo.errors?.required && f.termo.touched"
@@ -237,14 +240,7 @@
       </div>
     </div>
     <div>
-      <button
-        class="btn btn-confirm txt-btn"
-        type="submit"
-        (click)="form.valid ? confirmRegistration() : errorRegistration()"
-        (click)="
-          form.valid ? confirmRegistration() : showErrorForRequiredFields()
-        "
-      >
+      <button class="btn btn-confirm txt-btn" type="submit">
         <!-- [disabled]="!form.valid" -->
         Confirmar
       </button>

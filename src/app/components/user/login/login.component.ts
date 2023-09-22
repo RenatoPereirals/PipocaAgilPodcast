@@ -48,10 +48,6 @@ export class LoginComponent implements OnInit {
     this.validation();
   }
 
-  errorRegistration(): void {
-    this.toast.errorRegistration();
-  }
-
   showErrorForRequiredFields() {
     Object.keys(this.form.controls).forEach((field) => {
       const control = this.form.get(field);
@@ -113,7 +109,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('/');
           console.log('usuário logado');
         } else {
-          this.toast.errorRegistration();
+          this.toast.errorRegistration('Erro', 'Erro ap tentar fazer login', 'error');
           console.log( 'Usuário não cadastrado no sistema');
           this.router.navigateByUrl('/cadastro');
         }

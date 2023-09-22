@@ -37,7 +37,7 @@ export class RecuperarSenhaComponent {
   }
 
   errorRegistration(): void {
-    this.toast.errorRegistration();
+    this.toast.errorRegistration('Erro', 'Error ao tentar recuperar senha', 'error');
   }
 
   showErrorForRequiredFields() {

@@ -37,8 +37,8 @@ export class ToastService {
     );
   }
 
-  errorRegistration(): void {
-    this.showMessage('Erro no cadastro!', 'Corrija os erros abaixo!', 'error');
+  errorRegistration(title: string, message: string, messageType: 'confirmation' | 'error'): void {
+    this.showMessage(title, message, messageType);
   }
 
   clear() {

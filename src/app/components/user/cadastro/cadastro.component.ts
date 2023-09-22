@@ -148,7 +148,7 @@ export class CadastroComponent implements OnInit {
 
     if (this.form.invalid) {
       this.showErrorForRequiredFields();
-      this.toast.errorRegistration();
+      this.toast.errorRegistration('Erro ao se cadasrar!', 'Corrija os erros abaixo', 'error');
 
       return;
     }
@@ -158,7 +158,7 @@ export class CadastroComponent implements OnInit {
     this.userService.register(this.user).subscribe({
       next: () => {},
       error: (error) => {
-        this.toast.errorRegistration();
+        this.toast.errorRegistration('Erro ao se cadasrar!', 'Corrija os erros abaixo', 'error');
         console.log('Erro ao cadastrar', error);
       },
       complete: () => {

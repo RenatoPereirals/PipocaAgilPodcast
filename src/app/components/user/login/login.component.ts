@@ -7,10 +7,14 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserLogin } from 'src/app/models/UserLogin';
 
 import { User } from 'src/app/models/user';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 import { ToastService } from 'src/app/services/toast.service';
+import { UserFakeService } from 'src/app/services/user-fake.service';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +24,7 @@ import { ToastService } from 'src/app/services/toast.service';
 export class LoginComponent implements OnInit {
   passwordVisible = false;
   imgShow = false;
+  model = {} as UserLogin;
 
   form!: FormGroup;
   user = {} as User;
@@ -27,7 +32,13 @@ export class LoginComponent implements OnInit {
   imageFechadaUrl: string = '../../../../assets/image/Hide.png';
   imageAbertaUrl: string = '../../../../assets/image/show.png';
 
-  constructor(private fb: FormBuilder, private toast: ToastService) {}
+  constructor(
+    private fb: FormBuilder,
+    private toast: ToastService,
+    private userSevice: UserFakeService,
+    private spinnerService: SpinnerService,
+    private router: Router
+  ) {}
 
   get f(): any {
     return this.form.controls;
@@ -86,5 +97,36 @@ export class LoginComponent implements OnInit {
     campoForm: FormControl | AbstractControl
   ): any {
     return { 'invalid-background': campoForm.errors && campoForm.touched };
+  }
+
+  login(): void {
+    this.spinnerService.show();
+
+    const userLogin: UserLogin = {
+      email: this.form.get('email')?.value,
+      password: this.form.get('password')?.value,
+    };
+
+    this.userSevice.login(userLogin.email, userLogin.password).subscribe({
+      next: (result) => {
+        if (result) {
+          this.router.navigateByUrl('/');
+          console.log('usuário logado');
+        } else {
+          this.toast.errorRegistration();
+          console.log( 'Usuário não cadastrado no sistema');
+          this.router.navigateByUrl('/cadastro');
+        }
+      },
+      error: (error) => {
+        console.error(error);
+      },
+      complete: () => {
+        setTimeout(() => {
+          this.spinnerService.hide();
+          this.toast.confirmRegistration(); // Exiba o toast após a conclusão do spinner.
+        }, 2000);
+      },
+    });
   }
 }

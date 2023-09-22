@@ -23,7 +23,7 @@ describe('ToastService', () => {
   });
 
   it('should set error message correctly', () => {
-    service.errorRegistration();
+    service.errorRegistration('Erro no cadastro!', 'Corrija os erros abaixo!', 'error');
     expect(service.title).toBe('Erro no cadastro!');
     expect(service.message).toContain('Corrija os erros abaixo!');
     expect(service.messageType).toBe('error');

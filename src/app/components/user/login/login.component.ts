@@ -106,12 +106,20 @@ export class LoginComponent implements OnInit {
     this.userSevice.login(userLogin.email, userLogin.password).subscribe({
       next: (result) => {
         if (result) {
-          this.router.navigateByUrl('/');
           console.log('usuário logado');
+          setTimeout(() => {
+            this.toast.confirmRegistration();
+            this.router.navigateByUrl('/');
+          }, 2000);
         } else {
-          this.toast.errorRegistration('Erro', 'Erro ap tentar fazer login', 'error');
-          console.log( 'Usuário não cadastrado no sistema');
-          this.router.navigateByUrl('/cadastro');
+          setTimeout(() => {
+            this.toast.errorRegistration(
+              'Erro ao tentar fazer login!',
+              'E-mail ou senha estão errados',
+              'error'
+            );
+          }, 2000);
+          console.log('Usuário não cadastrado no sistema');
         }
       },
       error: (error) => {
@@ -120,7 +128,6 @@ export class LoginComponent implements OnInit {
       complete: () => {
         setTimeout(() => {
           this.spinnerService.hide();
-          this.toast.confirmRegistration(); // Exiba o toast após a conclusão do spinner.
         }, 2000);
       },
     });

@@ -21,7 +21,6 @@ export class DatePickerService {
       return { invalidDatePattern: true };
     }
 
-    // Validação de data real
     const parts = control.value.split('/');
     const day = parseInt(parts[0], 10);
     const month = parseInt(parts[1], 10);

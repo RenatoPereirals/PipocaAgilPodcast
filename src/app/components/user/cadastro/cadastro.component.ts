@@ -83,6 +83,19 @@ export class CadastroComponent implements OnInit {
       : this.imageFechadaUrl;
   }
 
+  togglecomfirmPasswordVisibility(inputId: string, imgId: string): void {
+    this.passwordVisible = !this.passwordVisible;
+    this.imgShow = !this.imgShow;
+
+    const passwordInput = document.getElementById(inputId) as HTMLInputElement;
+    const togglePassword = document.getElementById(imgId) as HTMLImageElement;
+
+    passwordInput.type = this.passwordVisible ? 'text' : 'password';
+    togglePassword.src = this.imgShow
+      ? this.imageAbertaUrl
+      : this.imageFechadaUrl;
+  }
+
   private validation(): void {
     const formOptions: AbstractControlOptions = {
       validators: ValidatorField.MustMatch('password', 'confirmePassword'),
@@ -131,27 +144,38 @@ export class CadastroComponent implements OnInit {
   }
 
   registerUser(): void {
-    this.spinnerService.show();
-
     if (this.form.invalid) {
       this.showErrorForRequiredFields();
-      this.toast.errorRegistration();
+      this.toast.errorRegistration(
+        'Erro ao se cadasrar!',
+        'Corrija os erros abaixo',
+        'error'
+      );
 
       return;
     }
+    this.spinnerService.show();
 
     this.user = { ...this.form.value };
 
     this.userService.register(this.user).subscribe({
       next: () => {},
       error: (error) => {
-        this.toast.errorRegistration();
+        this.toast.errorRegistration(
+          'Erro ao se cadasrar!',
+          'Corrija os erros abaixo',
+          'error'
+        );
         console.log('Erro ao cadastrar', error);
       },
       complete: () => {
         setTimeout(() => {
           this.spinnerService.hide();
-          this.toast.confirmRegistration(); // Exiba o toast após a conclusão do spinner.
+          this.toast.confirmRegistration(
+            'Cadastro realizado',
+            'A <strong>confirmação</strong> do seu <strong>cadastro</strong> será enviado pelo <strong>e-mail associado</strong> à sua nova conta',
+            'confirmation'
+          ); // Exiba o toast após a conclusão do spinner.
         }, 2000);
       },
     });

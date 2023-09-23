@@ -7,10 +7,15 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserLogin } from 'src/app/models/UserLogin';
 
 import { User } from 'src/app/models/user';
+import { LoginAttempService } from 'src/app/services/login-attemp.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 import { ToastService } from 'src/app/services/toast.service';
+import { UserFakeService } from 'src/app/services/user-fake.service';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +25,7 @@ import { ToastService } from 'src/app/services/toast.service';
 export class LoginComponent implements OnInit {
   passwordVisible = false;
   imgShow = false;
+  model = {} as UserLogin;
 
   form!: FormGroup;
   user = {} as User;
@@ -27,7 +33,14 @@ export class LoginComponent implements OnInit {
   imageFechadaUrl: string = '../../../../assets/image/Hide.png';
   imageAbertaUrl: string = '../../../../assets/image/show.png';
 
-  constructor(private fb: FormBuilder, private toast: ToastService) {}
+  constructor(
+    private fb: FormBuilder,
+    private toast: ToastService,
+    private userSevice: UserFakeService,
+    private spinnerService: SpinnerService,
+    private router: Router,
+    private loginAttemps: LoginAttempService
+  ) {}
 
   get f(): any {
     return this.form.controls;
@@ -35,10 +48,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-  }
-
-  errorRegistration(): void {
-    this.toast.errorRegistration();
   }
 
   showErrorForRequiredFields() {
@@ -86,5 +95,64 @@ export class LoginComponent implements OnInit {
     campoForm: FormControl | AbstractControl
   ): any {
     return { 'invalid-background': campoForm.errors && campoForm.touched };
+  }
+
+  login(): void {
+    const userLogin: UserLogin = {
+      email: this.form.get('email')?.value,
+      password: this.form.get('password')?.value,
+    };
+
+    if (this.form.invalid) {
+      this.showErrorForRequiredFields();
+      this.toast.errorRegistration(
+        'Erro ao fazer login!',
+        'Corrija os erros abaixo',
+        'error'
+      );
+    } else if (this.loginAttemps.isLoginBlocked(userLogin.email)) {
+      this.toast.confirmRegistration(
+        'Você atingiu o número máximo de tentativas',
+        'Você está bloqueado temporariamente',
+        'confirmation'
+      );
+    } else {
+      // Todas as validações passaram, pode fazer a tentativa de login
+      this.spinnerService.show();
+
+      this.userSevice.login(userLogin.email, userLogin.password).subscribe({
+        next: (result) => {
+          if (result) {
+            console.log('usuário logado');
+            setTimeout(() => {
+              this.toast.confirmRegistration(
+                'Login bem-sucedido',
+                'Você está logado na sua conta.',
+                'confirmation'
+              );
+              this.router.navigateByUrl('/');
+            }, 2000);
+          } else {
+            setTimeout(() => {
+              this.toast.errorRegistration(
+                'Erro ao tentar fazer login!',
+                'E-mail ou senha estão errados',
+                'error'
+              );
+              this.loginAttemps.recordLoginAttemp(userLogin.email); // Registra tentativa de login
+            }, 2000);
+            console.log('Usuário não cadastrado no sistema');
+          }
+        },
+        error: (error) => {
+          console.error(error);
+        },
+        complete: () => {
+          setTimeout(() => {
+            this.spinnerService.hide();
+          }, 2000);
+        },
+      });
+    }
   }
 }

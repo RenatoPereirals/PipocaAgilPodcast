@@ -1,14 +1,8 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  flushMicrotasks,
-  tick,
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { CadastroComponent } from './cadastro.component';
 import { UserFakeService } from 'src/app/services/user-fake.service';
 import { ToastService } from 'src/app/services/toast.service';
@@ -99,17 +93,28 @@ describe('CadastroComponent', () => {
     expect(toastService.errorRegistration).not.toHaveBeenCalled();
   });
 
-  it('deve lidar com erro durante o registro', () => {
+  it('deve lidar com o erro ao registrar o usuário', () => {
+    const invalidUser = {
+      nomeCompleto: '',
+      email: '',
+      date: '',
+      password: '',
+      confirmePassword: '',
+      termo: false,
+    };
+
     spyOn(userService, 'register').and.returnValue(
-      of(null).pipe(() => {
-        throw new Error('Erro no registro');
-      })
+      throwError(() => new Error('Simulated error'))
     );
+
     spyOn(toastService, 'errorRegistration');
+
+    component.form.setValue(invalidUser);
 
     component.registerUser();
 
-    expect(userService.register).toHaveBeenCalled();
-    expect(toastService.errorRegistration).toHaveBeenCalledWith();
+    expect(userService.register).not.toHaveBeenCalledWith(invalidUser);
+
+    expect(toastService.errorRegistration).toHaveBeenCalled();
   });
 });

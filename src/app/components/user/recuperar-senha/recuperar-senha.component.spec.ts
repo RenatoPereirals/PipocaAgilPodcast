@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginComponent } from './login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecuperarSenhaComponent } from './recuperar-senha.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+describe('RecuperarSenhaComponent', () => {
+  let component: RecuperarSenhaComponent;
+  let fixture: ComponentFixture<RecuperarSenhaComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginComponent],
+      declarations: [RecuperarSenhaComponent],
       imports: [
         FormsModule,
         ReactiveFormsModule,
@@ -19,7 +19,7 @@ describe('LoginComponent', () => {
         HttpClientTestingModule,
       ],
     });
-    fixture = TestBed.createComponent(LoginComponent);
+    fixture = TestBed.createComponent(RecuperarSenhaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

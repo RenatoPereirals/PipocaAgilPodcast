@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { EpisodiosComponent } from './components/episodios/episodios.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
-import { LoginComponent } from './components/user/login/login.component';
 import { PoliticapComponent } from './components/politicap/politicap.component';
 import { TermoeconComponent } from './components/termoecon/termoecon.component';
 import { HomeComponent } from './components/home/home.component';
@@ -20,6 +19,8 @@ import { ToastComponent } from './components/shared/toasts/toast/toast.component
 import { BackgroundToastComponent } from './components/shared/toasts/background-toast/background-toast.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 import { SpinnerService } from './services/spinner.service';
+import { RecuperarSenhaComponent } from './components/user/recuperar-senha/recuperar-senha.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SpinnerService } from './services/spinner.service';
     CadastroComponent,
     BackgroundToastComponent,
     SpinnerComponent,
+    RecuperarSenhaComponent,
   ],
   imports: [
     BrowserModule,

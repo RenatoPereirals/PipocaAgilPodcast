@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { UserLogin } from 'src/app/models/UserLogin';
 
 import { User } from 'src/app/models/user';
+import { LoginAttempService } from 'src/app/services/login-attemp.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 
 import { ToastService } from 'src/app/services/toast.service';
@@ -37,7 +38,8 @@ export class LoginComponent implements OnInit {
     private toast: ToastService,
     private userSevice: UserFakeService,
     private spinnerService: SpinnerService,
-    private router: Router
+    private router: Router,
+    private loginAttemps: LoginAttempService
   ) {}
 
   get f(): any {
@@ -96,40 +98,61 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.spinnerService.show();
-
     const userLogin: UserLogin = {
       email: this.form.get('email')?.value,
       password: this.form.get('password')?.value,
     };
 
-    this.userSevice.login(userLogin.email, userLogin.password).subscribe({
-      next: (result) => {
-        if (result) {
-          console.log('usuário logado');
+    if (this.form.invalid) {
+      this.showErrorForRequiredFields();
+      this.toast.errorRegistration(
+        'Erro ao fazer login!',
+        'Corrija os erros abaixo',
+        'error'
+      );
+    } else if (this.loginAttemps.isLoginBlocked(userLogin.email)) {
+      this.toast.confirmRegistration(
+        'Você atingiu o número máximo de tentativas',
+        'Você está bloqueado temporariamente',
+        'confirmation'
+      );
+    } else {
+      // Todas as validações passaram, pode fazer a tentativa de login
+      this.spinnerService.show();
+
+      this.userSevice.login(userLogin.email, userLogin.password).subscribe({
+        next: (result) => {
+          if (result) {
+            console.log('usuário logado');
+            setTimeout(() => {
+              this.toast.confirmRegistration(
+                'Login bem-sucedido',
+                'Você está logado na sua conta.',
+                'confirmation'
+              );
+              this.router.navigateByUrl('/');
+            }, 2000);
+          } else {
+            setTimeout(() => {
+              this.toast.errorRegistration(
+                'Erro ao tentar fazer login!',
+                'E-mail ou senha estão errados',
+                'error'
+              );
+              this.loginAttemps.recordLoginAttemp(userLogin.email); // Registra tentativa de login
+            }, 2000);
+            console.log('Usuário não cadastrado no sistema');
+          }
+        },
+        error: (error) => {
+          console.error(error);
+        },
+        complete: () => {
           setTimeout(() => {
-            this.toast.confirmRegistration();
-            this.router.navigateByUrl('/');
+            this.spinnerService.hide();
           }, 2000);
-        } else {
-          setTimeout(() => {
-            this.toast.errorRegistration(
-              'Erro ao tentar fazer login!',
-              'E-mail ou senha estão errados',
-              'error'
-            );
-          }, 2000);
-          console.log('Usuário não cadastrado no sistema');
-        }
-      },
-      error: (error) => {
-        console.error(error);
-      },
-      complete: () => {
-        setTimeout(() => {
-          this.spinnerService.hide();
-        }, 2000);
-      },
-    });
+        },
+      });
+    }
   }
 }

@@ -11,6 +11,7 @@ import { enviroment } from 'src/environments/environment';
 export class UserFakeService {
   private currentUserSource = new ReplaySubject<User>(1);
   public currentUser$ = this.currentUserSource.asObservable();
+  private users: User[] = [];
 
   private apiURL = enviroment.baseApiUrl + '/users';
 

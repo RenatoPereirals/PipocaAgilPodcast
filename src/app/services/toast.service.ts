@@ -29,15 +29,19 @@ export class ToastService {
     this.title = title;
   }
 
-  confirmRegistration(): void {
-    this.showMessage(
-      'Cadastro realizado',
-      'A <strong>confirmação</strong> do seu <strong>cadastro</strong> será enviado pelo <strong>e-mail associado</strong> à sua nova conta',
-      'confirmation'
-    );
+  confirmRegistration(
+    title: string,
+    message: string,
+    messageType: 'confirmation' | 'error'
+  ): void {
+    this.showMessage(title, message, messageType);
   }
 
-  errorRegistration(title: string, message: string, messageType: 'confirmation' | 'error'): void {
+  errorRegistration(
+    title: string,
+    message: string,
+    messageType: 'confirmation' | 'error'
+  ): void {
     this.showMessage(title, message, messageType);
   }
 

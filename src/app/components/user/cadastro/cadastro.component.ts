@@ -144,27 +144,38 @@ export class CadastroComponent implements OnInit {
   }
 
   registerUser(): void {
-    this.spinnerService.show();
-
     if (this.form.invalid) {
       this.showErrorForRequiredFields();
-      this.toast.errorRegistration('Erro ao se cadasrar!', 'Corrija os erros abaixo', 'error');
+      this.toast.errorRegistration(
+        'Erro ao se cadasrar!',
+        'Corrija os erros abaixo',
+        'error'
+      );
 
       return;
     }
+    this.spinnerService.show();
 
     this.user = { ...this.form.value };
 
     this.userService.register(this.user).subscribe({
       next: () => {},
       error: (error) => {
-        this.toast.errorRegistration('Erro ao se cadasrar!', 'Corrija os erros abaixo', 'error');
+        this.toast.errorRegistration(
+          'Erro ao se cadasrar!',
+          'Corrija os erros abaixo',
+          'error'
+        );
         console.log('Erro ao cadastrar', error);
       },
       complete: () => {
         setTimeout(() => {
           this.spinnerService.hide();
-          this.toast.confirmRegistration(); // Exiba o toast após a conclusão do spinner.
+          this.toast.confirmRegistration(
+            'Cadastro realizado',
+            'A <strong>confirmação</strong> do seu <strong>cadastro</strong> será enviado pelo <strong>e-mail associado</strong> à sua nova conta',
+            'confirmation'
+          ); // Exiba o toast após a conclusão do spinner.
         }, 2000);
       },
     });

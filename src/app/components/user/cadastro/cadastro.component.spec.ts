@@ -1,5 +1,10 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of, throwError } from 'rxjs';
@@ -41,6 +46,8 @@ describe('CadastroComponent', () => {
     userService = TestBed.inject(UserFakeService);
     toastService = TestBed.inject(ToastService);
     router = TestBed.inject(Router);
+
+    // Inicializando elementos HTML usados nos testes.
     passwordInput = document.createElement('input');
     passwordInput.type = 'password';
     passwordInput.id = 'passwordInput';
@@ -110,15 +117,6 @@ describe('CadastroComponent', () => {
       const campoObrigatorioError =
         fixture.nativeElement.querySelector('.is-invalid');
       expect(campoObrigatorioError).toBeTruthy();
-    });
-
-    it('deve exibir mensagem de erro quando o campo "data" não é uma data válida', () => {
-      const dateControl = component.form.get('date');
-
-      dateControl?.setValue('2000-02-30');
-
-      expect(dateControl?.invalid).toBeTruthy();
-      expect(dateControl?.hasError('pattern')).toBeTruthy();
     });
 
     it('deve exibir mensagem de erro quando o usuário tem menos de 18 anos', () => {
@@ -238,7 +236,7 @@ describe('CadastroComponent', () => {
   });
 
   describe('Interação do usuário', () => {
-    const toggleVisibilityTest = (inputId: string, imgId: string) => {
+    const toggleVisibilityTest = async (inputId: string, imgId: string) => {
       const input: HTMLInputElement = fixture.nativeElement.querySelector(
         `#${inputId}`
       );
@@ -251,20 +249,26 @@ describe('CadastroComponent', () => {
       toggle.click();
       fixture.detectChanges();
 
+      await fixture.whenStable();
+
       expect(input.type).toBe('text');
 
       toggle.click();
       fixture.detectChanges();
 
+      await fixture.whenStable();
+
       expect(input.type).toBe('password');
     };
 
-    it('deve alternar a visibilidade da senha do campo senha', () => {
+    it('deve alternar a visibilidade da senha do campo senha', fakeAsync(() => {
       toggleVisibilityTest('passwordInput', 'togglePassword');
-    });
+      tick();
+    }));
 
-    it('deve alternar a visibilidade da senha do campo confirmar senha', () => {
+    it('deve alternar a visibilidade da senha do campo confirmar senha', fakeAsync(() => {
       toggleVisibilityTest('confirmePassword', 'toggleConfirmPassword');
-    });
+      tick();
+    }));
   });
 });

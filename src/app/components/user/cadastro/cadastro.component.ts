@@ -51,7 +51,6 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-
   }
 
   showErrorForRequiredFields() {
@@ -128,8 +127,6 @@ export class CadastroComponent implements OnInit {
   }
 
   registerUser(): void {
-
-
     if (this.form.invalid) {
       this.showErrorForRequiredFields();
       this.toast.errorRegistration(

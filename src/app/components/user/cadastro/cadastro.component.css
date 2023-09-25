@@ -196,3 +196,34 @@ input::placeholder {
   margin-bottom: 238px;
   border: none;
 }
+
+/* Estilos para o rótulo que substituirá o checkbox */
+.termos label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px; /* Espaço para o ícone do checkbox */
+}
+
+/* Ícone do checkbox */
+.termos label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px; /* Largura do ícone do checkbox */
+  height: 17px; /* Altura do ícone do checkbox */
+  background-color: #D9D9D9; /* Cor de fundo inicial */
+
+  transition: background-color 0.3s ease; /* Transição de cor de fundo gradual */
+  border: 1px solid #000000; /* Cor da borda do ícone do checkbox */
+  transition: border 0.3s ease;
+}
+
+.termos input:checked + label::before {
+  background-image: url('../../../../assets/image/close.svg'); /* Adicione o caminho para a sua seta de seleção */
+  background-repeat: no-repeat; /* Impede que a imagem seja repetida */
+  background-position: center; /* Centraliza a imagem */
+  background-size: contain;
+  border: 1px solid #03a200; /* Cor da borda do ícone do checkbox */
+  background-color: #daf8da; /* Cor de fundo quando marcado */
+}

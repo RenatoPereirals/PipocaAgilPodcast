@@ -11,9 +11,8 @@ import { Router } from '@angular/router';
 import { UserLogin } from 'src/app/models/UserLogin';
 
 import { User } from 'src/app/models/user';
-import { LoginAttempService } from 'src/app/services/login-attemp.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
-
+import { LoginAttempService } from 'src/app/services/login-attemp.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { UserFakeService } from 'src/app/services/user-fake.service';
 
@@ -105,22 +104,26 @@ export class LoginComponent implements OnInit {
 
     if (this.form.invalid) {
       this.showErrorForRequiredFields();
+      console.log('erro de formulário');
       this.toast.errorRegistration(
         'Erro ao fazer login!',
         'Corrija os erros abaixo',
         'error'
       );
     } else if (this.loginAttemps.isLoginBlocked(userLogin.email)) {
+      console.log('erro de senha');
       this.toast.confirmRegistration(
         'Você atingiu o número máximo de tentativas',
         'Você está bloqueado temporariamente',
         'confirmation'
       );
     } else {
+      console.log('passou pelas validações');
       // Todas as validações passaram, pode fazer a tentativa de login
       this.spinnerService.show();
 
       this.userSevice.login(userLogin.email, userLogin.password).subscribe({
+
         next: (result) => {
           if (result) {
             console.log('usuário logado');
@@ -134,6 +137,7 @@ export class LoginComponent implements OnInit {
             }, 2000);
           } else {
             setTimeout(() => {
+              console.log('erro ao tentar fazer login');
               this.toast.errorRegistration(
                 'Erro ao tentar fazer login!',
                 'E-mail ou senha estão errados',
@@ -148,6 +152,7 @@ export class LoginComponent implements OnInit {
           console.error(error);
         },
         complete: () => {
+          console.log('subscribe completo');
           setTimeout(() => {
             this.spinnerService.hide();
           }, 2000);

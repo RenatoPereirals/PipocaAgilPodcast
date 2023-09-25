@@ -83,19 +83,6 @@ export class CadastroComponent implements OnInit {
       : this.imageFechadaUrl;
   }
 
-  togglecomfirmPasswordVisibility(inputId: string, imgId: string): void {
-    this.passwordVisible = !this.passwordVisible;
-    this.imgShow = !this.imgShow;
-
-    const passwordInput = document.getElementById(inputId) as HTMLInputElement;
-    const togglePassword = document.getElementById(imgId) as HTMLImageElement;
-
-    passwordInput.type = this.passwordVisible ? 'text' : 'password';
-    togglePassword.src = this.imgShow
-      ? this.imageAbertaUrl
-      : this.imageFechadaUrl;
-  }
-
   private validation(): void {
     const formOptions: AbstractControlOptions = {
       validators: ValidatorField.MustMatch('password', 'confirmePassword'),

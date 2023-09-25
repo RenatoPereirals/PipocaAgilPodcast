@@ -14,6 +14,7 @@ import { ToastService } from 'src/app/services/toast.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { DatePickerService } from 'src/app/services/date-picker.service';
 import { Router } from '@angular/router';
+import { DebugElement } from '@angular/core';
 
 describe('CadastroComponent', () => {
   let component: CadastroComponent;
@@ -23,6 +24,7 @@ describe('CadastroComponent', () => {
   let router: Router;
   let passwordInput: HTMLInputElement;
   let togglePasswordButton: HTMLButtonElement;
+  let debugElement: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -46,6 +48,7 @@ describe('CadastroComponent', () => {
     userService = TestBed.inject(UserFakeService);
     toastService = TestBed.inject(ToastService);
     router = TestBed.inject(Router);
+    debugElement = fixture.debugElement;
 
     // Inicializando elementos HTML usados nos testes.
     passwordInput = document.createElement('input');

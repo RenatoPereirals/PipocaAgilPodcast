@@ -51,10 +51,7 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-    console.log(this.spinnerService.showSpinnerSubject);
-    this.spinnerService.show();
-    console.log(this.spinnerService.showSpinnerSubject);
-    this.spinnerService.hide();
+
   }
 
   showErrorForRequiredFields() {
@@ -131,6 +128,8 @@ export class CadastroComponent implements OnInit {
   }
 
   registerUser(): void {
+
+
     if (this.form.invalid) {
       this.showErrorForRequiredFields();
       this.toast.errorRegistration(

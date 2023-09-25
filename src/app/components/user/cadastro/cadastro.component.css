@@ -168,7 +168,6 @@ input::placeholder {
 }
 
 /* validações */
-
 .valid-backgroud {
   border: 1px solid #03a200;
   background-color: #daf8da;
@@ -213,17 +212,25 @@ input::placeholder {
   width: 16px; /* Largura do ícone do checkbox */
   height: 17px; /* Altura do ícone do checkbox */
   background-color: #d9d9d9; /* Cor de fundo inicial */
-
   transition: background-color 0.3s ease; /* Transição de cor de fundo gradual */
   border: 1px solid #000000; /* Cor da borda do ícone do checkbox */
   transition: border 0.3s ease;
 }
 
 .termos input:checked + label::before {
-  background-image: url("../../../../assets/image/close.svg"); /* Adicione o caminho para a sua seta de seleção */
-  background-repeat: no-repeat; /* Impede que a imagem seja repetida */
-  background-position: center; /* Centraliza a imagem */
-  background-size: contain;
-  border: 1px solid #03a200; /* Cor da borda do ícone do checkbox */
-  background-color: #daf8da; /* Cor de fundo quando marcado */
+  content: "\2713"; /* Código de caractere Unicode para um visto (✓) */
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #03a200;
+  background-color: #daf8da;
+  font-weight: bold;
+  color: #000; /* Cor preta */
+  text-align: center; /* Centralizar horizontalmente */
+  line-height: 16px; /* Ajustar a linha verticalmente */
+}
+
+.unchecked:not(checked) + label::before {
+  border: 1px solid #fa0000; /* Cor da borda quando não marcado */
+  background-color: #fad6d6; /* Cor de fundo quando não marcado */
 }

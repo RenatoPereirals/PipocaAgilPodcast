@@ -219,6 +219,7 @@
         type="checkbox"
         name="termo"
         id="termo"
+        [class.unchecked]="f.termo.invalid && f.termo.touched"
         formControlName="termo"
         [ngClass]="{ 'is-invalid': f.termo.errors }"
         [checked]="f.termo.value"

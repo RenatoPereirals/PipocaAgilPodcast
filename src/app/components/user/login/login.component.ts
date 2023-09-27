@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private toast: ToastService,
+    public toast: ToastService,
     private userSevice: UserFakeService,
     private spinnerService: SpinnerService,
     private router: Router,
@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private validation(): void {
+  public validation(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -123,7 +123,6 @@ export class LoginComponent implements OnInit {
       this.spinnerService.show();
 
       this.userSevice.login(userLogin.email, userLogin.password).subscribe({
-
         next: (result) => {
           if (result) {
             console.log('usuário logado');
@@ -150,6 +149,11 @@ export class LoginComponent implements OnInit {
         },
         error: (error) => {
           console.error(error);
+          this.toast.errorRegistration(
+            'Erro ao tentar fazer login.',
+            'Pofavor tente novamente',
+            'error'
+          );
         },
         complete: () => {
           console.log('subscribe completo');

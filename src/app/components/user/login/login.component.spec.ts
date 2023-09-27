@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,7 +29,41 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve criar o componente', () => {
     expect(component).toBeTruthy();
+  });
+
+  //deve alterar a visibilidade da senha
+  describe('LoginComponent', () => {
+    let component: LoginComponent;
+
+    it('deve alternar a visibilidade da senha', () => {
+      // Verifique o estado inicial
+      expect(component.passwordVisible).toBe(false);
+      expect(component.imgShow).toBe(false);
+      // Outras verificações se aplicáveis
+
+      // Chame o método para alternar a visibilidade
+      component.togglePasswordVisibility(
+        'passwordInput',
+        'togglePasswordButton'
+      );
+
+      // Verifique se as propriedades foram atualizadas corretamente
+      expect(component.passwordVisible).toBe(true);
+      expect(component.imgShow).toBe(true);
+      // Outras verificações se aplicáveis
+
+      // Chame o método novamente para reverter a visibilidade
+      component.togglePasswordVisibility(
+        'passwordInput',
+        'togglePasswordButton'
+      );
+
+      // Verifique se as propriedades foram revertidas corretamente
+      expect(component.passwordVisible).toBe(false);
+      expect(component.imgShow).toBe(false);
+      // Outras verificações se aplicáveis
+    });
   });
 });

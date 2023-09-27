@@ -237,7 +237,8 @@ describe('CadastroComponent', () => {
       expect(toastService.errorRegistration).toHaveBeenCalled();
     });
   });
-
+  
+  //deve alterar a visibilidade da senha
   describe('Interação do usuário', () => {
     const toggleVisibilityTest = async (inputId: string, imgId: string) => {
       const input: HTMLInputElement = fixture.nativeElement.querySelector(

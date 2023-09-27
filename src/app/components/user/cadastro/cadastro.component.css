@@ -160,7 +160,7 @@ input::placeholder {
 }
 
 .termos label {
-  margin-left: 7px;
+  font-size: 12px;
 }
 
 .termos label a {
@@ -168,7 +168,6 @@ input::placeholder {
 }
 
 /* validações */
-
 .valid-backgroud {
   border: 1px solid #03a200;
   background-color: #daf8da;
@@ -195,4 +194,43 @@ input::placeholder {
   margin-top: 55px;
   margin-bottom: 238px;
   border: none;
+}
+
+/* Estilos para o rótulo que substituirá o checkbox */
+.termos label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px; /* Espaço para o ícone do checkbox */
+}
+
+/* Ícone do checkbox */
+.termos label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px; /* Largura do ícone do checkbox */
+  height: 17px; /* Altura do ícone do checkbox */
+  background-color: #d9d9d9; /* Cor de fundo inicial */
+  transition: background-color 0.3s ease; /* Transição de cor de fundo gradual */
+  border: 1px solid #000000; /* Cor da borda do ícone do checkbox */
+  transition: border 0.3s ease;
+}
+
+.termos input:checked + label::before {
+  content: "\2713"; /* Código de caractere Unicode para um visto (✓) */
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #03a200;
+  background-color: #daf8da;
+  font-weight: bold;
+  color: #000; /* Cor preta */
+  text-align: center; /* Centralizar horizontalmente */
+  line-height: 16px; /* Ajustar a linha verticalmente */
+}
+
+.unchecked:not(checked) + label::before {
+  border: 1px solid #fa0000; /* Cor da borda quando não marcado */
+  background-color: #fad6d6; /* Cor de fundo quando não marcado */
 }

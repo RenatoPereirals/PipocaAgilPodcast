@@ -51,10 +51,6 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-    console.log(this.spinnerService.showSpinnerSubject);
-    this.spinnerService.show();
-    console.log(this.spinnerService.showSpinnerSubject);
-    this.spinnerService.hide();
   }
 
   showErrorForRequiredFields() {
@@ -71,19 +67,6 @@ export class CadastroComponent implements OnInit {
   }
 
   togglePasswordVisibility(inputId: string, imgId: string): void {
-    this.passwordVisible = !this.passwordVisible;
-    this.imgShow = !this.imgShow;
-
-    const passwordInput = document.getElementById(inputId) as HTMLInputElement;
-    const togglePassword = document.getElementById(imgId) as HTMLImageElement;
-
-    passwordInput.type = this.passwordVisible ? 'text' : 'password';
-    togglePassword.src = this.imgShow
-      ? this.imageAbertaUrl
-      : this.imageFechadaUrl;
-  }
-
-  togglecomfirmPasswordVisibility(inputId: string, imgId: string): void {
     this.passwordVisible = !this.passwordVisible;
     this.imgShow = !this.imgShow;
 

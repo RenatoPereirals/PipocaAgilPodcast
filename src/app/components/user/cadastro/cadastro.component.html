@@ -102,7 +102,6 @@
             "
             [(ngModel)]="user.date"
           />
-          <p class="age">Para assinar precisa ser maior de 18 anos</p>
           <div
             *ngIf="f.date.errors?.required && f.date.touched"
             class="invalid-feedback"
@@ -110,7 +109,7 @@
             Data de nascimento é obrigatória.
           </div>
           <div
-            *ngIf="f.date.errors?.pattern && f.date.touched"
+            *ngIf="f.date.errors?.invalidDate && f.date.touched"
             class="invalid-feedback"
           >
             Insira uma data válida.
@@ -150,7 +149,6 @@
               togglePasswordVisibility('passwordInput', 'togglePassword')
             "
           />
-          <p class="age">Senha deve conter mínimo 8 caracteres</p>
         </div>
 
         <div
@@ -192,7 +190,10 @@
             src="../../../../assets/image/Hide.png"
             alt=""
             (click)="
-              togglecomfirmPasswordVisibility('confirmePassword', 'toggleConfirmPassword')
+              togglePasswordVisibility(
+                'confirmePassword',
+                'toggleConfirmPassword'
+              )
             "
           />
         </div>
@@ -218,9 +219,11 @@
         type="checkbox"
         name="termo"
         id="termo"
+        [class.unchecked]="f.termo.invalid && f.termo.touched"
         formControlName="termo"
         [ngClass]="{ 'is-invalid': f.termo.errors }"
         [checked]="f.termo.value"
+        style="display: none"
       />
       <label for="termo"
         >Concordo com os

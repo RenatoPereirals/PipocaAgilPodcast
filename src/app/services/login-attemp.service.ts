@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoginAttempService {
   private loginAttemps: { [email: string]: number } = {};
-  private maxAttemps = 3; //Número máximo de tentativas de login permitidas
+  public maxAttemps = 3; //Número máximo de tentativas de login permitidas
 
   constructor() {}
 

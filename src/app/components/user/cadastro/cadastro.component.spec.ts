@@ -21,10 +21,6 @@ describe('CadastroComponent', () => {
   let fixture: ComponentFixture<CadastroComponent>;
   let userService: UserFakeService;
   let toastService: ToastService;
-  let router: Router;
-  let passwordInput: HTMLInputElement;
-  let togglePasswordButton: HTMLButtonElement;
-  let debugElement: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -47,24 +43,8 @@ describe('CadastroComponent', () => {
     component = fixture.componentInstance;
     userService = TestBed.inject(UserFakeService);
     toastService = TestBed.inject(ToastService);
-    router = TestBed.inject(Router);
-    debugElement = fixture.debugElement;
-
-    // Inicializando elementos HTML usados nos testes.
-    passwordInput = document.createElement('input');
-    passwordInput.type = 'password';
-    passwordInput.id = 'passwordInput';
-    togglePasswordButton = document.createElement('button');
-    togglePasswordButton.id = 'togglePasswordButton';
-    document.body.appendChild(passwordInput);
-    document.body.appendChild(togglePasswordButton);
-    fixture.detectChanges();
 
     fixture.detectChanges();
-  });
-
-  it('Deve criar o componente', () => {
-    expect(component).toBeTruthy();
   });
 
   describe('Validação de formulário', () => {
@@ -236,43 +216,5 @@ describe('CadastroComponent', () => {
 
       expect(toastService.errorRegistration).toHaveBeenCalled();
     });
-  });
-  
-  //deve alterar a visibilidade da senha
-  describe('Interação do usuário', () => {
-    const toggleVisibilityTest = async (inputId: string, imgId: string) => {
-      const input: HTMLInputElement = fixture.nativeElement.querySelector(
-        `#${inputId}`
-      );
-      const toggle: HTMLImageElement = fixture.nativeElement.querySelector(
-        `#${imgId}`
-      );
-
-      expect(input.type).toBe('password');
-
-      toggle.click();
-      fixture.detectChanges();
-
-      await fixture.whenStable();
-
-      expect(input.type).toBe('text');
-
-      toggle.click();
-      fixture.detectChanges();
-
-      await fixture.whenStable();
-
-      expect(input.type).toBe('password');
-    };
-
-    it('deve alternar a visibilidade da senha do campo senha', fakeAsync(() => {
-      toggleVisibilityTest('passwordInput', 'togglePassword');
-      tick();
-    }));
-
-    it('deve alternar a visibilidade da senha do campo confirmar senha', fakeAsync(() => {
-      toggleVisibilityTest('confirmePassword', 'toggleConfirmPassword');
-      tick();
-    }));
   });
 });

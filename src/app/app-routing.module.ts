@@ -14,7 +14,7 @@ import { RecuperarSenhaComponent } from './components/user/recuperar-senha/recup
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'contatos', component: ContatoComponent },
-  { path: 'episosdios', component: EpisodiosComponent },
+  { path: 'episodios', component: EpisodiosComponent },
   { path: 'galeria', component: GaleriaComponent },
   { path: 'politicap', component: PoliticapComponent },
   { path: 'termoecon', component: TermoeconComponent },

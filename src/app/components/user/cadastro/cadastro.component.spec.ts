@@ -13,8 +13,6 @@ import { UserFakeService } from 'src/app/services/user-fake.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { DatePickerService } from 'src/app/services/date-picker.service';
-import { Router } from '@angular/router';
-import { DebugElement } from '@angular/core';
 
 describe('CadastroComponent', () => {
   let component: CadastroComponent;

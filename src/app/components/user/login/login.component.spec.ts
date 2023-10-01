@@ -120,4 +120,28 @@ describe('LoginComponent', () => {
       expect(component.toast.errorRegistration).toHaveBeenCalled();
     }));
   });
+
+  describe('Interação com o usuário', () => {
+    it('deve trocar a visibilidade do campo senha', () => {
+      const inputId = 'passwordInput';
+      const imgId = 'togglePassword';
+
+      expect(component.passwordVisible).toBeFalse();
+
+      component.togglePasswordVisibility(inputId, imgId);
+
+      expect(component.passwordVisible).toBeTrue();
+    });
+
+    it('deve trocar o tipo de imagem do campo senha', () => {
+      const inputId = 'passwordInput';
+      const imgId = 'togglePassword';
+
+      expect(component.imgShow).toBeFalse();
+
+      component.togglePasswordVisibility(inputId, imgId);
+
+      expect(component.imgShow).toBeTrue();
+    });
+  });
 });

@@ -13,7 +13,6 @@ import { UserFakeService } from 'src/app/services/user-fake.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { LoginAttempService } from 'src/app/services/login-attemp.service';
-import { DebugElement } from '@angular/core';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;

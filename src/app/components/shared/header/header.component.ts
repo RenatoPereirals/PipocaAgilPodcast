@@ -8,24 +8,12 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class HeaderComponent implements OnInit {
   showAppHome = false;
-  isMenuShow = this.menuService.isMenuOpen
 
   constructor(private menuService: MenuService) {}
 
-  ngOnInit() {
-    this.checkWindowSize();
-  }
+  ngOnInit() {}
 
   toggleMenuOpen() {
     this.menuService.toggleMenuOpen();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.checkWindowSize();
-  }
-
-  private checkWindowSize() {
-    this.showAppHome = window.innerWidth <= 360;
   }
 }

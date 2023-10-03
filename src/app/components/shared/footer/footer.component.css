@@ -59,3 +59,11 @@
   gap: 20px;
   position: relative;
 }
+
+/*======= MOBILE FIRST =======*/
+/* SMALL DEVICES - SMARTPHONES */
+@media screen and (max-width: 480px) {
+  .footer-container {
+    display: none;
+  }
+}

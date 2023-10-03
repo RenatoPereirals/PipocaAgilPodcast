@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,16 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   showAppHome = false;
+  isMenuShow = this.menuService.isMenuOpen
 
-  constructor() {}
+  constructor(private menuService: MenuService) {}
 
   ngOnInit() {
     this.checkWindowSize();
+  }
+
+  toggleMenuOpen() {
+    this.menuService.toggleMenuOpen();
   }
 
   @HostListener('window:resize', ['$event'])

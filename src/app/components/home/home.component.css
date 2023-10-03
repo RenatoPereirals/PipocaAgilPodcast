@@ -147,3 +147,13 @@ section {
 .ultimos .pagination a {
   padding: 5px;
 }
+
+
+/*======= MOBILE FIRST =======*/
+/* SMALL DEVICES - SMARTPHONES */
+@media screen and (max-width: 480px) {
+.home-container {
+  display: none;
+}
+
+}

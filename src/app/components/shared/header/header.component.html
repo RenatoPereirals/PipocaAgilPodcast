@@ -1,11 +1,15 @@
+
+
 <header>
   <nav class="navigator">
     <div class="icon-menu">
-      <img
-        class="icon-menu-img"
-        src="../../../../assets/image/icon-menu.png"
-        alt=""
-      />
+      <button (click)="toggleMenuOpen()">
+        <img
+          class="icon-menu-img"
+          src="../../../../assets/image/icon-menu.png"
+          alt=""
+        />
+      </button>
     </div>
     <div class="logo-pipoca">
       <img
@@ -51,7 +55,7 @@
       </div>
     </div>
   </div>
-  <ng-container *ngIf="showAppHome">
+  <ng-container *ngIf="">
     <app-home></app-home>
   </ng-container>
 </header>

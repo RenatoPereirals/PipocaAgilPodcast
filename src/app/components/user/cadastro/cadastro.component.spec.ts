@@ -1,10 +1,5 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick,
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of, throwError } from 'rxjs';
@@ -13,8 +8,6 @@ import { UserFakeService } from 'src/app/services/user-fake.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { DatePickerService } from 'src/app/services/date-picker.service';
-import { Router } from '@angular/router';
-import { DebugElement } from '@angular/core';
 
 describe('CadastroComponent', () => {
   let component: CadastroComponent;
@@ -215,6 +208,52 @@ describe('CadastroComponent', () => {
       expect(userService.register).not.toHaveBeenCalledWith(invalidUser);
 
       expect(toastService.errorRegistration).toHaveBeenCalled();
+    });
+  });
+
+  describe('Interação com o usuário', () => {
+    it('deve trocar a visibilidade do campo senha', () => {
+      const inputId = 'passwordInput';
+      const imgId = 'togglePassword';
+
+      expect(component.passwordVisible).toBeFalse();
+
+      component.togglePasswordVisibility(inputId, imgId);
+
+      expect(component.passwordVisible).toBeTrue();
+    });
+
+    it('deve trocar a visibilidade do campo confirmar senha', () => {
+      const inputId = 'confirmePassword';
+      const imgId = 'toggleConfirmPassword';
+
+      expect(component.passwordVisible).toBeFalse();
+
+      component.togglePasswordVisibility(inputId, imgId);
+
+      expect(component.passwordVisible).toBeTrue();
+    });
+
+    it('deve trocar o tipo de imagem do campo senha', () => {
+      const inputId = 'passwordInput';
+      const imgId = 'togglePassword';
+
+      expect(component.imgShow).toBeFalse();
+
+      component.togglePasswordVisibility(inputId, imgId);
+
+      expect(component.imgShow).toBeTrue();
+    });
+
+    it('deve trocar o tipo de imagem do campo confirmar senha', () => {
+      const inputId = 'confirmePassword';
+      const imgId = 'toggleConfirmPassword';
+
+      expect(component.imgShow).toBeFalse();
+
+      component.togglePasswordVisibility(inputId, imgId);
+
+      expect(component.imgShow).toBeTrue();
     });
   });
 });

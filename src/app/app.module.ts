@@ -21,6 +21,7 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
 import { SpinnerService } from './services/spinner.service';
 import { RecuperarSenhaComponent } from './components/user/recuperar-senha/recuperar-senha.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { MenuComponent } from './components/shared/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { LoginComponent } from './components/user/login/login.component';
     BackgroundToastComponent,
     SpinnerComponent,
     RecuperarSenhaComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

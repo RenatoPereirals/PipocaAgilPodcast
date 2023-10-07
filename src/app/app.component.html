@@ -3,7 +3,7 @@
   *ngIf="toastService.messageType === 'error'"
 ></app-background-toast>
 
-<main class="container background-wrapper">
+<main class="container">
   <router-outlet></router-outlet>
 </main>
 <app-spinner *ngIf="(spinnerService.showSpinnerSubject)"></app-spinner>

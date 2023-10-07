@@ -1,61 +1,32 @@
-
-
-<header>
-  <nav class="navigator">
-    <div class="icon-menu">
-      <button (click)="toggleMenuOpen()">
-        <img
-          class="icon-menu-img"
-          src="../../../../assets/image/icon-menu.png"
-          alt=""
-        />
-      </button>
-    </div>
-    <div class="logo-pipoca">
+<nav class="navigator">
+  <div class="icon-menu">
+    <button (click)="toggleMenuOpen()">
       <img
-        class="logo-popoca-agil-1"
-        src="../../../../assets/image/logo-pipoca-agil.png"
-        alt="logo-pipoca-agil"
+        class="icon-menu-img"
+        src="../../../../assets/image/icon-menu.png"
+        alt=""
       />
-    </div>
-    <div class="menu">
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/blog">Blog</a></li>
-      <li><a routerLink="/episosdios">Episódios</a></li>
-      <li><a routerLink="/contatos">Contato</a></li>
-    </div>
-    <div class="div-container">
-      <img
-        src="../../../../assets/image/icon _person_.svg"
-        alt="icone pessoa"
-      /><a routerLink="/login">Login</a>
-    </div>
-    <div class="vazia"></div>
-  </nav>
-  <div class="container">
-    <div class="title-background">
-      <div class="title">“O Podcast mais animado do Mundo Ágil”</div>
-    </div>
-    <div class="title-360px"><p>“O Podcast mais animado do Mundo Ágil”</p></div>
-    <div class="container-button">
-      <div class="txt-desc">
-        <h2>
-          Assine e seja membro para ter acesso a <br />
-          conteúdos exclusivos.
-        </h2>
-      </div>
-      <div class="btn-container">
-        <button
-          routerLink="/cadastro"
-          class="btns btn-access txt-btn"
-          id="assinar"
-        >
-          <p>ASSINAR</p>
-        </button>
-      </div>
-    </div>
+    </button>
   </div>
-  <ng-container *ngIf="">
-    <app-home></app-home>
-  </ng-container>
-</header>
+  <div class="logo-pipoca">
+    <img
+      class="logo-popoca-agil-1"
+      src="../../../../assets/image/logo-pipoca-agil.png"
+      alt="logo-pipoca-agil"
+    />
+  </div>
+  <div class="menu">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/blog">Blog</a></li>
+    <li><a routerLink="/episosdios">Episódios</a></li>
+    <li><a routerLink="/contatos">Contato</a></li>
+  </div>
+  <div class="div-container">
+    <img
+      src="../../../../assets/image/icon _person_.svg"
+      alt="icone pessoa"
+    /><a routerLink="/login">Login</a>
+  </div>
+  <div class="vazia"></div>
+</nav>
+

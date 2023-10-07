@@ -278,14 +278,6 @@ input::placeholder {
   cursor: pointer;
 }
 
-.btn-confirm {
-  display: flex;
-  justify-content: center;
-  margin-top: 55px;
-  margin-bottom: 238px;
-  border: none;
-}
-
 /* Estilos para o rótulo que substituirá o checkbox */
 .termos label {
   position: relative;
@@ -387,6 +379,7 @@ input::placeholder {
   box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   border: none;
+  gap: 10px;
 }
 
 .btn:hover {
@@ -397,7 +390,7 @@ input::placeholder {
 .btn-access {
   width: 319px;
   padding: 27px 152px;
-  gap: 10px;
+
 }
 
 /* Botão de Confirmação */
@@ -405,7 +398,8 @@ input::placeholder {
   width: 188px;
   height: 56px;
   padding: 21px 27px;
-  gap: 10px;
+  margin-top: 55px;
+  margin-bottom: 238px;
 }
 
 /* SMALL DEVICES - SMARTPHONES */

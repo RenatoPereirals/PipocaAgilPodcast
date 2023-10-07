@@ -1,7 +1,3 @@
-.email, .password, .newPassword, .btnunit {
-  width: 100%;
-}
-
 /* SMALL DEVICES - SMARTPHONES */
 @media screen and (max-width: 480px) {
   .background-wrapper::before {

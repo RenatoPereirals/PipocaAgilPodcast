@@ -1,3 +1,105 @@
+.container {
+  width: 100%;
+  max-width: 1400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 135px;
+}
+
+.title-background {
+  width: 100%;
+  max-width: 1185px;
+  height: 284px;
+  background: rgba(7, 2, 2, 0.3);
+  flex-shrink: 0;
+  border-radius: 90px;
+  overflow: hidden;
+  margin-left: -70px;
+}
+
+.background-fullscreen {
+  background-position: center top; /* Alinhar a imagem ao topo */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../assets/image/fundo.jpg");
+  width: 100%;
+  height: 810px;
+  position: relative;
+}
+
+.background-fullscreen::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.title {
+  font-size: 96px;
+  font-weight: 900;
+  color: var(--color-yellow);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+}
+
+.title-360px {
+  display: none;
+}
+
+.container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.txt-desc {
+  width: 629px;
+  height: 80px;
+}
+
+.txt-desc h2 {
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.txt-btn {
+  color: #000;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.btns {
+  margin-left: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: var(--color-yellow);
+  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border: none;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -161,18 +263,96 @@ section {
   display: none;
 }
 
-/*======= MOBILE FIRST =======*/
 /* SMALL DEVICES - SMARTPHONES */
 @media screen and (max-width: 480px) {
-  .home-container {
+  .background-fullscreen {
+    background: none;
+    height: 0;
+    position: none;
+  }
+
+  .container {
     display: flex;
+    height: 100%;
     flex-direction: column;
     flex-wrap: nowrap;
-    margin-top: -380px;
+    align-items: center;
+    padding-left: 0;
+    gap: 0;
+    padding-top: 68px;
+  }
+
+  .title-background {
+    display: none;
+  }
+
+  .title-360px {
+    width: 265px;
+    height: 44px;
+    display: block;
+  }
+  .title-360px > p {
+    width: 100%;
+    flex-shrink: 0;
+    color: #fecf5d;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    text-align: center;
+    line-height: normal;
+  }
+
+  .container-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btns {
+    margin-left: 0px;
+  }
+
+  .txt-btn {
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+
+  }
+
+  .txt-desc {
+    width: 100%;
+    height: 63px;
+  }
+
+  .txt-desc > h2 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .home-container {
+    width: 100%;
+    margin-top: 267.5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .article-one {
     order: 2;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,9 +363,9 @@ section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: -54px;
     justify-content: center;
     align-items: center;
+    margin-top: 0;
   }
 
   .title-one {
@@ -194,12 +374,10 @@ section {
   }
 
   .title-one > h2 {
-    flex-shrink: 0;
     font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     text-align: center;
+    margin-top: 36px;
+    margin-bottom: 16px;
   }
 
   .descricao {
@@ -207,23 +385,48 @@ section {
     height: 103px;
     font-size: 14px;
     text-align: center;
-    padding: 17px 17px;
+    padding: 0px 17px;
   }
 
+  /* .descricao {
+  width: 671px;
+  height: 214px;
+  flex-shrink: 0;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+} */
+
   .mobile {
-   display: block;
-   width: 90%;
-   height: auto;
+    display: block;
+    width: 90%;
+    height: 150px;
+    margin-bottom: 16.3px;
+  }
+
+  .mobile iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .fullscreen {
     display: none;
   }
 
+  .apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0 0px 0;
+  }
+
   .apresentacao > h3 {
     font-size: 14px;
-    margin-bottom: 70px;
     height: auto;
+    padding: 0;
   }
 
   .redes-sociais {
@@ -232,11 +435,6 @@ section {
 
   .ultimos {
     display: none;
-  }
-
-  .apresentacao {
-    order: 1;
-    margin: 0;
   }
 
   .article-three {

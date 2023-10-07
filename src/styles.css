@@ -17,6 +17,7 @@ body {
   height: 100%;
   width: 100%;
   background-position: center;
+  box-sizing: border-box;
 }
 
 a {
@@ -32,6 +33,176 @@ li {
 
 img {
   max-width: 100%;
+}
+
+/* Estilos comuns */
+label {
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h2,
+p {
+  font-family: "Work Sans";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.68px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 500px;
+  margin-left: 140px;
+  margin-top: 101px;
+}
+
+.formcad,
+.crieconta {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+
+.crieconta > h2 {
+  font-family: Work Sans;
+  margin-top: 45px;
+  font-size: 34px;
+  letter-spacing: -0.68px;
+}
+
+.crieconta > p {
+  font-family: Work Sans;
+  padding-top: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+}
+
+.login {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 43px;
+}
+
+.login > a {
+  text-decoration-line: underline;
+  color: #fff;
+}
+
+/* Principal */
+.principal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  min-height: 1024px;
+}
+
+/* Informações Pessoais */
+.registration {
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 43px;
+}
+
+.email-data,
+.senhas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.email,
+.date,
+.password,
+.termo {
+  width: 48%;
+  margin-top: 26px;
+}
+
+label {
+  margin-top: 27px;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #201c1c;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: #201c1c;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.username {
+  margin-top: 14px;
+  width: 100%;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.age {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 6px;
+}
+
+.senhas {
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.password-input {
+  position: relative;
+}
+
+.termos {
+  width: 100%;
+  margin-top: 16px;
+  margin-top: 43px;
+}
+
+.termos label {
+  font-size: 12px;
+}
+
+.termos label a {
+  text-decoration: underline;
 }
 
 /* Variáveis CSS */
@@ -61,7 +232,7 @@ img {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
   z-index: 1;
 }
 
@@ -84,6 +255,74 @@ img {
   margin-bottom: 30%;
 }
 
+/* validações */
+.valid-backgroud {
+  border: 1px solid #03a200;
+  background-color: #daf8da;
+}
+
+.invalid-background {
+  border: 1px solid #fa0000;
+  background-color: #fad6d6;
+}
+
+/* Outros estilos */
+.hide,
+.show {
+  position: absolute;
+  top: 39px;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.btn-confirm {
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
+  margin-bottom: 238px;
+  border: none;
+}
+
+/* Estilos para o rótulo que substituirá o checkbox */
+.termos label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+}
+
+/* Ícone do checkbox */
+.termos label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -2.5px;
+  width: 16px;
+  height: 17px;
+  background-color: #d9d9d9;
+  transition: background-color 0.3s ease; /* Transição de cor de fundo gradual */
+  border: 1px solid #000000;
+  transition: border 0.3s ease;
+}
+
+.termos input:checked + label::before {
+  content: "\2713"; /* Código de caractere Unicode para um visto (✓) */
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #03a200;
+  background-color: #daf8da;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  line-height: 16px; /* Ajustar a linha verticalmente */
+}
+
+.unchecked:not(checked) + label::before {
+  border: 1px solid #fa0000;
+  background-color: #fad6d6;
+}
+
 /* Estilos para elementos com fonte */
 .roboto-font {
   font-family: "Roboto", sans-serif;
@@ -104,6 +343,7 @@ img {
 
 /* Mensagens de Erro/Validações */
 .invalid-feedback {
+  position: absolute;
   margin-top: 6px;
   color: #fa0000;
   font-size: 12px;
@@ -134,7 +374,6 @@ img {
 }
 
 /* Botões */
-
 /* Botões Genéricos */
 .btn {
   display: flex;
@@ -163,37 +402,127 @@ img {
 .btn-confirm {
   width: 188px;
   height: 56px;
-  gap: 8px;
   padding: 21px 27px;
   gap: 10px;
 }
 
+/* SMALL DEVICES - SMARTPHONES */
 @media screen and (max-width: 480px) {
-  body {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
     width: 100%;
-  }
-  .background-wrapper {
-    width: 100%;
-    height: 780px;
-    top: 85px;
-    bottom: 0;
-    background: url("assets/image/microfone.png"),
-      lightgray -382.393px 0px / 374.423% 100% no-repeat;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    flex-shrink: 0;
-    position: absolute;
+    height: 100%;
   }
 
+  .background-wrapper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background: url("/assets/image/microfone.png"), lightgray no-repeat;
+    background-size: cover;
+    background-position: center center;
+    flex-shrink: 0;
+  }
+
+  /* Botões */
   .btn-access {
     width: 155px;
     height: 38px;
-    padding: 27px 152px;
+    padding: 0px 0px;
+    gap: 0;
+  }
+
+  .btn-confirm {
+    width: 155px;
+    margin-top: 39px;
+    margin-bottom: 0px;
+    height: 38px;
+    padding: 0px 0px;
     gap: 0;
   }
 
   .txt-btn {
     font-size: 14px;
+  }
+
+  /* Logomarca */
+  .bemvindo {
+    display: flex;
+    width: 100%;
+    height: 85px;
+    justify-content: center;
+    background-size: 0;
+    background-image: none;
+    margin-top: 0;
+  }
+
+  .bemvindo::before {
+    display: none;
+  }
+
+  .bemvindo h2 {
+    display: none;
+  }
+
+  .logo-bemvindo {
+    width: 56px;
+    height: 56px;
+    margin-top: 27px;
+    flex-shrink: 0;
+  }
+
+  .logo-pipoca {
+    right: 0;
+    top: 0;
+    margin-bottom: 0;
+  }
+
+  /* formulários */
+  .crieconta > h2,
+  p {
+    text-align: center;
+  }
+
+  .crieconta > h2 {
+    margin-top: 43px;
+    font-size: 24px;
+  }
+
+  .crieconta > p {
+    padding-top: 0px;
+    font-size: 16px;
+  }
+
+  .principal {
+    justify-content: center;
+    height: 100%;
+    padding: 0px 19px;
+    padding-bottom: 50px;
+  }
+
+  form {
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 27px;
+    z-index: 1;
+  }
+
+  .email,
+  .date,
+  .password {
+    width: 100%;
+    margin-top: 26px;
+  }
+
+  .login {
+    font-size: 14px;
+    margin-top: 29px;
+  }
+
+  .termos label {
+    font-size: 11px;
   }
 }

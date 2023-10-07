@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "pipocaagilpodcast"
-  }
+  },
+  "targets": {
+    "pipocaagilpodcast": {
+      "hosting": {
+        "squad-vermelho-coral": [
+          "web-app"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

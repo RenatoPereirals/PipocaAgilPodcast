@@ -145,7 +145,7 @@ export class CadastroComponent implements OnInit {
       next: () => {},
       error: (error) => {
         this.toast.errorRegistration(
-          'Erro ao se cadasrar!',
+          'Erro no cadasrar!',
           'Corrija os erros abaixo',
           'error'
         );

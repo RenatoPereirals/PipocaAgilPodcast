@@ -1,3 +1,9 @@
+/* Cores */
+.color-yellow {
+  color: var(--color-yellow);
+}
+
+/* Corpo */
 .container {
   width: 100%;
   max-width: 1400px;
@@ -22,7 +28,7 @@
 }
 
 .background-fullscreen {
-  background-position: center top; /* Alinhar a imagem ao topo */
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../../../assets/image/fundo.jpg");
@@ -44,7 +50,6 @@
 .title {
   font-size: 96px;
   font-weight: 900;
-  color: var(--color-yellow);
   height: 100%;
   display: flex;
   align-items: center;
@@ -69,7 +74,7 @@
 
 .txt-desc h2 {
   flex-shrink: 0;
-  color: #fff;
+  color: var(--color-white);
   font-family: Roboto;
   font-size: 32px;
   font-style: normal;
@@ -79,7 +84,7 @@
 }
 
 .txt-btn {
-  color: #000;
+  color: var(--color-black-medium);
   font-family: Roboto;
   font-size: 24px;
   font-style: normal;
@@ -155,13 +160,6 @@
   margin: 90px 0 50px 0;
 }
 
-.apresentacao > h3 {
-  padding: 20px;
-  color: #fecf5d;
-  font-size: 40px;
-  font-weight: 800;
-}
-
 .video-apresentacao {
   width: 802px;
   height: 399px;
@@ -189,7 +187,7 @@ section {
   padding-top: 40px;
   font-size: 40px;
   font-weight: 800;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .videos-ultimos {
@@ -213,7 +211,7 @@ section {
   width: 305px;
   height: 31px;
   flex-shrink: 0;
-  color: #fff;
+  color: var(--color-white);
   font-family: Roboto;
   font-size: 36px;
   font-style: normal;
@@ -294,7 +292,7 @@ section {
   .title-360px > p {
     width: 100%;
     flex-shrink: 0;
-    color: #fecf5d;
+    color: var(--color-yellow);
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
@@ -316,7 +314,7 @@ section {
   }
 
   .txt-btn {
-    color: #000;
+    color: var(--color-black-medium);
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
@@ -387,16 +385,6 @@ section {
     text-align: center;
     padding: 0px 17px;
   }
-
-  /* .descricao {
-  width: 671px;
-  height: 214px;
-  flex-shrink: 0;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-} */
 
   .mobile {
     display: block;

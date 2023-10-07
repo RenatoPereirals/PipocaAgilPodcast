@@ -1,4 +1,4 @@
-<main class="principal">
+<main class="principal background-wrapper">
   <article class="bemvindo">
     <section class="logo-bemvindo">
       <img
@@ -49,7 +49,6 @@
               togglePasswordVisibility('passwordInput', 'togglePassword')
             "
           />
-          <p class="minPassword">Senha deve conter mínimo 8 caracteres</p>
         </div>
 
         <div
@@ -92,7 +91,10 @@
             src="../../../../assets/image/Hide.png"
             alt=""
             (click)="
-            togglePasswordVisibility('confirmePassword', 'toggleConfirmPassword')
+              togglePasswordVisibility(
+                'confirmePassword',
+                'toggleConfirmPassword'
+              )
             "
           />
         </div>
@@ -111,14 +113,16 @@
           Confirmar Senha é obrigatória.
         </div>
       </div>
-      <button
-        class="btn btn-confirm txt-btn"
-        type="submit"
-        (click)="form.valid ? '' : errorRegistration()"
-        (click)="form.valid ? '' : showErrorForRequiredFields()"
-      >
-        Confirmar
-      </button>
+      <div class="btnunit">
+        <button
+          class="btn btn-confirm txt-btn"
+          type="submit"
+          (click)="form.valid ? '' : errorRegistration()"
+          (click)="form.valid ? '' : showErrorForRequiredFields()"
+        >
+          Confirmar
+        </button>
+      </div>
     </fieldset>
   </form>
 </main>

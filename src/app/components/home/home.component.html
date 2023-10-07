@@ -1,144 +1,178 @@
-<app-header></app-header>
-<main class="home-container">
-  <article class="article-one">
-    <section class="desc-logos">
-      <div class="title-one"><h2>Quem somos</h2></div>
-      <p class="descricao">
-        O Pipoca Ágil é um podcast voltado para o Mundo Ágil e afins. Com o
-        propósito de ser um podcast "chão de fábrica", ajudando na divulgação de
-        conteúdo do Mundo Ágil e contando casos e soluções para a implementação
-        da Transformação Digital nas empresas.
-      </p>
-      <div class="redes-sociais">
-        <p>Siga nossos canais</p>
-        <div class="redes">
-          <li>
-            <a [href]="getSafeUrl(socialMediaUrls.youtube)" target="_blank"
-              ><img [src]="path + 'bi_youtube.svg'" alt="logo youtube"
-            /></a>
-          </li>
-          <li>
-            <a [href]="getSafeUrl(socialMediaUrls.twitter)" target="_blank"
-              ><img [src]="path + 'skill-icons_twitter.svg'" alt="logo twitter"
-            /></a>
-          </li>
-          <li>
-            <a [href]="getSafeUrl(socialMediaUrls.instagram)" target="_blank"
-              ><img [src]="path + 'ri_instagram-fill.svg'" alt="logo instagram"
-            /></a>
-          </li>
-          <li>
-            <a [href]="getSafeUrl(socialMediaUrls.spotify)" target="_blank"
-              ><img [src]="path + 'mdi_spotify.svg'" alt="logo spotify"
-            /></a>
-          </li>
-          <li>
-            <a [href]="getSafeUrl(socialMediaUrls.linkedin)" target="_blank"
-              ><img [src]="path + 'bi_linkedin.svg'" alt="logo linkedin"
-            /></a>
-          </li>
-          <li>
-            <a [href]="getSafeUrl(socialMediaUrls.facebook)" target="_blank"
-              ><img
-                [src]="path + 'ic_outline-facebook.svg'"
-                alt="logo facebook"
-            /></a>
-          </li>
+<app-header *ngIf="isMobile"></app-header>
+<main class="background-wrapper">
+  <header class="background-fullscreen">
+    <app-header *ngIf="!isMobile"></app-header>
+    <div class="container">
+      <div class="title-background">
+        <div class="title">“O Podcast mais animado do Mundo Ágil”</div>
+      </div>
+      <div class="title-360px">
+        <p>“O Podcast mais animado do Mundo Ágil”</p>
+      </div>
+      <div class="container-button">
+        <div class="txt-desc">
+          <h2>
+            Assine e seja membro para ter acesso a <br />
+            conteúdos exclusivos.
+          </h2>
+        </div>
+        <div class="btn-container">
+          <button
+            routerLink="/cadastro"
+            class="btns btn-access"
+            id="assinar"
+          >
+            <p class="txt-btn">ASSINAR</p>
+          </button>
         </div>
       </div>
-    </section>
-  </article>
-  <article class="apresentacao">
-    <div class="fullscreen">
-      <iframe
-        width="802"
-        height="399"
-        src="https://www.youtube.com/embed/RvSzTZUvj5o?controls=0"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
     </div>
-    <div class="mobile">
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/RvSzTZUvj5o?controls=0"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <h3>Veja nossa apresentação!</h3>
-  </article>
-  <section class="article-three">
-    <section class="ultimos">
-      <h3>Últimos podcasts</h3>
-      <div class="videos-ultimos">
-        <div *ngFor="let video of paginatedVi">
-          <div class="video-text">
-            <iframe
-              width="305"
-              height="197"
-              [src]="getSafeVideoUrl(video.url)"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-            <p>{{ video.title }}</p>
+  </header>
+  <section class="home-container">
+    <article class="article-one">
+      <section class="desc-logos">
+        <div class="title-one"><h2>Quem somos</h2></div>
+        <p class="descricao">
+          O Pipoca Ágil é um podcast voltado para o Mundo Ágil e afins. Com o
+          propósito de ser um podcast "chão de fábrica", ajudando na divulgação
+          de conteúdo do Mundo Ágil e contando casos e soluções para a
+          implementação da Transformação Digital nas empresas.
+        </p>
+        <div class="redes-sociais">
+          <p>Siga nossos canais</p>
+          <div class="redes">
+            <li>
+              <a [href]="getSafeUrl(socialMediaUrls.youtube)" target="_blank"
+                ><img [src]="path + 'bi_youtube.svg'" alt="logo youtube"
+              /></a>
+            </li>
+            <li>
+              <a [href]="getSafeUrl(socialMediaUrls.twitter)" target="_blank"
+                ><img
+                  [src]="path + 'skill-icons_twitter.svg'"
+                  alt="logo twitter"
+              /></a>
+            </li>
+            <li>
+              <a [href]="getSafeUrl(socialMediaUrls.instagram)" target="_blank"
+                ><img
+                  [src]="path + 'ri_instagram-fill.svg'"
+                  alt="logo instagram"
+              /></a>
+            </li>
+            <li>
+              <a [href]="getSafeUrl(socialMediaUrls.spotify)" target="_blank"
+                ><img [src]="path + 'mdi_spotify.svg'" alt="logo spotify"
+              /></a>
+            </li>
+            <li>
+              <a [href]="getSafeUrl(socialMediaUrls.linkedin)" target="_blank"
+                ><img [src]="path + 'bi_linkedin.svg'" alt="logo linkedin"
+              /></a>
+            </li>
+            <li>
+              <a [href]="getSafeUrl(socialMediaUrls.facebook)" target="_blank"
+                ><img
+                  [src]="path + 'ic_outline-facebook.svg'"
+                  alt="logo facebook"
+              /></a>
+            </li>
           </div>
         </div>
+      </section>
+    </article>
+    <article class="apresentacao">
+      <div class="fullscreen">
+        <iframe
+          width="802"
+          height="399"
+          src="https://www.youtube.com/embed/RvSzTZUvj5o?controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
-      <div class="pagination">
-        <button
-          class="btn-pagination"
-          [disabled]="paginatedVideo.currentPage === 1"
-          (click)="onPageChanged(1)"
-          [ngClass]="{ active: paginatedVideo.currentPage === 1 }"
-        >
-          <img
-            [src]="
-              paginatedVideo.currentPage === 1
-                ? '../../../assets/image/Ellipse 4.svg'
-                : '../../../assets/image/Ellipse 3.svg'
-            "
-            alt=""
-          />
-        </button>
-        <button
-          class="btn-pagination"
-          [disabled]="paginatedVideo.currentPage === 2"
-          (click)="onPageChanged(2)"
-          [ngClass]="{ active: paginatedVideo.currentPage === 2 }"
-        >
-          <img
-            [src]="
-              paginatedVideo.currentPage === 2
-                ? '../../../assets/image/Ellipse 4.svg'
-                : '../../../assets/image/Ellipse 3.svg'
-            "
-            alt=""
-          />
-        </button>
-        <button
-          class="btn-pagination"
-          [disabled]="paginatedVideo.currentPage === 3"
-          (click)="onPageChanged(3)"
-          [ngClass]="{ active: paginatedVideo.currentPage === 3 }"
-        >
-          <img
-            [src]="
-              paginatedVideo.currentPage === 3
-                ? '../../../assets/image/Ellipse 4.svg'
-                : '../../../assets/image/Ellipse 3.svg'
-            "
-            alt=""
-          />
-        </button>
+      <div class="mobile">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/RvSzTZUvj5o?controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
+      <h3>Veja nossa apresentação!</h3>
+    </article>
+    <section class="article-three">
+      <section class="ultimos">
+        <h3>Últimos podcasts</h3>
+        <div class="videos-ultimos">
+          <div *ngFor="let video of paginatedVi">
+            <div class="video-text">
+              <iframe
+                width="305"
+                height="197"
+                [src]="getSafeVideoUrl(video.url)"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+              <p>{{ video.title }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <button
+            class="btn-pagination"
+            [disabled]="paginatedVideo.currentPage === 1"
+            (click)="onPageChanged(1)"
+            [ngClass]="{ active: paginatedVideo.currentPage === 1 }"
+          >
+            <img
+              [src]="
+                paginatedVideo.currentPage === 1
+                  ? '../../../assets/image/Ellipse 4.svg'
+                  : '../../../assets/image/Ellipse 3.svg'
+              "
+              alt=""
+            />
+          </button>
+          <button
+            class="btn-pagination"
+            [disabled]="paginatedVideo.currentPage === 2"
+            (click)="onPageChanged(2)"
+            [ngClass]="{ active: paginatedVideo.currentPage === 2 }"
+          >
+            <img
+              [src]="
+                paginatedVideo.currentPage === 2
+                  ? '../../../assets/image/Ellipse 4.svg'
+                  : '../../../assets/image/Ellipse 3.svg'
+              "
+              alt=""
+            />
+          </button>
+          <button
+            class="btn-pagination"
+            [disabled]="paginatedVideo.currentPage === 3"
+            (click)="onPageChanged(3)"
+            [ngClass]="{ active: paginatedVideo.currentPage === 3 }"
+          >
+            <img
+              [src]="
+                paginatedVideo.currentPage === 3
+                  ? '../../../assets/image/Ellipse 4.svg'
+                  : '../../../assets/image/Ellipse 3.svg'
+              "
+              alt=""
+            />
+          </button>
+        </div>
+      </section>
     </section>
   </section>
 </main>

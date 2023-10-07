@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { Pagination } from 'src/app/models/Pagination';
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   public pages: number[] = [];
   public currentPage: number = 1;
   public clickedPage: number | null = null;
+  public isMobile: boolean = false;
 
   socialMediaUrls = {
     youtube: 'https://www.youtube.com/@PipocaAgil',
@@ -47,6 +48,15 @@ export class HomeComponent implements OnInit {
       { length: this.paginatedVideo.totalPages },
       (_, i) => i + 1
     );
+
+    this.checkScreenSize();
+    console.log('é mobile = ' + this.isMobile);
+
+  }
+
+  @HostListener('window:resize', ['$event'])
+  checkScreenSize(event?: Event) {
+    this.isMobile = window.innerWidth <= 480;
   }
 
   getSafeVideoUrl(videoUrl: string): SafeResourceUrl {

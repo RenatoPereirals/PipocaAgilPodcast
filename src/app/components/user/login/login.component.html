@@ -1,4 +1,4 @@
-<main class="principal">
+<main class="principal background-wrapper">
   <article class="bemvindo">
     <section class="logo-bemvindo">
       <img
@@ -9,6 +9,8 @@
       <h2>Bem - vindo</h2>
     </section>
   </article>
+
+  <!-- FORMULÁRIO -->
   <form [formGroup]="form" id="formlogin1" (ngSubmit)="login()">
     <section class="formcad">
       <aside class="crieconta">
@@ -20,9 +22,11 @@
       </aside>
       <p class="login">
         Não tem conta?
-        <a routerLink="/cadastro" target="_parent">Cadastre aqui!</a>
+        <a routerLink="/cadastro">Cadastre aqui!</a>
       </p>
     </section>
+
+    <!-- LOGIN -->
     <fieldset class="registration">
       <div class="email">
         <label for="e-mail">E-mail </label>
@@ -96,9 +100,13 @@
           Deve conter no mínimo 8 caracteres.
         </div>
       </div>
-      <button class="btn btn-confirm txt-btn" type="submit">Confirmar</button>
+      <div class="btnunit">
+        <button class="btn btn-confirm txt-btn" type="submit">Confirmar</button>
+      </div>
       <div class="newPassword">
-        <p>Esqueceu a senha? <a href="/forgot-password">Clique aqui!</a></p>
+        <p class="login">
+          Esqueceu a senha? <a href="/forgot-password">Clique aqui!</a>
+        </p>
       </div>
     </fieldset>
   </form>

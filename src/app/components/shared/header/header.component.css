@@ -1,24 +1,3 @@
-header {
-  background-position: center top; /* Alinhar a imagem ao topo */
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: -15px;
-  background-image: url("../../../../assets/image/fundo.jpg");
-  width: 100%;
-  height: 810px;
-  position: relative;
-}
-
-header::before {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
 a {
   color: var(--color-white);
   font-family: Roboto;
@@ -70,50 +49,6 @@ a {
   padding-right: 135px;
 }
 
-.container {
-  width: 100%;
-  max-width: 1400px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 135px;
-}
-
-.title-background {
-  width: 100%;
-  max-width: 1185px;
-  height: 284px;
-  background: rgba(7, 2, 2, 0.3);
-  flex-shrink: 0;
-  border-radius: 90px;
-  overflow: hidden;
-  margin-left: -70px;
-}
-
-.title {
-  font-size: 96px;
-  font-weight: 900;
-  color: var(--color-yellow);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  margin-left: 70px;
-}
-
-.title-360px {
-  display: none;
-}
-
-.container-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 100%;
-}
-
 .txt-desc {
   width: 629px;
   height: 80px;
@@ -130,53 +65,24 @@ a {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.btn {
-  margin-left: 42px;
-}
-
-.txt-btn {
-  color: #000;
-  font-family: Roboto;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-}
-
-.btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  border-radius: 50px;
-  background: var(--color-yellow);
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  border: none;
-}
-
 /* SMALL DEVICES - SMARTPHONES */
 @media screen and (max-width: 480px) {
-  header {
-    background-image: none;
-  }
   .navigator {
     height: 85px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     padding-left: 0;
     padding-right: 0;
-    margin-top: -100px;
     padding-top: 0;
   }
 
   .icon-menu,
   .vazia {
     flex: 1;
-    height: 100%;
     display: flex;
-    align-items: center;
     justify-content: flex-start;
     padding-left: 22px;
   }
@@ -186,6 +92,8 @@ a {
     border: none;
     background: transparent;
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 
   .icon-menu-img {
@@ -216,63 +124,5 @@ a {
 
   .div-container {
     display: none;
-  }
-
-  .container {
-    display: flex;
-    height: auto;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    margin-top: 68px;
-    padding-left: 0;
-    gap: 0;
-  }
-
-  .title-background {
-    display: none;
-  }
-
-  .title-360px {
-    width: 265px;
-    height: 44px;
-    display: block;
-  }
-  .title-360px > p {
-    width: 100%;
-    flex-shrink: 0;
-    color: #fecf5d;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 900;
-    text-align: center;
-    line-height: normal;
-  }
-
-  .container-button {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 60px;
-  }
-
-  .txt-desc {
-    width: 100%;
-    height: 63px;
-    margin-bottom: 16px;
-  }
-
-  .txt-desc > h2 {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .btn-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
 }

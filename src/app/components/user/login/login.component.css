@@ -189,3 +189,67 @@ input::placeholder {
   margin-top: 90px;
   border: none;
 }
+
+/* SMALL DEVICES - SMARTPHONES */
+@media screen and (max-width: 480px) {
+  .background-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .crieconta > h2,
+  p {
+    text-align: center;
+  }
+
+  .crieconta > h2 {
+    margin-top: 43px;
+    font-size: 24px;
+  }
+
+  .crieconta > p {
+    padding-top: 0px;
+    font-size: 16px;
+  }
+
+  .principal {
+    justify-content: center;
+    height: 100%;
+    padding: 0px 19px;
+  }
+
+  form {
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 27px;
+    z-index: 1;
+  }
+
+  .email,
+  .date,
+  .password {
+    width: 100%;
+    margin-top: 26px;
+  }
+
+  .login {
+    font-size: 14px;
+    margin-top: 29px;
+  }
+
+  .termos label {
+    font-size: 11px;
+  }
+
+  .btn-confirm {
+    margin-top: 39px;
+    margin-bottom: 50px;
+  }
+}

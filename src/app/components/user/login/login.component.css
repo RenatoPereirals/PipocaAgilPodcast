@@ -1,3 +1,20 @@
+.registration {
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.formcad {
+height: 0px;
+}
+
+.btnunit {
+  height: 38px;
+}
+
+.newPassword {
+  margin-top: 50px;
+}
+
 /* SMALL DEVICES - SMARTPHONES */
 @media screen and (max-width: 480px) {
   .background-wrapper::before {

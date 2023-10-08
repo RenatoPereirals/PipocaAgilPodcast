@@ -16,7 +16,7 @@
 @media screen and (max-width: 480px) {
   .background-wrapper::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;

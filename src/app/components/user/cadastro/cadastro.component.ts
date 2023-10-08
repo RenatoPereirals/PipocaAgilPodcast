@@ -24,8 +24,6 @@ import { UserFakeService } from 'src/app/services/user-fake.service';
 })
 export class CadastroComponent implements OnInit {
   passwordVisible = false;
-  imgShow = false;
-  checked = false;
   showAgeError = false;
 
   imageFechadaUrl = '../../../../assets/image/Hide.png';
@@ -68,17 +66,8 @@ export class CadastroComponent implements OnInit {
   }
 
   // Altera a visibilidade da senha e altera a imagem
-  togglePasswordVisibility(inputId: string, imgId: string): void {
+  togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
-    this.imgShow = !this.imgShow;
-
-    const passwordInput = document.getElementById(inputId) as HTMLInputElement;
-    const togglePassword = document.getElementById(imgId) as HTMLImageElement;
-
-    passwordInput.type = this.passwordVisible ? 'text' : 'password';
-    togglePassword.src = this.imgShow
-      ? this.imageAbertaUrl
-      : this.imageFechadaUrl;
   }
 
   // Validação do formulário

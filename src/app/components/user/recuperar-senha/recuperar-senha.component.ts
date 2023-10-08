@@ -67,17 +67,9 @@ export class RecuperarSenhaComponent {
     );
   }
 
-  togglePasswordVisibility(inputId: string, imgId: string): void {
+  // Altera a visibilidade da senha e altera a imagem
+  togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
-    this.imgShow = !this.imgShow;
-
-    const passwordInput = document.getElementById(inputId) as HTMLInputElement;
-    const togglePassword = document.getElementById(imgId) as HTMLImageElement;
-
-    passwordInput.type = this.passwordVisible ? 'text' : 'password';
-    togglePassword.src = this.imgShow
-      ? this.imageAbertaUrl
-      : this.imageFechadaUrl;
   }
 
   public cssValidator(campoForm: FormControl | AbstractControl): any {

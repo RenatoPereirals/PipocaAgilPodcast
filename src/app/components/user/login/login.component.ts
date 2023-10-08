@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
     this.passwordVisible = !this.passwordVisible;
   }
 
-   // Validação do formulário
+  // Validação do formulário
   public validation(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -103,7 +103,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  // Deve lidar  o email após três tentativas de login inválidas
+  // Deve lidar o com o bloqueio do email após três tentativas de login inválidas
   private handleBlockedLogin(email: string): void {
     this.toast.confirmRegistration(
       'Você atingiu o número máximo de tentativas',
@@ -112,7 +112,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  // Deve lidar com o login do usuário e esconder o spinner
+  // Deve tentar logar do usuário
   private attemptUserLogin(userLogin: UserLogin): void {
     this.spinnerService.show();
     this.userSevice.login(userLogin.email, userLogin.password).subscribe({
@@ -132,7 +132,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // Deve lidar com o login bem sucedido e chamar o toast de confirmação
+  // Deve lidar com o login bem-sucedido e chamar o toast de confirmação
   private handleSuccessfulLogin(): void {
     this.toast.confirmRegistration(
       'Login bem-sucedido',
@@ -162,7 +162,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
-   // Deve lidar com o login de usuário válido e retornar erro caso o login seja inválido
+  // Deve lidar com o login de usuário válido e retornar erro caso o login seja inválido
   login(): void {
     const userLogin: UserLogin = {
       email: this.form.get('email')?.value,

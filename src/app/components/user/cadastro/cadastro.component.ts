@@ -121,7 +121,7 @@ export class CadastroComponent implements OnInit {
     return { 'invalid-background': campoForm.errors && campoForm.touched };
   }
 
-  // Deve chamar as funções showErrorForRequiredFields e toast.errorRegistration se houver campos inválidos
+  // Deve lidar com erro de campos inválidos
   private handleInvalidForm(): void {
     this.showErrorForRequiredFields();
     this.toast.errorRegistration(
@@ -131,7 +131,7 @@ export class CadastroComponent implements OnInit {
     );
   }
 
-  // Deve chamar toast.errorRegistration se houver erros inesperados no cadastro
+  // Deve lidar com erros inesperados no cadastro
   private handleRegistrationError(error: any): void {
     this.toast.errorRegistration(
       'Erro no cadastro!',
@@ -141,7 +141,7 @@ export class CadastroComponent implements OnInit {
     console.error('Erro ao cadastrar', error);
   }
 
-  // Deve esconder o spinner e chamar toast.confirmRegistration se o cadastro for válido
+  // Deve lidar com cadastro válido
   private handleRegistrationComplete(): void {
     setTimeout(() => {
       this.spinnerService.hide();
@@ -153,7 +153,7 @@ export class CadastroComponent implements OnInit {
     }, 2000);
   }
 
-  // Deve chamar o spinner e cadastrar o usuário válido e retornar erro caso o usuário seja inválido
+  // Deve registrar o usuário válido e retornar erro caso o usuário seja inválido
   registerUser(): void {
     if (this.form.invalid) {
       this.handleInvalidForm();

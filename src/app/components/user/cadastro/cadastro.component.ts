@@ -28,8 +28,8 @@ export class CadastroComponent implements OnInit {
   checked = false;
   showAgeError = false;
 
-  imageFechadaUrl: string = '../../../../assets/image/Hide.png';
-  imageAbertaUrl: string = '../../../../assets/image/show.png';
+  imageFechadaUrl = '../../../../assets/image/Hide.png';
+  imageAbertaUrl = '../../../../assets/image/show.png';
 
   form!: FormGroup;
   user = {} as User;
@@ -53,6 +53,7 @@ export class CadastroComponent implements OnInit {
     this.validation();
   }
 
+  // Deve exibir mensagens de erro para os campos inválidos
   showErrorForRequiredFields() {
     Object.keys(this.form.controls).forEach((field) => {
       const control = this.form.get(field);
@@ -66,6 +67,7 @@ export class CadastroComponent implements OnInit {
     });
   }
 
+  // Altera a visibilidade da senha e altera a imagem
   togglePasswordVisibility(inputId: string, imgId: string): void {
     this.passwordVisible = !this.passwordVisible;
     this.imgShow = !this.imgShow;
@@ -79,6 +81,7 @@ export class CadastroComponent implements OnInit {
       : this.imageFechadaUrl;
   }
 
+  // Validação do formulário
   private validation(): void {
     const formOptions: AbstractControlOptions = {
       validators: ValidatorField.MustMatch('password', 'confirmePassword'),
@@ -97,7 +100,7 @@ export class CadastroComponent implements OnInit {
     );
   }
 
-  // Função de validação de idade personalizada
+  // Deve validar a idade somente quando maior de 18 anos
   validateAge(control: AbstractControl): { [key: string]: any } | null {
     const birthDate = new Date(control.value);
     const today = new Date();
@@ -112,55 +115,68 @@ export class CadastroComponent implements OnInit {
     }
   }
 
+  // Deve exibe uma mensagem de erro quando o campo é clicado e está vazio
   public cssValidator(campoForm: FormControl | AbstractControl): any {
     return { 'is-invalid': campoForm.errors && campoForm.touched };
   }
 
+  // Deve altera a cor de fundo do input quando válido
   public cssBackgroundValidator(campoForm: FormControl | AbstractControl): any {
     return { 'valid-backgroud ': campoForm.valid };
   }
 
+  // Deve altera a cor de fundo do input quando inválido
   public cssBackgroundInvalidator(
     campoForm: FormControl | AbstractControl
   ): any {
     return { 'invalid-background': campoForm.errors && campoForm.touched };
   }
 
+  // Deve chamar as funções showErrorForRequiredFields e toast.errorRegistration se houver campos inválidos
+  private handleInvalidForm(): void {
+    this.showErrorForRequiredFields();
+    this.toast.errorRegistration(
+      'Erro ao se cadastrar!',
+      'Corrija os erros abaixo',
+      'error'
+    );
+  }
+
+  // Deve chamar  toast.errorRegistration se houver erros inesperados no cadastro
+  private handleRegistrationError(error: any): void {
+    this.toast.errorRegistration(
+      'Erro no cadastro!',
+      'Por favor, tente novamente',
+      'error'
+    );
+    console.error('Erro ao cadastrar', error);
+  }
+
+  // Deve esconder o spinner e chamar toast.confirmRegistration se o cadastro for válido
+  private handleRegistrationComplete(): void {
+    setTimeout(() => {
+      this.spinnerService.hide();
+      this.toast.confirmRegistration(
+        'Cadastro realizado',
+        'A <strong>confirmação</strong> do seu <strong>cadastro</strong> será enviada pelo <strong>e-mail associado</strong> à sua nova conta',
+        'confirmation'
+      );
+    }, 2000);
+  }
+
+  // Deve chamar o spinner e cadastrar o usuário válido e retornar erro caso o usuário seja inválido
   registerUser(): void {
     if (this.form.invalid) {
-      this.showErrorForRequiredFields();
-      this.toast.errorRegistration(
-        'Erro ao se cadasrar!',
-        'Corrija os erros abaixo',
-        'error'
-      );
-
+      this.handleInvalidForm();
       return;
     }
+
     this.spinnerService.show();
+    const user = { ...this.form.value };
 
-    this.user = { ...this.form.value };
-
-    this.userService.register(this.user).subscribe({
-      next: () => {},
-      error: (error) => {
-        this.toast.errorRegistration(
-          'Erro no cadasrar!',
-          'Corrija os erros abaixo',
-          'error'
-        );
-        console.log('Erro ao cadastrar', error);
-      },
-      complete: () => {
-        setTimeout(() => {
-          this.spinnerService.hide();
-          this.toast.confirmRegistration(
-            'Cadastro realizado',
-            'A <strong>confirmação</strong> do seu <strong>cadastro</strong> será enviado pelo <strong>e-mail associado</strong> à sua nova conta',
-            'confirmation'
-          ); // Exiba o toast após a conclusão do spinner.
-        }, 2000);
-      },
+    this.userService.register(user).subscribe({
+      error: (error) => this.handleRegistrationError(error),
+      complete: () => this.handleRegistrationComplete(),
     });
   }
 }

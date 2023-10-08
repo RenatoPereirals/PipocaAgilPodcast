@@ -131,7 +131,7 @@ export class CadastroComponent implements OnInit {
     );
   }
 
-  // Deve chamar  toast.errorRegistration se houver erros inesperados no cadastro
+  // Deve chamar toast.errorRegistration se houver erros inesperados no cadastro
   private handleRegistrationError(error: any): void {
     this.toast.errorRegistration(
       'Erro no cadastro!',

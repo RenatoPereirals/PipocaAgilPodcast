@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
     this.validation();
   }
 
+  // Deve exibir mensagens de erro para os campos inválidos
   showErrorForRequiredFields() {
     Object.keys(this.form.controls).forEach((field) => {
       const control = this.form.get(field);
@@ -62,6 +63,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  // Altera a visibilidade da senha e altera a imagem
+  togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
+  }
+
+   // Validação do formulário
   public validation(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -69,25 +76,93 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // Altera a visibilidade da senha e altera a imagem
-  togglePasswordVisibility(): void {
-    this.passwordVisible = !this.passwordVisible;
-  }
-
+  // Deve exibe uma mensagem de erro quando o campo é clicado e está vazio
   public cssValidator(campoForm: FormControl | AbstractControl): any {
     return { 'is-invalid': campoForm.errors && campoForm.touched };
   }
 
+  // Deve altera a cor de fundo do input quando válido
   public cssBackgroundValidator(campoForm: FormControl | AbstractControl): any {
     return { 'valid-backgroud ': campoForm.valid };
   }
 
+  // Deve altera a cor de fundo do input quando inválido
   public cssBackgroundInvalidator(
     campoForm: FormControl | AbstractControl
   ): any {
     return { 'invalid-background': campoForm.errors && campoForm.touched };
   }
 
+  // Deve lidar com erro de campos inválidos
+  private handleInvalidForm(): void {
+    this.showErrorForRequiredFields();
+    this.toast.errorRegistration(
+      'Erro ao fazer login!',
+      'Corrija os erros abaixo',
+      'error'
+    );
+  }
+
+  // Deve lidar  o email após três tentativas de login inválidas
+  private handleBlockedLogin(email: string): void {
+    this.toast.confirmRegistration(
+      'Você atingiu o número máximo de tentativas',
+      'Você está bloqueado temporariamente',
+      'confirmation'
+    );
+  }
+
+  // Deve lidar com o login do usuário e esconder o spinner
+  private attemptUserLogin(userLogin: UserLogin): void {
+    this.spinnerService.show();
+    this.userSevice.login(userLogin.email, userLogin.password).subscribe({
+      next: (result: any) => {
+        if (result) {
+          this.handleSuccessfulLogin();
+        } else {
+          this.handleFailedLogin(userLogin.email);
+        }
+      },
+      error: (error) => {
+        this.handleError(error);
+      },
+      complete: () => {
+        this.spinnerService.hide();
+      },
+    });
+  }
+
+  // Deve lidar com o login bem sucedido e chamar o toast de confirmação
+  private handleSuccessfulLogin(): void {
+    this.toast.confirmRegistration(
+      'Login bem-sucedido',
+      'Você está logado na sua conta.',
+      'confirmation'
+    );
+    this.router.navigateByUrl('/');
+  }
+
+  // Deve lidar com o erro caso o email e/ou senha estejam errados
+  private handleFailedLogin(email: string): void {
+    this.toast.errorRegistration(
+      'Erro ao tentar fazer login!',
+      'E-mail ou senha estão errados',
+      'error'
+    );
+    this.loginAttemps.recordLoginAttemp(email); // Registra tentativa de login
+  }
+
+  // Deve lidar erros inesperados no login
+  private handleError(error: any): void {
+    console.error(error);
+    this.toast.errorRegistration(
+      'Erro ao tentar fazer login.',
+      'Por favor, tente novamente',
+      'error'
+    );
+  }
+
+   // Deve lidar com o login de usuário válido e retornar erro caso o login seja inválido
   login(): void {
     const userLogin: UserLogin = {
       email: this.form.get('email')?.value,
@@ -95,65 +170,11 @@ export class LoginComponent implements OnInit {
     };
 
     if (this.form.invalid) {
-      this.showErrorForRequiredFields();
-      console.log('erro de formulário');
-      this.toast.errorRegistration(
-        'Erro ao fazer login!',
-        'Corrija os erros abaixo',
-        'error'
-      );
+      this.handleInvalidForm();
     } else if (this.loginAttemps.isLoginBlocked(userLogin.email)) {
-      console.log('erro de senha');
-      this.toast.confirmRegistration(
-        'Você atingiu o número máximo de tentativas',
-        'Você está bloqueado temporariamente',
-        'confirmation'
-      );
+      this.handleBlockedLogin(userLogin.email);
     } else {
-      console.log('passou pelas validações');
-      // Todas as validações passaram, pode fazer a tentativa de login
-      this.spinnerService.show();
-
-      this.userSevice.login(userLogin.email, userLogin.password).subscribe({
-        next: (result) => {
-          if (result) {
-            console.log('usuário logado');
-            setTimeout(() => {
-              this.toast.confirmRegistration(
-                'Login bem-sucedido',
-                'Você está logado na sua conta.',
-                'confirmation'
-              );
-              this.router.navigateByUrl('/');
-            }, 2000);
-          } else {
-            setTimeout(() => {
-              console.log('erro ao tentar fazer login');
-              this.toast.errorRegistration(
-                'Erro ao tentar fazer login!',
-                'E-mail ou senha estão errados',
-                'error'
-              );
-              this.loginAttemps.recordLoginAttemp(userLogin.email); // Registra tentativa de login
-            }, 2000);
-            console.log('Usuário não cadastrado no sistema');
-          }
-        },
-        error: (error) => {
-          console.error(error);
-          this.toast.errorRegistration(
-            'Erro ao tentar fazer login.',
-            'Pofavor tente novamente',
-            'error'
-          );
-        },
-        complete: () => {
-          console.log('subscribe completo');
-          setTimeout(() => {
-            this.spinnerService.hide();
-          }, 2000);
-        },
-      });
+      this.attemptUserLogin(userLogin);
     }
   }
 }

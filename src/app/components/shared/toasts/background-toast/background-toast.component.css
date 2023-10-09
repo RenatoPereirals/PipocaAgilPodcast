@@ -39,8 +39,7 @@ p {
 /* SMALL DEVICES - SMARTPHONES */
 @media screen and (max-width: 480px) {
   .message-header {
-    width: 90%;
-    margin: 10px 13px;
+    padding: 10px 13px;
     top: 0;
     left: 0;
     height: 45px;

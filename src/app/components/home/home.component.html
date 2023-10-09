@@ -4,7 +4,9 @@
     <app-header *ngIf="!isMobile"></app-header>
     <div class="container">
       <div class="title-background">
-        <div class="title color-yellow">“O Podcast mais animado do Mundo Ágil”</div>
+        <div class="title color-yellow">
+          “O Podcast mais animado do Mundo Ágil”
+        </div>
       </div>
       <div class="title-360px">
         <p>“O Podcast mais animado do Mundo Ágil”</p>
@@ -17,11 +19,7 @@
           </h2>
         </div>
         <div class="btn-container">
-          <button
-            routerLink="/cadastro"
-            class="btns btn-access "
-            id="assinar"
-          >
+          <button routerLink="/cadastro" class="btns btn-access" id="assinar">
             <p class="txt-btn">ASSINAR</p>
           </button>
         </div>
@@ -43,7 +41,10 @@
           <div class="redes">
             <li>
               <a [href]="getSafeUrl(socialMediaUrls.youtube)" target="_blank"
-                ><img [src]="path + 'bi_youtube.svg'" alt="logo youtube"
+                ><img
+                  [src]="path + 'bi_youtube.svg'"
+                  alt="logo youtube"
+                  loading="lazy"
               /></a>
             </li>
             <li>
@@ -51,6 +52,7 @@
                 ><img
                   [src]="path + 'skill-icons_twitter.svg'"
                   alt="logo twitter"
+                  loading="lazy"
               /></a>
             </li>
             <li>
@@ -58,16 +60,23 @@
                 ><img
                   [src]="path + 'ri_instagram-fill.svg'"
                   alt="logo instagram"
+                  loading="lazy"
               /></a>
             </li>
             <li>
               <a [href]="getSafeUrl(socialMediaUrls.spotify)" target="_blank"
-                ><img [src]="path + 'mdi_spotify.svg'" alt="logo spotify"
+                ><img
+                  [src]="path + 'mdi_spotify.svg'"
+                  alt="logo spotify"
+                  loading="lazy"
               /></a>
             </li>
             <li>
               <a [href]="getSafeUrl(socialMediaUrls.linkedin)" target="_blank"
-                ><img [src]="path + 'bi_linkedin.svg'" alt="logo linkedin"
+                ><img
+                  [src]="path + 'bi_linkedin.svg'"
+                  alt="logo linkedin"
+                  loading="lazy"
               /></a>
             </li>
             <li>
@@ -75,6 +84,7 @@
                 ><img
                   [src]="path + 'ic_outline-facebook.svg'"
                   alt="logo facebook"
+                  loading="lazy"
               /></a>
             </li>
           </div>
@@ -91,6 +101,7 @@
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
+          loading="lazy"
         ></iframe>
       </div>
       <div class="mobile">
@@ -102,6 +113,7 @@
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
+          loading="lazy"
         ></iframe>
       </div>
       <h3>Veja nossa apresentação!</h3>
@@ -120,6 +132,7 @@
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
+                loading="lazy"
               ></iframe>
               <p>{{ video.title }}</p>
             </div>
@@ -128,43 +141,14 @@
         <div class="pagination">
           <button
             class="btn-pagination"
-            [disabled]="paginatedVideo.currentPage === 1"
-            (click)="onPageChanged(1)"
-            [ngClass]="{ active: paginatedVideo.currentPage === 1 }"
+            *ngFor="let page of pagesArray"
+            [disabled]="paginatedVideo.currentPage === page"
+            (click)="onPageChanged(page)"
+            [ngClass]="{ active: paginatedVideo.currentPage === page }"
           >
             <img
               [src]="
-                paginatedVideo.currentPage === 1
-                  ? '../../../assets/image/Ellipse 4.svg'
-                  : '../../../assets/image/Ellipse 3.svg'
-              "
-              alt=""
-            />
-          </button>
-          <button
-            class="btn-pagination"
-            [disabled]="paginatedVideo.currentPage === 2"
-            (click)="onPageChanged(2)"
-            [ngClass]="{ active: paginatedVideo.currentPage === 2 }"
-          >
-            <img
-              [src]="
-                paginatedVideo.currentPage === 2
-                  ? '../../../assets/image/Ellipse 4.svg'
-                  : '../../../assets/image/Ellipse 3.svg'
-              "
-              alt=""
-            />
-          </button>
-          <button
-            class="btn-pagination"
-            [disabled]="paginatedVideo.currentPage === 3"
-            (click)="onPageChanged(3)"
-            [ngClass]="{ active: paginatedVideo.currentPage === 3 }"
-          >
-            <img
-              [src]="
-                paginatedVideo.currentPage === 3
+                paginatedVideo.currentPage === page
                   ? '../../../assets/image/Ellipse 4.svg'
                   : '../../../assets/image/Ellipse 3.svg'
               "

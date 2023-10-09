@@ -13,11 +13,10 @@ export class HomeComponent implements OnInit {
   videos: any[] = [];
   public paginatedVideo = {} as Pagination;
   public paginatedVi: any[] = [];
-  public paginatedVideos: any[] = [];
   public pages: number[] = [];
   public currentPage: number = 1;
-  public clickedPage: number | null = null;
   public isMobile: boolean = false;
+  public pagesArray: number[] = [1, 2, 3];
 
   socialMediaUrls = {
     youtube: 'https://www.youtube.com/@PipocaAgil',

@@ -11,13 +11,14 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: var(roboto-font), sans-serif;
   background-color: var(--color-black);
-  color: #fff;
+  color: var(--color-white);
   height: 100%;
   width: 100%;
   background-position: center;
   box-sizing: border-box;
+  font-display: swap;
 }
 
 a {
@@ -37,12 +38,22 @@ img {
 
 /* Variáveis CSS */
 :root {
+  /* cores */
   --color-yellow: #fecf5d;
   --color-yellow-medium: rgba(254, 207, 93, 0.5);
   --color-white: #fff;
   --color-white-medium: #d9d9d9;
   --color-black: #201c1c;
   --color-black-medium: #000;
+  --color-backgound-25: rgba(7, 2, 2, 0.25);
+  --color-valid: #03a200;
+  --color-background-valid: #daf8da;
+  --color-invalid: #fa0000;
+  --color-background-invalid: #fad6d6;
+
+  /* fontes */
+  --fonte-roboto: "Roboto", sans-serif;
+  --fonte-work-sans: "Work Sans", sans-serif;
 }
 
 /* Estilos comuns */
@@ -54,7 +65,7 @@ label {
 
 h2,
 p {
-  font-family: "Work Sans";
+  font-family: var(work-sans-font);
   font-size: 34px;
   font-style: normal;
   font-weight: 700;
@@ -107,7 +118,7 @@ form {
 
 .login > a {
   text-decoration-line: underline;
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* Principal */
@@ -152,10 +163,10 @@ label {
 
 input {
   padding: 5px;
-  border: 1px solid #000;
-  background: #fff;
+  border: 1px solid var(--color-black-medium);
+  background: var(--color-white);
   color: #201c1c;
-  font-family: "Roboto";
+  font-family: var(roboto-font);
   font-size: 18px;
   font-weight: 400;
   line-height: normal;
@@ -215,8 +226,6 @@ input::placeholder {
   text-decoration: underline;
 }
 
-
-
 /* logo marca e background */
 .bemvindo {
   width: 489px;
@@ -234,7 +243,7 @@ input::placeholder {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--color-black-medium);
   z-index: 1;
 }
 
@@ -259,13 +268,13 @@ input::placeholder {
 
 /* validações */
 .valid-backgroud {
-  border: 1px solid #03a200;
-  background-color: #daf8da;
+  border: 1px solid var(--color-valid);
+  background-color: var(--color-background-valid);
 }
 
 .invalid-background {
-  border: 1px solid #fa0000;
-  background-color: #fad6d6;
+  border: 1px solid var(--color-invalid);
+  background-color: var(--color-background-invalid);
 }
 
 /* Outros estilos */
@@ -293,9 +302,9 @@ input::placeholder {
   top: -2.5px;
   width: 16px;
   height: 17px;
-  background-color: #d9d9d9;
+  background-color: var(--color-white-medium);
   transition: background-color 0.3s ease; /* Transição de cor de fundo gradual */
-  border: 1px solid #000000;
+  border: 1px solid var(--color-black-medium);
   transition: border 0.3s ease;
 }
 
@@ -304,26 +313,17 @@ input::placeholder {
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 1px solid #03a200;
-  background-color: #daf8da;
+  border: 1px solid var(--color-valid);
+  background-color: var(--color-background-valid);
   font-weight: bold;
-  color: #000;
+  color: var(--color-black-medium);
   text-align: center;
   line-height: 16px; /* Ajustar a linha verticalmente */
 }
 
 .unchecked:not(checked) + label::before {
-  border: 1px solid #fa0000;
-  background-color: #fad6d6;
-}
-
-/* Estilos para elementos com fonte */
-.roboto-font {
-  font-family: "Roboto", sans-serif;
-}
-
-.work-sans-font {
-  font-family: "Work Sans", sans-serif;
+  border: 1px solid var(--color-invalid);
+  background-color: var(--color-background-invalid);
 }
 
 /* Logo Pipoca */
@@ -339,26 +339,26 @@ input::placeholder {
 .invalid-feedback {
   position: absolute;
   margin-top: 6px;
-  color: #fa0000;
+  color: var(--color-invalid);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 .valid-backgroud {
-  border: 1px solid #03a200;
-  background-color: #daf8da;
+  border: 1px solid var(--color-valid);
+  background-color: var(--color-background-valid);
 }
 
 .invalid-background {
-  border: 1px solid #fa0000;
-  background-color: #fad6d6;
+  border: 1px solid var(--color-invalid);
+  background-color: var(--color-background-invalid);
 }
 
 /* Textos */
 
 .txt-btn {
-  color: #000;
+  color: var(--color-black-medium);
   font-family: Work Sans;
   font-size: 16px;
   font-style: normal;
@@ -390,7 +390,6 @@ input::placeholder {
 .btn-access {
   width: 319px;
   padding: 27px 152px;
-
 }
 
 /* Botão de Confirmação */

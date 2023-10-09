@@ -75,17 +75,17 @@
 .txt-desc h2 {
   flex-shrink: 0;
   color: var(--color-white);
-  font-family: Roboto;
+  font-family: var(--fonte-roboto);
+  text-shadow: 0px 4px 4px var(--color-backgound-25);
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .txt-btn {
   color: var(--color-black-medium);
-  font-family: Roboto;
+  font-family: var(--fonte-roboto);
   font-size: 24px;
   font-style: normal;
   font-weight: 900;
@@ -93,16 +93,16 @@
 }
 
 .btns {
+  background: var(--color-yellow);
+  box-shadow: 0px 10px 4px 0px var(--color-backgound-25);
   margin-left: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   border-radius: 50px;
-  background: var(--color-yellow);
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   border: none;
+  flex-shrink: 0;
 }
 
 .home-container {
@@ -212,7 +212,7 @@ section {
   height: 31px;
   flex-shrink: 0;
   color: var(--color-white);
-  font-family: Roboto;
+  font-family: var(--fonte-roboto);
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -293,7 +293,7 @@ section {
     width: 100%;
     flex-shrink: 0;
     color: var(--color-yellow);
-    font-family: Roboto;
+    font-family: var(--fonte-roboto);
     font-size: 20px;
     font-style: normal;
     font-weight: 900;
@@ -315,7 +315,7 @@ section {
 
   .txt-btn {
     color: var(--color-black-medium);
-    font-family: Roboto;
+    font-family: var(--fonte-roboto);
     font-size: 14px;
     font-style: normal;
     font-weight: 900;

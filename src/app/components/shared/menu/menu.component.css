@@ -43,7 +43,6 @@
   margin-left: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
 }
 
@@ -65,6 +64,7 @@
   font-weight: 700;
   line-height: normal;
   margin-left: 23px;
+  text-align: left;
 }
 
 .logout {

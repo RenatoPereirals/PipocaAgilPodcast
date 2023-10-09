@@ -46,6 +46,7 @@ img {
   --color-black: #201c1c;
   --color-black-medium: #000;
   --color-backgound-25: rgba(7, 2, 2, 0.25);
+  --color-backgound-60: rgba(0, 0, 0, 0.6);
   --color-valid: #03a200;
   --color-background-valid: #daf8da;
   --color-invalid: #fa0000;
@@ -243,7 +244,7 @@ input::placeholder {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--color-black-medium);
+  background-color: var(--color-backgound-60);
   z-index: 1;
 }
 

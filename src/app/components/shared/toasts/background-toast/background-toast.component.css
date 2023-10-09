@@ -39,10 +39,13 @@ p {
 /* SMALL DEVICES - SMARTPHONES */
 @media screen and (max-width: 480px) {
   .message-header {
-    padding: 10px 13px;
+    margin: 10px 13px;
+    width: auto;
     top: 0;
     left: 0;
     height: 45px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .nav img {

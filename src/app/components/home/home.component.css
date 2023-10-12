@@ -1,7 +1,10 @@
+.color-yellow {
+  color: var(--color-yellow);
+}
+
 /* Corpo */
 .container {
   width: 100%;
-  max-width: 1400px;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -42,7 +45,7 @@
   right: 0;
 }
 
-.title {
+.title h1 {
   font-size: 96px;
   font-weight: 900;
   height: 100%;

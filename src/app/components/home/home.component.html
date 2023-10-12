@@ -1,26 +1,27 @@
 <app-header *ngIf="isMobile"></app-header>
 <main class="background-wrapper">
-  <header class="background-fullscreen">
+  <header class="background-fullscreen" id="microphone-background">
     <app-header *ngIf="!isMobile"></app-header>
     <div class="container">
-      <div class="title-background">
-        <div class="title color-yellow">
-          “O Podcast mais animado do Mundo Ágil”
+      <div class="title-background" id="title-background">
+        <div class="title color-yellow" >
+          <h1 id="title">
+            “O Podcast mais animado do Mundo Ágil”
+          </h1>
         </div>
       </div>
       <div class="title-360px">
-        <p>“O Podcast mais animado do Mundo Ágil”</p>
+        <h1>“O Podcast mais animado do Mundo Ágil”</h1>
       </div>
       <div class="container-button">
         <div class="txt-desc">
-          <h2>
-            Assine e seja membro para ter acesso a <br />
-            conteúdos exclusivos.
+          <h2 id="title-desc">
+            Assine e seja membro para ter acesso a <br />conteúdos exclusivos.
           </h2>
         </div>
         <div class="btn-container">
-          <button routerLink="/cadastro" class="btns btn-access" id="assinar">
-            <p class="txt-btn">ASSINAR</p>
+          <button routerLink="/cadastro" class="btns btn-access" id="btn-access">
+            <p class="txt-btn" id="btn-access">ASSINAR</p>
           </button>
         </div>
       </div>
@@ -152,7 +153,7 @@
                   ? '../../../assets/image/Ellipse 4.svg'
                   : '../../../assets/image/Ellipse 3.svg'
               "
-              alt=""
+              alt="pagination"
             />
           </button>
         </div>

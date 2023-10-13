@@ -4,10 +4,8 @@
     <app-header *ngIf="!isMobile"></app-header>
     <div class="container">
       <div class="title-background" id="title-background">
-        <div class="title color-yellow" >
-          <h1 id="title">
-            “O Podcast mais animado do Mundo Ágil”
-          </h1>
+        <div class="title color-yellow">
+          <h1 id="title">“O Podcast mais animado do Mundo Ágil”</h1>
         </div>
       </div>
       <div class="title-360px">
@@ -20,7 +18,11 @@
           </h2>
         </div>
         <div class="btn-container">
-          <button routerLink="/cadastro" class="btns btn-access" id="btn-access">
+          <button
+            routerLink="/cadastro"
+            class="btns btn-access"
+            id="btn-access"
+          >
             <p class="txt-btn" id="btn-access">ASSINAR</p>
           </button>
         </div>
@@ -31,13 +33,13 @@
     <article class="article-one">
       <section class="desc-logos">
         <div class="title-one"><h2>Quem somos</h2></div>
-        <p class="descricao">
-          O Pipoca Ágil é um podcast voltado para o Mundo Ágil e afins. Com o
+        <p class="descricao" id="txt-desc">
+          O Pipoca Ágil é um podcast voltado para o Mundo Ágil e afins. com o
           propósito de ser um podcast "chão de fábrica", ajudando na divulgação
           de conteúdo do Mundo Ágil e contando casos e soluções para a
           implementação da Transformação Digital nas empresas.
         </p>
-        <div class="redes-sociais">
+        <ul class="redes-sociais">
           <p>Siga nossos canais</p>
           <div class="redes">
             <li>
@@ -89,7 +91,7 @@
               /></a>
             </li>
           </div>
-        </div>
+        </ul>
       </section>
     </article>
     <article class="apresentacao">

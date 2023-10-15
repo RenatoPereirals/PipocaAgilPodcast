@@ -151,6 +151,11 @@
   justify-content: space-between;
 }
 
+.redes img {
+  width: auto;
+  height: auto;
+}
+
 .apresentacao {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,40 @@
+{
+  "socialMedias": [
+    {
+      "id": "youtube",
+      "name": "Youtube",
+      "url": "https://www.youtube.com/@PipocaAgil",
+      "icon": "../assets/image/bi_youtube.svg"
+    },
+    {
+      "id": "twitter",
+      "name": "Twitter",
+      "url": "https://twitter.com/pipoca_agil",
+      "icon": "../assets/image/fa-6-brands-square-x-twitter.svg"
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "url": "https://www.instagram.com/pipocaagil/",
+      "icon": "../assets/image/ri_instagram-fill.svg"
+    },
+    {
+      "id": "spotify",
+      "name": "spotify",
+      "url": "https://open.spotify.com/show/5J1scP1l7m7kXK6v5RZS7J",
+      "icon": "../assets/image/mdi_spotify.svg"
+    },
+    {
+      "id": "linkedin",
+      "name": "Linkedin",
+      "url": "https://www.linkedin.com/company/pipoca-%C3%A1gil/mycompany/verification/",
+      "icon": "../assets/image/bi_linkedin.svg"
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "url": "https://web.facebook.com/pipocaagil/?_rdc=1&_rdr",
+      "icon": "../assets/image/ic_outline-facebook.svg"
+    }
+  ]
+}

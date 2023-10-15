@@ -40,56 +40,19 @@
           implementação da Transformação Digital nas empresas.
         </p>
         <ul class="redes-sociais">
-          <p>Siga nossos canais</p>
+          <p id="txt-media">Siga nossos canais</p>
           <div class="redes">
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.youtube)" target="_blank"
-                ><img
-                  [src]="path + 'bi_youtube.svg'"
-                  alt="logo youtube"
-                  loading="lazy"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.twitter)" target="_blank"
-                ><img
-                  [src]="path + 'skill-icons_twitter.svg'"
-                  alt="logo twitter"
-                  loading="lazy"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.instagram)" target="_blank"
-                ><img
-                  [src]="path + 'ri_instagram-fill.svg'"
-                  alt="logo instagram"
-                  loading="lazy"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.spotify)" target="_blank"
-                ><img
-                  [src]="path + 'mdi_spotify.svg'"
-                  alt="logo spotify"
-                  loading="lazy"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.linkedin)" target="_blank"
-                ><img
-                  [src]="path + 'bi_linkedin.svg'"
-                  alt="logo linkedin"
-                  loading="lazy"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.facebook)" target="_blank"
-                ><img
-                  [src]="path + 'ic_outline-facebook.svg'"
-                  alt="logo facebook"
-                  loading="lazy"
-              /></a>
-            </li>
+            <div *ngFor="let media of medias">
+              <li>
+                <a [href]="getSafeUrl(media.url)" target="_blank"
+                  ><img
+                    [id]="media.id"
+                    [src]="media.icon"
+                    [alt]="media.name"
+                    loading="lazy"
+                /></a>
+              </li>
+            </div>
           </div>
         </ul>
       </section>
@@ -97,6 +60,7 @@
     <article class="apresentacao">
       <div class="fullscreen">
         <iframe
+          id="presentation-video"
           width="802"
           height="399"
           src="https://www.youtube.com/embed/RvSzTZUvj5o?controls=0"
@@ -119,12 +83,12 @@
           loading="lazy"
         ></iframe>
       </div>
-      <h3>Veja nossa apresentação!</h3>
+      <h3 id="txt-presentation-video">Veja nossa apresentação!</h3>
     </article>
     <section class="article-three">
       <section class="ultimos">
-        <h3>Últimos podcasts</h3>
-        <div class="videos-ultimos">
+        <h3 id="txt-last-videos">Últimos eventos</h3>
+        <div class="videos-ultimos" id="last-videos">
           <div *ngFor="let video of paginatedVi">
             <div class="video-text">
               <iframe

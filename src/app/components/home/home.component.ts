@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
 
     this.checkScreenSize();
     console.log('é mobile = ' + this.isMobile);
-
   }
 
   @HostListener('window:resize', ['$event'])

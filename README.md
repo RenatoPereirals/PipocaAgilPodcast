@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-
-# Pipoca Ágil
+# Pipoca Ágil Podcast
 
 Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) na versão 16.1.4.
 
@@ -33,4 +31,3 @@ Execute `ng e2e` para executar testes end-to-end usando uma plataforma de sua es
 ## Ajuda Adicional
 
 Para obter mais ajuda sobre o Angular CLI, utilize `ng help` ou consulte a [Visão Geral e Referência de Comandos do Angular CLI](https://angular.io/cli).
->>>>>>> 8451631fca744c43f125a96b66991e4e28f92e8b

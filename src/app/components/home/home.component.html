@@ -44,7 +44,7 @@
           <div class="redes">
             <div *ngFor="let media of medias">
               <li>
-                <a [href]="getSafeUrl(media.url)" target="_blank"
+                <a [id]="'link-' + media.id" [href]="getSafeUrl(media.url)" target="_blank"
                   ><img
                     [id]="media.id"
                     [src]="media.icon"

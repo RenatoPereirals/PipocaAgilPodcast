@@ -11,10 +11,12 @@ import { LoginComponent } from './components/user/login/login.component';
 import { CadastroComponent } from './components/user/cadastro/cadastro.component';
 import { RecuperarSenhaComponent } from './components/user/recuperar-senha/recuperar-senha.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
+import { QuemsomosComponent } from './components/quemsomos/quemsomos.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'contatos', component: ContatoComponent },
+  { path: 'contato', component: ContatoComponent },
   { path: 'episodios', component: EpisodiosComponent },
   { path: 'galeria', component: GaleriaComponent },
   { path: 'politicap', component: PoliticapComponent },
@@ -22,7 +24,9 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: RecuperarSenhaComponent },
-  { path: 'menu', component: MenuComponent}
+  { path: 'menu', component: MenuComponent },
+  { path: 'quemsomos', component: QuemsomosComponent },
+  { path: 'blog', component: BlogComponent },
 ];
 
 @NgModule({

@@ -163,6 +163,17 @@
   margin: 90px 0 50px 0;
 }
 
+#txt-presentation-video {
+  margin-top: 33px;
+  color: var(--color-yellow);
+  font-family: var(--fonte-roboto);
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
 .video-apresentacao {
   width: 802px;
   height: 399px;
@@ -324,7 +335,6 @@ section {
     font-style: normal;
     font-weight: 900;
     line-height: normal;
-
   }
 
   .txt-desc {
@@ -342,7 +352,6 @@ section {
     width: 100%;
     display: flex;
     justify-content: center;
-
   }
 
   .home-container {
@@ -416,10 +425,9 @@ section {
     margin: 0px 0 0px 0;
   }
 
-  .apresentacao > h3 {
+  #txt-presentation-video {
+    margin-top: 16.3px;
     font-size: 14px;
-    height: auto;
-    padding: 0;
   }
 
   .redes-sociais {

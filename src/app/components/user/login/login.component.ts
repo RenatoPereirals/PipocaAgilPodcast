@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   user = {} as User;
 
-  imageFechadaUrl: string = '../../../../assets/image/Hide.png';
-  imageAbertaUrl: string = '../../../../assets/image/show.png';
+  imageFechadaUrl = '../../../../assets/image/hide.png';
+  imageAbertaUrl = '../../../../assets/image/remove-red-eye.png';
 
   constructor(
     private fb: FormBuilder,

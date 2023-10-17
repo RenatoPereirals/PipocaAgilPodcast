@@ -77,7 +77,7 @@
             placeholder="Digite uma Senha"
           />
           <img
-            class="hide"
+            [class]="passwordVisible ? 'show' : 'hide'"
             id="togglePassword"
             [src]="passwordVisible ? imageAbertaUrl : imageFechadaUrl"
             alt=""

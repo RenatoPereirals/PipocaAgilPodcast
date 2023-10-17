@@ -23,8 +23,8 @@ export class RecuperarSenhaComponent {
   form!: FormGroup;
   user = {} as User;
 
-  imageFechadaUrl: string = '../../../../assets/image/Hide.png';
-  imageAbertaUrl: string = '../../../../assets/image/show.png';
+  imageFechadaUrl = '../../../../assets/image/hide.png';
+  imageAbertaUrl = '../../../../assets/image/remove-red-eye.png';
 
   constructor(private fb: FormBuilder, private toast: ToastService) {}
 
@@ -37,7 +37,11 @@ export class RecuperarSenhaComponent {
   }
 
   errorRegistration(): void {
-    this.toast.errorRegistration('Erro', 'Error ao tentar recuperar senha', 'error');
+    this.toast.errorRegistration(
+      'Erro',
+      'Error ao tentar recuperar senha',
+      'error'
+    );
   }
 
   showErrorForRequiredFields() {

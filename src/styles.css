@@ -12,8 +12,9 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
   background-color: var(--color-black);
-  color: #fff;
+  color: var(--color-white);
   height: 100%;
   width: 100%;
   background-position: center;
@@ -45,19 +46,33 @@ img {
   --color-white-medium: #d9d9d9;
   --color-black: #201c1c;
   --color-black-medium: #000;
-  --color-backgound-25: rgba(7, 2, 2, 0.25);
-  --color-backgound-60: rgba(0, 0, 0, 0.6);
   --color-valid: #03a200;
   --color-background-valid: #daf8da;
   --color-invalid: #fa0000;
   --color-background-invalid: #fad6d6;
 
-  /* fontes */
+  /* fontes styles */
   --fonte-roboto: "Roboto", sans-serif;
   --fonte-work-sans: "Work Sans", sans-serif;
 
+  /*tamanhos das fontes */
+  --size-font-96: 6rem;
+  --size-font-40: 2.5rem;
+  --size-font-36: 2.25rem;
+  --size-font-34: 2.125rem;
+  --size-font-32: 2em;
+  --size-font-30: 1875em;
+  --size-font-24: 1.5em;
+  --size-font-20: 1.25rem;
+  --size-font-18: 1.125rem;
+  --size-font-16: 1rem;
+  --size-font-14: 0.875rem;
+  --size-font-12: 0.75rem;
+
   /* sonbras */
   --shadow-medium: rgb(0, 0, 0, 0.25);
+  --color-backgound-25: rgba(7, 2, 2, 0.25);
+  --color-backgound-60: rgba(0, 0, 0, 0.6);
 
   /* hover */
   --hover-btn: #e0e3e3;
@@ -73,7 +88,7 @@ label {
 h2,
 p {
   font-family: var(work-sans-font);
-  font-size: 34px;
+  font-size: var(--size-font-34);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -102,7 +117,7 @@ form {
 .crieconta > h2 {
   font-family: Work Sans;
   margin-top: 45px;
-  font-size: 34px;
+  font-size: var(--size-font-34);
   letter-spacing: -0.68px;
 }
 
@@ -112,12 +127,12 @@ form {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  font-size: 20px;
+  font-size: var(--size-font-20);
   letter-spacing: -0.4px;
 }
 
 .login {
-  font-size: 16px;
+  font-size: var(--size-font-16);
   font-weight: 700;
   line-height: normal;
   margin-top: 43px;
@@ -172,18 +187,18 @@ input {
   padding: 5px;
   border: 1px solid var(--color-black-medium);
   background: var(--color-white);
-  color: #201c1c;
+  color: var(--color-black);
   font-family: var(roboto-font);
-  font-size: 18px;
+  font-size: var(--size-font-18);
   font-weight: 400;
   line-height: normal;
   border-radius: 5px;
 }
 
 input::placeholder {
-  color: #201c1c;
-  font-family: Roboto;
-  font-size: 14px;
+  color: var(--color-black);
+  font-family: var(--fonte-roboto);
+  font-size: var(--size-font-14);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -200,7 +215,7 @@ input::placeholder {
   flex-shrink: 0;
   color: rgba(255, 255, 255, 0.6);
   font-family: Roboto;
-  font-size: 12px;
+  font-size: var(--size-font-12);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -226,7 +241,7 @@ input::placeholder {
 }
 
 .termos label {
-  font-size: 12px;
+  font-size: var(--size-font-12);
 }
 
 .termos label a {
@@ -322,7 +337,7 @@ input::placeholder {
   display: inline-block;
   width: 16px;
   height: 17px;
-  background-image: url('../src/assets/image/done.png');
+  background-image: url("../src/assets/image/done.png");
   border: 1px solid var(--color-valid);
   background-color: var(--color-background-valid);
   font-weight: bold;
@@ -350,7 +365,7 @@ input::placeholder {
   position: absolute;
   margin-top: 6px;
   color: var(--color-invalid);
-  font-size: 12px;
+  font-size: var(--size-font-12);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -370,7 +385,7 @@ input::placeholder {
 .txt-btn {
   color: var(--color-black-medium);
   font-family: Work Sans;
-  font-size: 16px;
+  font-size: var(--size-font-16);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -423,7 +438,7 @@ input::placeholder {
 
   .background-wrapper {
     width: 100%;
-    height: 100%;
+    min-height: 780px;
     bottom: 0;
     background: url("/assets/image/microfone.png"), lightgray no-repeat;
     background-size: cover;
@@ -449,7 +464,7 @@ input::placeholder {
   }
 
   .txt-btn {
-    font-size: 14px;
+    font-size: var(--size-font-14);
   }
 
   /* Logomarca */
@@ -497,7 +512,7 @@ input::placeholder {
 
   .crieconta > p {
     padding-top: 0px;
-    font-size: 16px;
+    font-size: var(--size-font-16);
   }
 
   .principal {
@@ -523,7 +538,7 @@ input::placeholder {
   }
 
   .login {
-    font-size: 14px;
+    font-size: var(--size-font-14);
     margin-top: 29px;
   }
 

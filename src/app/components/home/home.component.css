@@ -33,6 +33,7 @@
   width: 100%;
   height: 810px;
   position: relative;
+  box-shadow: 0px 4px 4px 0px var(--shadow-medium);
 }
 
 .background-fullscreen::before {
@@ -81,23 +82,15 @@
 
 .txt-btn {
   color: var(--color-black-medium);
+  font-style: var(--fonte-roboto);
   font-size: 24px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
 }
 
-.btns {
-  background: var(--color-yellow);
-  box-shadow: 0px 10px 4px 0px var(--color-backgound-25);
+.btn {
   margin-left: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  cursor: pointer;
-  border: none;
-  flex-shrink: 0;
 }
 
 .home-container {
@@ -196,7 +189,8 @@ section {
 .ultimos > h3 {
   padding-top: 40px;
   font-size: 40px;
-  font-weight: 800;}
+  font-weight: 800;
+}
 
 .videos-ultimos {
   display: flex;
@@ -234,12 +228,9 @@ section {
   gap: 15px;
 }
 
-.pagination button {
-  border: none;
-}
-
 .btn-pagination {
   background-color: transparent;
+  border: none;
   cursor: pointer;
 }
 
@@ -300,7 +291,6 @@ section {
     width: 100%;
     flex-shrink: 0;
     color: var(--color-yellow);
-
     font-size: 20px;
     font-style: normal;
     font-weight: 900;
@@ -309,8 +299,6 @@ section {
   }
 
   .container-button {
-    width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -322,7 +310,6 @@ section {
 
   .txt-btn {
     color: var(--color-black-medium);
-
     font-size: 14px;
     font-style: normal;
     font-weight: 900;

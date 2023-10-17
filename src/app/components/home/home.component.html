@@ -20,7 +20,7 @@
         <div class="btn-container">
           <button
             routerLink="/cadastro"
-            class="btns btn-access"
+            class="btn btn-access"
             id="btn-access"
           >
             <p class="txt-btn" id="txt-btn-access">ASSINAR</p>
@@ -108,6 +108,7 @@
         <div class="pagination">
           <button
             class="btn-pagination"
+            id="btn-pagination"
             *ngFor="let page of pagesArray"
             [disabled]="paginatedVideo.currentPage === page"
             (click)="onPageChanged(page)"

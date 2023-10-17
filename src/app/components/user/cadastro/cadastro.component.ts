@@ -26,8 +26,8 @@ export class CadastroComponent implements OnInit {
   passwordVisible = false;
   showAgeError = false;
 
-  imageFechadaUrl = '../../../../assets/image/Hide.png';
-  imageAbertaUrl = '../../../../assets/image/show.png';
+  imageFechadaUrl = '../../../../assets/image/hide.png';
+  imageAbertaUrl = '../../../../assets/image/remove-red-eye.png';
 
   form!: FormGroup;
   user = {} as User;

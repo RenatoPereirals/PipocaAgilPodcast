@@ -141,13 +141,11 @@
             placeholder="Digite uma Senha"
           />
           <img
-            class="hide"
+            [class]="passwordVisible ? 'show' : 'hide'"
             id="togglePassword"
             [src]="passwordVisible ? imageAbertaUrl : imageFechadaUrl"
             alt=""
-            (click)="
-              togglePasswordVisibility()
-            "
+            (click)="togglePasswordVisibility()"
           />
         </div>
 
@@ -185,7 +183,7 @@
             placeholder="Confirme a senha"
           />
           <img
-            class="show"
+            [class]="passwordVisible ? 'show' : 'hide'"
             id="toggleConfirmPassword"
             [src]="passwordVisible ? imageAbertaUrl : imageFechadaUrl"
             alt=""

@@ -11,9 +11,9 @@
 }
 
 body {
-  font-family: var(roboto-font), sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--color-black);
-  color: var(--color-white);
+  color: #fff;
   height: 100%;
   width: 100%;
   background-position: center;
@@ -33,7 +33,7 @@ li {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
 }
 
 /* Variáveis CSS */

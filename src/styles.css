@@ -12,12 +12,14 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
   background-color: var(--color-black);
-  color: #fff;
+  color: var(--color-white);
   height: 100%;
   width: 100%;
   background-position: center;
   box-sizing: border-box;
+  font-display: swap;
 }
 
 a {
@@ -32,7 +34,48 @@ li {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
+}
+
+/* Variáveis CSS */
+:root {
+  /* cores */
+  --color-yellow: #fecf5d;
+  --color-yellow-medium: rgba(254, 207, 93, 0.5);
+  --color-white: #fff;
+  --color-white-medium: #d9d9d9;
+  --color-black: #201c1c;
+  --color-black-medium: #000;
+  --color-valid: #03a200;
+  --color-background-valid: #daf8da;
+  --color-invalid: #fa0000;
+  --color-background-invalid: #fad6d6;
+
+  /* fontes styles */
+  --fonte-roboto: "Roboto", sans-serif;
+  --fonte-work-sans: "Work Sans", sans-serif;
+
+  /*tamanhos das fontes */
+  --size-font-96: 6rem;
+  --size-font-40: 2.5rem;
+  --size-font-36: 2.25rem;
+  --size-font-34: 2.125rem;
+  --size-font-32: 2em;
+  --size-font-30: 1.875em;
+  --size-font-24: 1.5em;
+  --size-font-20: 1.25rem;
+  --size-font-18: 1.125rem;
+  --size-font-16: 1rem;
+  --size-font-14: 0.875rem;
+  --size-font-12: 0.75rem;
+
+  /* sonbras */
+  --shadow-medium: rgb(0, 0, 0, 0.25);
+  --color-backgound-25: rgba(7, 2, 2, 0.25);
+  --color-backgound-60: rgba(0, 0, 0, 0.6);
+
+  /* hover */
+  --hover-btn: #e0e3e3;
 }
 
 /* Estilos comuns */
@@ -44,8 +87,8 @@ label {
 
 h2,
 p {
-  font-family: "Work Sans";
-  font-size: 34px;
+  font-family: var(work-sans-font);
+  font-size: var(--size-font-34);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -74,7 +117,7 @@ form {
 .crieconta > h2 {
   font-family: Work Sans;
   margin-top: 45px;
-  font-size: 34px;
+  font-size: var(--size-font-34);
   letter-spacing: -0.68px;
 }
 
@@ -84,12 +127,12 @@ form {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  font-size: 20px;
+  font-size: var(--size-font-20);
   letter-spacing: -0.4px;
 }
 
 .login {
-  font-size: 16px;
+  font-size: var(--size-font-16);
   font-weight: 700;
   line-height: normal;
   margin-top: 43px;
@@ -97,7 +140,7 @@ form {
 
 .login > a {
   text-decoration-line: underline;
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* Principal */
@@ -142,20 +185,20 @@ label {
 
 input {
   padding: 5px;
-  border: 1px solid #000;
-  background: #fff;
-  color: #201c1c;
-  font-family: "Roboto";
-  font-size: 18px;
+  border: 1px solid var(--color-black-medium);
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(roboto-font);
+  font-size: var(--size-font-18);
   font-weight: 400;
   line-height: normal;
   border-radius: 5px;
 }
 
 input::placeholder {
-  color: #201c1c;
-  font-family: Roboto;
-  font-size: 14px;
+  color: var(--color-black);
+  font-family: var(--fonte-roboto);
+  font-size: var(--size-font-14);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -172,7 +215,7 @@ input::placeholder {
   flex-shrink: 0;
   color: rgba(255, 255, 255, 0.6);
   font-family: Roboto;
-  font-size: 12px;
+  font-size: var(--size-font-12);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -198,28 +241,18 @@ input::placeholder {
 }
 
 .termos label {
-  font-size: 12px;
+  font-size: var(--size-font-12);
 }
 
 .termos label a {
   text-decoration: underline;
 }
 
-/* Variáveis CSS */
-:root {
-  --color-yellow: #fecf5d;
-  --color-yellow-medium: rgba(254, 207, 93, 0.5);
-  --color-white: #fff;
-  --color-white-medium: #d9d9d9;
-  --color-black: #201c1c;
-  --color-black-medium: #000;
-}
-
 /* logo marca e background */
 .bemvindo {
   width: 489px;
   margin-top: -15px;
-  background-image: url("assets/image/microfone.png");
+  background-image: url("assets/image/microfone.webp");
   background-size: 489px 100%;
   background-repeat: no-repeat;
   position: relative;
@@ -232,7 +265,7 @@ input::placeholder {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--color-backgound-60);
   z-index: 1;
 }
 
@@ -257,31 +290,25 @@ input::placeholder {
 
 /* validações */
 .valid-backgroud {
-  border: 1px solid #03a200;
-  background-color: #daf8da;
+  border: 1px solid var(--color-valid);
+  background-color: var(--color-background-valid);
 }
 
 .invalid-background {
-  border: 1px solid #fa0000;
-  background-color: #fad6d6;
+  border: 1px solid var(--color-invalid);
+  background-color: var(--color-background-invalid);
 }
 
 /* Outros estilos */
 .hide,
 .show {
   position: absolute;
+  width: 22px;
+  height: 22px;
   top: 39px;
   right: 10px;
   transform: translateY(-50%);
   cursor: pointer;
-}
-
-.btn-confirm {
-  display: flex;
-  justify-content: center;
-  margin-top: 55px;
-  margin-bottom: 238px;
-  border: none;
 }
 
 /* Estilos para o rótulo que substituirá o checkbox */
@@ -299,37 +326,29 @@ input::placeholder {
   top: -2.5px;
   width: 16px;
   height: 17px;
-  background-color: #d9d9d9;
+  background-color: var(--color-white-medium);
   transition: background-color 0.3s ease; /* Transição de cor de fundo gradual */
-  border: 1px solid #000000;
+  border: 1px solid var(--color-black-medium);
   transition: border 0.3s ease;
 }
 
 .termos input:checked + label::before {
-  content: "\2713"; /* Código de caractere Unicode para um visto (✓) */
+  content: "";
   display: inline-block;
   width: 16px;
-  height: 16px;
-  border: 1px solid #03a200;
-  background-color: #daf8da;
+  height: 17px;
+  background-image: url("../src/assets/image/done.png");
+  border: 1px solid var(--color-valid);
+  background-color: var(--color-background-valid);
   font-weight: bold;
-  color: #000;
+  color: var(--color-black-medium);
   text-align: center;
   line-height: 16px; /* Ajustar a linha verticalmente */
 }
 
 .unchecked:not(checked) + label::before {
-  border: 1px solid #fa0000;
-  background-color: #fad6d6;
-}
-
-/* Estilos para elementos com fonte */
-.roboto-font {
-  font-family: "Roboto", sans-serif;
-}
-
-.work-sans-font {
-  font-family: "Work Sans", sans-serif;
+  border: 1px solid var(--color-invalid);
+  background-color: var(--color-background-invalid);
 }
 
 /* Logo Pipoca */
@@ -345,28 +364,28 @@ input::placeholder {
 .invalid-feedback {
   position: absolute;
   margin-top: 6px;
-  color: #fa0000;
-  font-size: 12px;
+  color: var(--color-invalid);
+  font-size: var(--size-font-12);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 .valid-backgroud {
-  border: 1px solid #03a200;
-  background-color: #daf8da;
+  border: 1px solid var(--color-valid);
+  background-color: var(--color-background-valid);
 }
 
 .invalid-background {
-  border: 1px solid #fa0000;
-  background-color: #fad6d6;
+  border: 1px solid var(--color-invalid);
+  background-color: var(--color-background-invalid);
 }
 
 /* Textos */
 
 .txt-btn {
-  color: #000;
+  color: var(--color-black-medium);
   font-family: Work Sans;
-  font-size: 16px;
+  font-size: var(--size-font-16);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -379,23 +398,23 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   border-radius: 50px;
   background: var(--color-yellow);
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 14px 9px 0px var(--shadow-medium);
   cursor: pointer;
   border: none;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .btn:hover {
-  background: var(--color-yellow-medium);
+  background: var(--hover-btn);
 }
 
 /* Botão de Acesso */
 .btn-access {
   width: 319px;
   padding: 27px 152px;
-  gap: 10px;
 }
 
 /* Botão de Confirmação */
@@ -403,7 +422,8 @@ input::placeholder {
   width: 188px;
   height: 56px;
   padding: 21px 27px;
-  gap: 10px;
+  margin-top: 55px;
+  margin-bottom: 238px;
 }
 
 /* SMALL DEVICES - SMARTPHONES */
@@ -418,7 +438,7 @@ input::placeholder {
 
   .background-wrapper {
     width: 100%;
-    height: 100%;
+    min-height: 780px;
     bottom: 0;
     background: url("/assets/image/microfone.png"), lightgray no-repeat;
     background-size: cover;
@@ -444,7 +464,7 @@ input::placeholder {
   }
 
   .txt-btn {
-    font-size: 14px;
+    font-size: var(--size-font-14);
   }
 
   /* Logomarca */
@@ -492,7 +512,7 @@ input::placeholder {
 
   .crieconta > p {
     padding-top: 0px;
-    font-size: 16px;
+    font-size: var(--size-font-16);
   }
 
   .principal {
@@ -518,7 +538,7 @@ input::placeholder {
   }
 
   .login {
-    font-size: 14px;
+    font-size: var(--size-font-14);
     margin-top: 29px;
   }
 

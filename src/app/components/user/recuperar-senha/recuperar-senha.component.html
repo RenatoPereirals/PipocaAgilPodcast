@@ -27,7 +27,7 @@
           <input
             class="username"
             id="passwordInput"
-            type="password"
+            [type]="passwordVisible ? 'text' : 'password'"
             name="senha"
             formControlName="password"
             [ngClass]="{
@@ -41,13 +41,11 @@
             placeholder="Digite uma Senha"
           />
           <img
-            class="hide"
+            [class]="passwordVisible ? 'show' : 'hide'"
             id="togglePassword"
-            src="../../../../assets/image/Hide.png"
+            [src]="passwordVisible ? imageAbertaUrl : imageFechadaUrl"
             alt=""
-            (click)="
-              togglePasswordVisibility('passwordInput', 'togglePassword')
-            "
+            (click)="togglePasswordVisibility()"
           />
         </div>
 
@@ -71,7 +69,7 @@
           <input
             class="username"
             id="confirmePassword"
-            type="password"
+            [type]="passwordVisible ? 'text' : 'password'"
             name="confirmasenha"
             formControlName="confirmePassword"
             [ngClass]="{
@@ -86,16 +84,11 @@
             placeholder="Confirme a senha"
           />
           <img
-            class="show"
+            [class]="passwordVisible ? 'show' : 'hide'"
             id="toggleConfirmPassword"
-            src="../../../../assets/image/Hide.png"
+            [src]="passwordVisible ? imageAbertaUrl : imageFechadaUrl"
             alt=""
-            (click)="
-              togglePasswordVisibility(
-                'confirmePassword',
-                'toggleConfirmPassword'
-              )
-            "
+            (click)="togglePasswordVisibility()"
           />
         </div>
         <div

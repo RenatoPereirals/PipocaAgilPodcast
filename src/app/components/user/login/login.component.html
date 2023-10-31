@@ -63,7 +63,7 @@
           <input
             class="username"
             id="passwordInput"
-            type="password"
+            [type]="passwordVisible ? 'text' : 'password'"
             name="senha"
             formControlName="password"
             [ngClass]="{
@@ -77,12 +77,12 @@
             placeholder="Digite uma Senha"
           />
           <img
-            class="hide"
+            [class]="passwordVisible ? 'show' : 'hide'"
             id="togglePassword"
-            src="../../../../assets/image/Hide.png"
+            [src]="passwordVisible ? imageAbertaUrl : imageFechadaUrl"
             alt=""
             (click)="
-              togglePasswordVisibility('passwordInput', 'togglePassword')
+              togglePasswordVisibility()
             "
           />
         </div>

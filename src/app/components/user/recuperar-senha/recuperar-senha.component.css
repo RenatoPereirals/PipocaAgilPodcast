@@ -1,14 +1,32 @@
+.formcad {
+  height: 50px;
+}
+
+.registration {
+  margin-top: 0;
+  flex-direction: column;
+}
+
+.btn-confirm {
+  margin-top: 116px;
+  margin-bottom: 0px;
+}
+
 /* SMALL DEVICES - SMARTPHONES */
 @media screen and (max-width: 480px) {
   .background-wrapper::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--color-backgound-60);
     z-index: 1;
+  }
+
+  .formcad {
+    height: auto;
   }
 
   .registration {

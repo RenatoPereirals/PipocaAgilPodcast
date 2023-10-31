@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { Pagination } from 'src/app/models/Pagination';
+import { SocialMedias } from 'src/app/models/Social-medias';
 import { JsonDataService } from 'src/app/services/json-data.service';
 
 @Component({
@@ -10,14 +11,14 @@ import { JsonDataService } from 'src/app/services/json-data.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  public medias: SocialMedias[] = [];
   videos: any[] = [];
   public paginatedVideo = {} as Pagination;
   public paginatedVi: any[] = [];
-  public paginatedVideos: any[] = [];
   public pages: number[] = [];
   public currentPage: number = 1;
-  public clickedPage: number | null = null;
   public isMobile: boolean = false;
+  public pagesArray: number[] = [1, 2, 3];
 
   socialMediaUrls = {
     youtube: 'https://www.youtube.com/@PipocaAgil',
@@ -38,6 +39,7 @@ export class HomeComponent implements OnInit {
 
   public ngOnInit(): void {
     this.loadVideos();
+    this.loadMedias();
     this.paginatedVideo = {
       currentPage: 1,
       itemsPerPage: 3,
@@ -51,7 +53,7 @@ export class HomeComponent implements OnInit {
 
     this.checkScreenSize();
     console.log('é mobile = ' + this.isMobile);
-
+    console.log(this.medias);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -65,6 +67,12 @@ export class HomeComponent implements OnInit {
 
   getSafeUrl(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+  loadMedias() {
+    this.jsonDataService.getMediaData().subscribe((data: any) => {
+      this.medias = data.socialMedias;
+    });
   }
 
   loadVideos() {

@@ -1,6 +1,6 @@
 .message-header {
   position: fixed;
-  margin-left: 60%;
+  margin-left: 65%;
   left: -25%;
   top: 0;
   width: 710px;
@@ -11,6 +11,7 @@
   align-items: center;
   flex-wrap: nowrap;
   background: #fa0000;
+  z-index: 2;
 }
 
 .nav img {
@@ -25,11 +26,50 @@
   flex-direction: row;
 }
 
-.message p {
+.message h2,
+p {
   color: #fff;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin-left: 5px;
+}
+
+/* SMALL DEVICES - SMARTPHONES */
+@media screen and (max-width: 480px) {
+  .message-header {
+    margin: 0px 0px;
+    margin-top: 10px;
+    width: 90%;
+    top: 0;
+    height: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav img {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin: 9px 20px;
+  }
+
+  .message {
+    width: 100%;
+  }
+
+  .message h2,
+  p {
+    width: auto;
+    font-size: 14px;
+  }
+
+  h2 {
+    text-align: end;
+  }
+
+  p {
+    text-align: start;
+  }
 }

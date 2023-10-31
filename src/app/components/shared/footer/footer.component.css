@@ -1,8 +1,8 @@
 /* Estilo do container do rodapé */
 .footer-container {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
   height: 322px;
 }
@@ -14,10 +14,11 @@
 }
 
 /* Estilo comum para os elementos de email e termos de política */
-.email,
-.term-policy {
+.footer-email,
+.footer-term-policy {
   height: 159px;
   flex-shrink: 0;
+  font-family: var(--fonte-roboto);
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -28,7 +29,7 @@
   line-height: 2.5;
 }
 
-.email p {
+.footer-email p {
   text-decoration-line: underline;
 }
 
@@ -52,12 +53,11 @@
   text-align: center;
 }
 
-.icon-redes {
+.footer-icon-redes {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  position: relative;
 }
 
 /*======= MOBILE FIRST =======*/

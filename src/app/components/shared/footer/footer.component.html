@@ -1,39 +1,32 @@
 <footer class="footer-container">
   <div class="logo-rodape">
     <img
+      id="footer-logo"
       src="../../../../assets/image/logo-pipoca-agil.png"
       alt="logo pipoca agil"
     />
   </div>
-  <div class="term-policy">
+  <div class="footer-term-policy">
     Termos de Uso <br />
-    Politica de Privacidade <br />
+    Política de Privacidade <br />
     ©Grupo Coral 2023
   </div>
-  <div class="email">
+  <div class="footer-email">
     E-mail: <br />
     <p>pipocaagil@gmail.com</p>
   </div>
   <div class="rodape">
-    <p>Redes Sociais</p>
-    <div class="icon-redes">
-      <a href="https://www.instagram.com/pipocaagil/" target="_blank"
-        ><img
-          src="../../../../assets/image/ri_instagram-fill.svg"
-          alt="logo instagram"
-      /></a>
+    <p id="footer-txt-media">Redes Sociais</p>
+    <div class="footer-icon-redes">
       <a
-        href="https://www.linkedin.com/company/pipoca-%C3%A1gil/mycompany/verification/"
+        *ngFor="let media of filteredMedias"
+        [id]="'footer-' + media.id"
+        [href]="getSafeUrl(media.url)"
         target="_blank"
-        ><img
-          src="../../../../assets/image/bi_linkedin.svg"
-          alt="logo linkedin"
-      /></a>
-      <a href="https://web.facebook.com/pipocaagil/?_rdc=1&_rdr" target="_blank"
-        ><img
-          src="../../../../assets/image/ic_outline-facebook.svg"
-          alt="logo facebook"
-      /></a>
+        loading="lazy"
+      >
+        <img [src]="media.icon" [alt]="media.name" />
+      </a>
     </div>
   </div>
 </footer>

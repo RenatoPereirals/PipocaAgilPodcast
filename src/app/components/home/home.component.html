@@ -1,28 +1,29 @@
 <app-header *ngIf="isMobile"></app-header>
 <main class="background-wrapper">
-  <header class="background-fullscreen">
+  <header class="background-fullscreen" id="microphone-background">
     <app-header *ngIf="!isMobile"></app-header>
     <div class="container">
-      <div class="title-background">
-        <div class="title">“O Podcast mais animado do Mundo Ágil”</div>
+      <div class="title-background" id="title-background">
+        <div class="title color-yellow">
+          <h1 id="title">“O Podcast mais animado do Mundo Ágil”</h1>
+        </div>
       </div>
       <div class="title-360px">
-        <p>“O Podcast mais animado do Mundo Ágil”</p>
+        <h1 id="title-mobile">“O Podcast mais animado do Mundo Ágil”</h1>
       </div>
       <div class="container-button">
         <div class="txt-desc">
-          <h2>
-            Assine e seja membro para ter acesso a <br />
-            conteúdos exclusivos.
+          <h2 id="title-desc">
+            Assine e seja membro para ter acesso a <br />conteúdos exclusivos.
           </h2>
         </div>
-        <div class="btn-container">
+        <div class="btn-container roboto">
           <button
             routerLink="/cadastro"
-            class="btns btn-access"
-            id="assinar"
+            class="btn btn-access"
+            id="btn-access"
           >
-            <p class="txt-btn">ASSINAR</p>
+            <p class="txt-btn" id="txt-btn-access">ASSINAR</p>
           </button>
         </div>
       </div>
@@ -32,58 +33,34 @@
     <article class="article-one">
       <section class="desc-logos">
         <div class="title-one"><h2>Quem somos</h2></div>
-        <p class="descricao">
-          O Pipoca Ágil é um podcast voltado para o Mundo Ágil e afins. Com o
+        <p class="descricao" id="txt-desc">
+          O Pipoca Ágil é um podcast voltado para o Mundo Ágil e afins. com o
           propósito de ser um podcast "chão de fábrica", ajudando na divulgação
           de conteúdo do Mundo Ágil e contando casos e soluções para a
           implementação da Transformação Digital nas empresas.
         </p>
-        <div class="redes-sociais">
-          <p>Siga nossos canais</p>
+        <ul class="redes-sociais">
+          <p id="txt-media">Siga nossos canais</p>
           <div class="redes">
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.youtube)" target="_blank"
-                ><img [src]="path + 'bi_youtube.svg'" alt="logo youtube"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.twitter)" target="_blank"
-                ><img
-                  [src]="path + 'skill-icons_twitter.svg'"
-                  alt="logo twitter"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.instagram)" target="_blank"
-                ><img
-                  [src]="path + 'ri_instagram-fill.svg'"
-                  alt="logo instagram"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.spotify)" target="_blank"
-                ><img [src]="path + 'mdi_spotify.svg'" alt="logo spotify"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.linkedin)" target="_blank"
-                ><img [src]="path + 'bi_linkedin.svg'" alt="logo linkedin"
-              /></a>
-            </li>
-            <li>
-              <a [href]="getSafeUrl(socialMediaUrls.facebook)" target="_blank"
-                ><img
-                  [src]="path + 'ic_outline-facebook.svg'"
-                  alt="logo facebook"
-              /></a>
-            </li>
+            <div *ngFor="let media of medias">
+              <li>
+                <a [id]="'link-' + media.id" [href]="getSafeUrl(media.url)" target="_blank"
+                  ><img
+                    [id]="media.id"
+                    [src]="media.icon"
+                    [alt]="media.name"
+                    loading="lazy"
+                /></a>
+              </li>
+            </div>
           </div>
-        </div>
+        </ul>
       </section>
     </article>
     <article class="apresentacao">
       <div class="fullscreen">
         <iframe
+          id="presentation-video"
           width="802"
           height="399"
           src="https://www.youtube.com/embed/RvSzTZUvj5o?controls=0"
@@ -91,6 +68,7 @@
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
+          loading="lazy"
         ></iframe>
       </div>
       <div class="mobile">
@@ -102,14 +80,15 @@
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
+          loading="lazy"
         ></iframe>
       </div>
-      <h3>Veja nossa apresentação!</h3>
+      <h3 id="txt-presentation-video">Veja nossa apresentação!</h3>
     </article>
     <section class="article-three">
       <section class="ultimos">
-        <h3>Últimos podcasts</h3>
-        <div class="videos-ultimos">
+        <h3 id="txt-last-videos">Últimos eventos</h3>
+        <div class="videos-ultimos" id="last-videos">
           <div *ngFor="let video of paginatedVi">
             <div class="video-text">
               <iframe
@@ -120,55 +99,28 @@
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
+                loading="lazy"
               ></iframe>
-              <p>{{ video.title }}</p>
+              <p id="txt-title-last-videos">{{ video.title }}</p>
             </div>
           </div>
         </div>
         <div class="pagination">
           <button
             class="btn-pagination"
-            [disabled]="paginatedVideo.currentPage === 1"
-            (click)="onPageChanged(1)"
-            [ngClass]="{ active: paginatedVideo.currentPage === 1 }"
+            id="btn-pagination"
+            *ngFor="let page of pagesArray"
+            [disabled]="paginatedVideo.currentPage === page"
+            (click)="onPageChanged(page)"
+            [ngClass]="{ active: paginatedVideo.currentPage === page }"
           >
             <img
               [src]="
-                paginatedVideo.currentPage === 1
+                paginatedVideo.currentPage === page
                   ? '../../../assets/image/Ellipse 4.svg'
                   : '../../../assets/image/Ellipse 3.svg'
               "
-              alt=""
-            />
-          </button>
-          <button
-            class="btn-pagination"
-            [disabled]="paginatedVideo.currentPage === 2"
-            (click)="onPageChanged(2)"
-            [ngClass]="{ active: paginatedVideo.currentPage === 2 }"
-          >
-            <img
-              [src]="
-                paginatedVideo.currentPage === 2
-                  ? '../../../assets/image/Ellipse 4.svg'
-                  : '../../../assets/image/Ellipse 3.svg'
-              "
-              alt=""
-            />
-          </button>
-          <button
-            class="btn-pagination"
-            [disabled]="paginatedVideo.currentPage === 3"
-            (click)="onPageChanged(3)"
-            [ngClass]="{ active: paginatedVideo.currentPage === 3 }"
-          >
-            <img
-              [src]="
-                paginatedVideo.currentPage === 3
-                  ? '../../../assets/image/Ellipse 4.svg'
-                  : '../../../assets/image/Ellipse 3.svg'
-              "
-              alt=""
+              alt="pagination"
             />
           </button>
         </div>

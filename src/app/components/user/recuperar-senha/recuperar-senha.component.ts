@@ -23,8 +23,8 @@ export class RecuperarSenhaComponent {
   form!: FormGroup;
   user = {} as User;
 
-  imageFechadaUrl: string = '../../../../assets/image/Hide.png';
-  imageAbertaUrl: string = '../../../../assets/image/show.png';
+  imageFechadaUrl = '../../../../assets/image/hide.png';
+  imageAbertaUrl = '../../../../assets/image/remove-red-eye.png';
 
   constructor(private fb: FormBuilder, private toast: ToastService) {}
 
@@ -37,7 +37,11 @@ export class RecuperarSenhaComponent {
   }
 
   errorRegistration(): void {
-    this.toast.errorRegistration('Erro', 'Error ao tentar recuperar senha', 'error');
+    this.toast.errorRegistration(
+      'Erro',
+      'Error ao tentar recuperar senha',
+      'error'
+    );
   }
 
   showErrorForRequiredFields() {
@@ -67,17 +71,9 @@ export class RecuperarSenhaComponent {
     );
   }
 
-  togglePasswordVisibility(inputId: string, imgId: string): void {
+  // Altera a visibilidade da senha e altera a imagem
+  togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
-    this.imgShow = !this.imgShow;
-
-    const passwordInput = document.getElementById(inputId) as HTMLInputElement;
-    const togglePassword = document.getElementById(imgId) as HTMLImageElement;
-
-    passwordInput.type = this.passwordVisible ? 'text' : 'password';
-    togglePassword.src = this.imgShow
-      ? this.imageAbertaUrl
-      : this.imageFechadaUrl;
   }
 
   public cssValidator(campoForm: FormControl | AbstractControl): any {

@@ -46,9 +46,16 @@ Execute `ng e2e` para executar testes end-to-end usando uma plataforma de sua es
     </tr>
     <tr>
       <td>Testes de Integração</td>
+<<<<<<< HEAD
       <td><img src="https://img.shields.io/badge/tests-passing-brightgreen"></td>
       <td>def456</td>
     </tr>
+=======
+      <td><img src="https://img.shields.io/badge/tests-passing-brightgreen""></td>
+      <td>def456</td>
+    </tr>
+    <!-- Adicione mais linhas para outros tipos de testes -->
+>>>>>>> b0fb6342dd4e19d6a3876f9e1722bf60af4a39d7
   </tbody>
 </table>
 

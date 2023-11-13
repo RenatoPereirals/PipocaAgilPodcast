@@ -70,6 +70,7 @@ export class CadastroComponent implements OnInit {
   togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
   }
+  
   toggleConfirmPasswordVisibility(): void {
     this.ConfirmPasswordVisible = !this.ConfirmPasswordVisible;
   }

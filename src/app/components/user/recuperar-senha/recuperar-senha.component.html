@@ -69,7 +69,7 @@
           <input
             class="username"
             id="confirmePassword"
-            [type]="passwordVisible ? 'text' : 'password'"
+            [type]="ConfirmPasswordVisible ? 'text' : 'password'"
             name="confirmasenha"
             formControlName="confirmePassword"
             [ngClass]="{
@@ -84,11 +84,11 @@
             placeholder="Confirme a senha"
           />
           <img
-            [class]="passwordVisible ? 'show' : 'hide'"
+            [class]="ConfirmPasswordVisible ? 'show' : 'hide'"
             id="toggleConfirmPassword"
-            [src]="passwordVisible ? imageAbertaUrl : imageFechadaUrl"
+            [src]="ConfirmPasswordVisible ? imageAbertaUrl : imageFechadaUrl"
             alt=""
-            (click)="togglePasswordVisibility()"
+            (click)="toggleConfirmPasswordVisibility()"
           />
         </div>
         <div

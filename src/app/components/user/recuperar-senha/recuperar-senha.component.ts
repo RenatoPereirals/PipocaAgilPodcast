@@ -18,6 +18,7 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class RecuperarSenhaComponent {
   passwordVisible = false;
+  ConfirmPasswordVisible = false;
   imgShow = false;
 
   form!: FormGroup;
@@ -74,6 +75,10 @@ export class RecuperarSenhaComponent {
   // Altera a visibilidade da senha e altera a imagem
   togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
+  }
+
+  toggleConfirmPasswordVisibility(): void {
+    this.ConfirmPasswordVisible = !this.ConfirmPasswordVisible;
   }
 
   public cssValidator(campoForm: FormControl | AbstractControl): any {

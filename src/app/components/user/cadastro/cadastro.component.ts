@@ -24,10 +24,11 @@ import { UserFakeService } from 'src/app/services/user-fake.service';
 })
 export class CadastroComponent implements OnInit {
   passwordVisible = false;
+  ConfirmPasswordVisible = false;
   showAgeError = false;
 
   imageFechadaUrl = '../../../../assets/image/hide.png';
-  imageAbertaUrl = '../../../../assets/image/remove-red-eye.png';
+  imageAbertaUrl = '../../../../assets/image/show.png';
 
   form!: FormGroup;
   user = {} as User;
@@ -68,6 +69,9 @@ export class CadastroComponent implements OnInit {
   // Altera a visibilidade da senha e altera a imagem
   togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
+  }
+  toggleConfirmPasswordVisibility(): void {
+    this.ConfirmPasswordVisible = !this.ConfirmPasswordVisible;
   }
 
   // Validação do formulário

@@ -1,6 +1,15 @@
 # Pipoca Ágil Podcast
 
-Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) na versão 16.1.4.
+Bem-vindo ao frontend do Pipoca Ágil, um projeto de gerenciamento e apresentação de podcasts desenvolvido com Angular. Este projeto faz parte de uma iniciativa voluntária de uma equipe Scrum, composta por um Product Owner, Scrum Master, Quality Assurance, UX/UI Designer e eu, um Desenvolvedor Fullstack.
+
+O objetivo deste projeto é desenvolver nossas habilidades em um ambiente Scrum, criando uma aplicação web moderna e responsiva que se adapta a diversos tamanhos de tela. Atualmente, o projeto está em fase de desenvolvimento e contará com três tipos de usuários: Usuários Comuns, Administradores e Assinantes.
+
+Usuários Comuns poderão acessar o conteúdo gratuito do site e interagir com posts na galeria, curtindo, comentando e compartilhando.
+Assinantes terão acesso a todos os recursos disponíveis para os usuários comuns, além de acesso antecipado a podcasts e conteúdos exclusivos.
+Administradores poderão moderar o site e os conteúdos postados pelos usuários. Eles também terão acesso a dados importantes para a tomada de decisões informadas, como relatórios sobre os podcasts, posts e fotos mais acessados, e informações úteis sobre os usuários.
+Embora o projeto ainda esteja em desenvolvimento, a ideia é tratar esses dados com a linguagem R, que estou atualmente estudando.
+
+Por favor, note que este é o frontend do projeto. Ele é projetado para interagir perfeitamente com o backend correspondente e um projeto de testes de unidade desenvolvido com Xunit.net, criando uma experiência de usuário completa e coesa.
 
  **Tecnologias Utilizadas:**
 - HTML
